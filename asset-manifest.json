@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/shlok-zanwar.github.io/static/css/main.a4da3201.chunk.css",
+    "main.js": "/shlok-zanwar.github.io/static/js/main.da793fe5.chunk.js",
+    "main.js.map": "/shlok-zanwar.github.io/static/js/main.da793fe5.chunk.js.map",
+    "runtime-main.js": "/shlok-zanwar.github.io/static/js/runtime-main.f032f181.js",
+    "runtime-main.js.map": "/shlok-zanwar.github.io/static/js/runtime-main.f032f181.js.map",
+    "static/js/2.25aa4994.chunk.js": "/shlok-zanwar.github.io/static/js/2.25aa4994.chunk.js",
+    "static/js/2.25aa4994.chunk.js.map": "/shlok-zanwar.github.io/static/js/2.25aa4994.chunk.js.map",
+    "index.html": "/shlok-zanwar.github.io/index.html",
+    "static/css/main.a4da3201.chunk.css.map": "/shlok-zanwar.github.io/static/css/main.a4da3201.chunk.css.map",
+    "static/js/2.25aa4994.chunk.js.LICENSE.txt": "/shlok-zanwar.github.io/static/js/2.25aa4994.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f032f181.js",
+    "static/js/2.25aa4994.chunk.js",
+    "static/css/main.a4da3201.chunk.css",
+    "static/js/main.da793fe5.chunk.js"
+  ]
+}
