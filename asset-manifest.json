@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Shlok-Zanwar/Shlok-Zanwar.github.io/static/css/main.a4da3201.chunk.css",
-    "main.js": "/Shlok-Zanwar/Shlok-Zanwar.github.io/static/js/main.248bd692.chunk.js",
-    "main.js.map": "/Shlok-Zanwar/Shlok-Zanwar.github.io/static/js/main.248bd692.chunk.js.map",
-    "runtime-main.js": "/Shlok-Zanwar/Shlok-Zanwar.github.io/static/js/runtime-main.8459e7f0.js",
-    "runtime-main.js.map": "/Shlok-Zanwar/Shlok-Zanwar.github.io/static/js/runtime-main.8459e7f0.js.map",
-    "static/js/2.b584422e.chunk.js": "/Shlok-Zanwar/Shlok-Zanwar.github.io/static/js/2.b584422e.chunk.js",
-    "static/js/2.b584422e.chunk.js.map": "/Shlok-Zanwar/Shlok-Zanwar.github.io/static/js/2.b584422e.chunk.js.map",
-    "index.html": "/Shlok-Zanwar/Shlok-Zanwar.github.io/index.html",
-    "static/css/main.a4da3201.chunk.css.map": "/Shlok-Zanwar/Shlok-Zanwar.github.io/static/css/main.a4da3201.chunk.css.map",
-    "static/js/2.b584422e.chunk.js.LICENSE.txt": "/Shlok-Zanwar/Shlok-Zanwar.github.io/static/js/2.b584422e.chunk.js.LICENSE.txt"
+    "main.css": "/static/css/main.a4da3201.chunk.css",
+    "main.js": "/static/js/main.248bd692.chunk.js",
+    "main.js.map": "/static/js/main.248bd692.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ed5fa0ab.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ed5fa0ab.js.map",
+    "static/js/2.b584422e.chunk.js": "/static/js/2.b584422e.chunk.js",
+    "static/js/2.b584422e.chunk.js.map": "/static/js/2.b584422e.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.a4da3201.chunk.css.map": "/static/css/main.a4da3201.chunk.css.map",
+    "static/js/2.b584422e.chunk.js.LICENSE.txt": "/static/js/2.b584422e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8459e7f0.js",
+    "static/js/runtime-main.ed5fa0ab.js",
     "static/js/2.b584422e.chunk.js",
     "static/css/main.a4da3201.chunk.css",
     "static/js/main.248bd692.chunk.js"
