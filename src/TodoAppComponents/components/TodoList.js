@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import Todo from './Todo';
 import TodoForm from './TodoForm'
 import Doing from './Doing'
-// import Done from './Done'
 import SendDone from './SendDone';
 
 

@@ -1,16 +1,11 @@
 import './App.css';
-// import TodoForm from './components/TodoForm';
-import TodoList from './components/TodoList';
+import RoutePaths  from './RoutePaths'
 
 function App() {
-
   return (
-    <>
     <div>
-    <h1>To-Do App - Shlok Zanwar !!</h1>
-      <TodoList />
+      <RoutePaths />
     </div>
-    </>
   );
 }
 

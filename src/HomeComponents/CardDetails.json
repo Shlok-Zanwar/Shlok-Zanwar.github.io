@@ -1,0 +1,14 @@
+[
+    {
+        "id":1,
+        "title":"ToDo App",
+        "description": "A Well designed todo app for managing your work.",
+        "url":"/blogs/todo"
+    },
+    {
+        "id":2,
+        "title":"Toxic Bot Discord",
+        "description": "A discord bot for playing memes in your discord voice channel.",
+        "url":"/blogs/toxicbot"
+    }
+]

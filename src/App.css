@@ -1,9 +1,6 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+:root {
+  --black: #161a2b;
+  --white: #ffffff;
 }
 
 body {
@@ -18,85 +15,90 @@ body {
   );
 }
 
-.todo-app {
+/* Navbar */
+
+.navbar-color{
+  background-color: var(--black);
+}
+
+.navbar-icons{
+  font-size: 24px;
+  padding: 2px 8px;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+* {
+	box-sizing: border-box;
+}
+
+
+/* Blog */
+
+
+.main-blog-div {
   display: inline-table;
   flex-direction: column;
-  justify-content: start;
-  min-width: 400px;
-  width: 28%;
-  height: 580px;
-  background: #161a2b;
+  justify-content: center;
+  opacity: 1;
+  /* min-width: 400px; */
+  width: 92%;
+  max-width: 750px;
+  height: auto;
+  background: var(--black);
   text-align: center;
-  margin: 12px 20px;
+  margin: 20px 20px;
   border-radius: 10px;
-  padding-bottom: 32px;
+  padding: 10px 10px 25px 10px;
+
 }
 
-@keyframes example {
-  from {background-color: red;}
-  to {background-color: yellow;}
+.blog-title {
+  font-size: 45px;
+  font-weight: bold;
+  color: rgba(255, 84, 17, 1);
+	letter-spacing: 1px;
+	padding: 10px 15px;
 }
 
-
-h1 {
-  margin: 20px 0px 15px 0px;
-  color: rgb(4, 238, 4);
+.blog-subheading{
   font-size: 30px;
+  font-weight: bold;
+  color: rgba(17, 122, 255, 1);
+	letter-spacing: 1px;
+	padding: 10px 15px;
 }
 
-h2 {
-  margin: 20px 0;
-  color: #fff;
-  font-size: 24px;
+.blog-para {
+  font-family: 'Muli', sans-serif;
+  text-align: left;
+  font-size: 20px;
+  color: #ffffff;
+  opacity: 0.9;
+  padding: 6px 30px;
+	letter-spacing: 2px;
 }
 
-
-.todo-form {
-  margin-bottom: 32px;
+.blog-image-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.todo-input {
-  padding: 14px 32px 14px 16px;
-  border-radius: 4px 0 0 4px;
-  border: 2px solid #5d0cff;
-  outline: none;
-  width: 68%;
-  background: transparent;
-  color: #fff;
+.blog-list{
+  justify-content: left;
+  text-align: left;
+  font-size: 20px;
+  opacity: 0.9;
+  padding: 10px 30px 10px 35px;
+  color: #ffffff;
 }
 
-.todo-input::placeholder {
-  color: #e2e2e2;
-}
+/* .blog-list-ul{
 
-.todo-button {
-  padding: 16px;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-  outline: none;
-  background: linear-gradient(
-    90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
-  );
-  color: #fff;
-  text-transform: capitalize;
-}
-.todo-input.edit {
-  border: 2px solid #149fff;
-}
+} */
 
-.todo-button.edit {
-  background: linear-gradient(
-    90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
-  );
-  padding: 16px 22px;
-}
-
-.delete-all-button{
+.redirect-button{
   padding: 16px;
   border: none;
   border-radius: 5px;
@@ -109,68 +111,59 @@ h2 {
     rgba(155, 0, 250, 1) 100%
   );
   color: #fff;
-  text-transform: capitalize;
 }
 
-.todo-container {
-  display: flex;
-  flex-direction: row;
-  position: relative;
+.blog-image{
+  border: 2px solid rgba(255, 118, 20, 1);
+  border-radius: 10px;
+  margin: 10px 10px 15px 10px;
+  max-height: 350px;
+  width: auto;
+  max-width: 90%;
+  height: auto;
 }
 
-.todo-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 4px auto;
-  color: #fff;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
-  );
-  word-break: break-all;
-  padding: 16px;
-  border-radius: 5px;
-  width: 90%;
-}
 
-.todo-row:nth-child(4n + 1) {
-  background: linear-gradient(
-    90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
-  );
-}
+/* Home Page Cards */
 
-.todo-row:nth-child(4n + 2) {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 12, 241, 1) 0%,
-    rgba(250, 0, 135, 1) 100%
-  );
-}
-
-.todo-row:nth-child(4n + 3) {
-  background: linear-gradient(
-    90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
-  );
-}
-
-.icons {
-  display: flex;
-  align-items: center;
-  font-size: 24px;
+.cards-box {
+	background-color: var(--black);
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  display: inline-table;
+  min-width: 400px;
+	max-width: 400px;
+  margin: 20px;
+  min-height: 220px;
   cursor: pointer;
 }
 
-.edit-icon {
-  /* margin-right: 5px; */
-  color: #fff;
+.cards-info {
+  padding: 3px 5px 10px 5px;
+  width: 100%;
 }
 
-.delete-icon {
-  color: #fff;
+.cards-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: rgba(255, 84, 17, 1);
+	letter-spacing: 1px;
+	padding: 10px 5px;
+}
+
+
+.cards-description {
+  font-size: 18px;
+  font-family: 'Muli', sans-serif;
+  color: #ffffff;
+  opacity: 0.8;
+  padding: 4px 10px;
+	letter-spacing: 2px;
+}
+
+
+.cards-box:hover{
+  border-radius: 10px;
+  transition: transform .5s;
+  transform: scale(1.05);
 }

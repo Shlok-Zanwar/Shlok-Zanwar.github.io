@@ -1,19 +1,16 @@
 import React, { useState } from 'react'
 import TodoForm from './TodoForm'
-// import TodoList from './TodoList'
-// import { RiDeleteBin5Line } from 'react-icons/ri'
 import { TiEdit } from 'react-icons/ti'
 import { MdDoneAll } from 'react-icons/md'
-// import { FiSend } from 'react-icons/fi'
-import { MdArrowBack } from 'react-icons/md'
+import { FiSend } from 'react-icons/fi'
 import { Tooltip } from '@material-ui/core'
 
-function Doing({todos, removeTodo, updateTodo, sendToDo, sendToDoing, sendToDone}) {
+function Todo({todos, removeTodo, updateTodo, sendToDo , sendToDoing, sendToDone}) {
     const [edit, setEdit] = useState({
         id: null,
         value: '',
-        todoList: false,
-        doing: true,
+        todoList: true,
+        doing: false,
         done:false,
     })
 
@@ -22,17 +19,17 @@ function Doing({todos, removeTodo, updateTodo, sendToDo, sendToDoing, sendToDone
         setEdit({
             id: null,
             value: '',
-            todoList: false,
-            doing: true,
+            todoList: true,
+            doing: false,
             done:false,
         })
     }
 
     if(edit.id) {
-        return <TodoForm edit={edit} onSubmit={submitUpdate} />
+        return <TodoForm edit={edit} onSubmit={submitUpdate}/>
     }
 
-    return todos.map((todo, index) => todo.doing ? (
+    return todos.map((todo, index) => todo.todoList ? (
             <div className={'todo-row'} key={index} >
                 <div key={todo.id}>
                     {todo.text}
@@ -41,16 +38,16 @@ function Doing({todos, removeTodo, updateTodo, sendToDo, sendToDoing, sendToDone
                     <Tooltip title='Edit Text' placement='top' arrow>
                         <span>
                             <TiEdit 
-                                onClick={() => setEdit({ id: todo.id, value: todo.text, todoList:false, doing:true, done:false })}
+                                onClick={() => setEdit({ id: todo.id, value: todo.text, todoList:true, doing:false, done:false })}
                                 className='edit-icon'
                             />
                         </span>
                     </Tooltip>
 
-                    <Tooltip title="Send to To-Do's" placement='top' arrow>
+                    <Tooltip title='Send to Doing' placement='top' arrow>
                         <span>
-                            <MdArrowBack
-                                onClick={() => sendToDo(todo.id)}
+                            <FiSend
+                                onClick={() => sendToDoing(todo.id)}
                             />
                         </span>
                     </Tooltip>
@@ -62,10 +59,10 @@ function Doing({todos, removeTodo, updateTodo, sendToDo, sendToDoing, sendToDone
                             />
                         </span>
                     </Tooltip>
-   
+
                 </div>
             </div>
     ) : null )
 }
 
-export default Doing
+export default Todo

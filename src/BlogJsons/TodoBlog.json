@@ -1,0 +1,88 @@
+[
+    {
+        "type":"title",
+        "text":"To-Do App"
+    },
+    {
+        "type":"paragraph",
+        "text":"A Well designed todo app for managing your work."
+    },
+    {
+        "type":"paragraph",
+        "text":"It consists of three columns :-"
+    },
+    {
+        "type":"list",
+        "list":[
+            "To-Do",
+            "Doing",
+            "Done"
+        ]
+    },
+    {
+        "type":"button",
+        "text":"Check it out",
+        "click":"https://shlok-zanwar.github.io/todo-app"
+    },
+    {
+        "type":"image",
+        "src":"https://i.ibb.co/L53DPxv/Todo-Capture.png",
+        "alt":"Image"
+    },
+    {
+        "type":"paragraph",
+        "text":"The three columns help in managing your work better. Specially when you do some projects and have multiple function to be done, you can track all the things you have done and also assign multiple things to 'doing' tab for faster working."
+    },
+    {
+        "type":"subheading",
+        "text":"To-Do"
+    },
+    {
+        "type":"paragraph",
+        "text":"It has the following functionalities :-"
+    },
+    {
+        "type":"list",
+        "list":[
+            "Edit Todo",
+            "Send to Doing",
+            "Send to Done"
+        ]
+    },
+    {
+        "type":"subheading",
+        "text":"Doing"
+    },
+    {
+        "type":"paragraph",
+        "text":"It has the following functionalities :-"
+    },
+    {
+        "type":"list",
+        "list":[
+            "Edit Todo",
+            "Send to To-do",
+            "Send to Done"
+        ]
+    },
+    {
+        "type":"subheading",
+        "text":"Done"
+    },
+    {
+        "type":"paragraph",
+        "text":"It has the following functionalities :-"
+    },
+    {
+        "type":"list",
+        "list":[
+            "Edit Todo",
+            "Send to To-Do",
+            "Delete Todo",
+            "Delete All Done (If more tha one are done)"
+        ]
+    }
+    
+
+]
+
