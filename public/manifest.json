@@ -1,19 +1,19 @@
 {
-  "short_name": "To-Do's",
-  "name": "To-Do's Shlok Zanwar",
+  "short_name": "Shlok Zanwar",
+  "name": "Shlok Zanwar",
   "icons": [
     {
-      "src": "To-Do-Tick.jpg",
+      "src": "Logo.PNG",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "To-Do-Tick.jpg",
+      "src": "Logo.PNG",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "To-Do-Tick.jpg",
+      "src": "Logo.PNG",
       "type": "image/png",
       "sizes": "512x512"
     }
