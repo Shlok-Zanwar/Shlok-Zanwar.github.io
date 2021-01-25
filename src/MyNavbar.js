@@ -11,7 +11,7 @@ function MyNavbar() {
         <>
         <Navbar collapseOnSelect expand="lg" className="navbar-color" variant="dark" sticky="top">
 
-            <Navbar.Brand as={Link} to="/" >
+            <Navbar.Brand href="https://shlok-zanwar.github.io/" >
                 Shlok Zanwar
             </Navbar.Brand>
 

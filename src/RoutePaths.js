@@ -21,7 +21,7 @@ function RoutePaths() {
                 <Route path="/blogs/toxicbot">
                     <BlogTemplate blogData={require("./BlogJsons/ToxicbotBlog.json")} />
                 </Route>
-                <Route path="/blogs/todo">
+                <Route path="/blogs/todo-app">
                     <BlogTemplate blogData={require("./BlogJsons/TodoBlog.json")} />
                 </Route>
                 <Route path="/todo-app">
