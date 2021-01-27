@@ -1,7 +1,7 @@
 [
     {
         "type":"title",
-        "text":"To-Do App"
+        "text":"Hotel Managment System"
     },
     {
         "type":"paragraph",
@@ -9,7 +9,7 @@
     },
     {
         "type":"paragraph",
-        "text":"By the end of this blog you will get to know about a unique data managment system and some good python tricks form terminal data look better."
+        "text":"By the end of this blog you will get to know about a unique data management system and some good python tricks for your terminal data look better."
     },
 
     {
@@ -38,10 +38,10 @@
         "type":"list",
         "list":[
             "Well designed interface (Tabulated)",
-            "Admin class features include checking the data for a particular date, modifing / updating menu, placing orders etc.",
-            "Employee can only take orders.",
-            "self ccreted database system using json and intelligence (A json file based database which works very well in this particular project).",
-            "A self updating html file for reference menu for the employee (The code will automatically change the html table contens when the availiblity is changed (using open, read, write file)."
+            "Admin class features include checking the data for a particular date, modifying / updating menu, placing orders etc.",
+            "Employees can only take orders.",
+            "Self created database system using json and intelligence (A json file based database which works very well in this particular project).",
+            "A self updating html file for reference menu for the employee (The code will automatically change the html table contents when the availability is changed (using open, read, write file)."
         ]
     },
 
@@ -98,7 +98,7 @@
     },
     {
         "type":"paragraph",
-        "text":"Every time a use logs-in the program fetches the date from the system and creates a new file named 'data_+(date).json' if it is not present. Then a template is created and hence updated after evry new order." 
+        "text":"Every time a use logs-in the program fetches the date from the system and creates a new file named 'data_+(date).json' if it is not present. Then a template is created and hence updated after every new order." 
     },
 
 
@@ -108,7 +108,7 @@
     },
     {
         "type":"paragraph",
-        "text":"This is one of the most important segment. The admin can create a new item, update previous item or even change the availablity of any item anythime. Every items has the following segments. These details are also maintained using a menu.json file. "
+        "text":"This is one of the most important segments. The admin can create a new item, update previous item or even change the availability of any item anytime. Every item has the following segments. These details are also maintained using a menu.json file. "
     },
     {
         "type":"image",
@@ -117,7 +117,7 @@
     },
     {
         "type":"paragraph",
-        "text":"There is also a html table maintained for reference while taking order, this table only displays the currently available items. The html file is updated everytime the menu is altered."
+        "text":"There is also a html table maintained for reference while taking order, this table only displays the currently available items. The html file is updated every time the menu is altered."
     },
     {
         "type":"image",
@@ -132,11 +132,11 @@
     },
     {
         "type":"paragraph",
-        "text":"This is feature common to the admins and employees."
+        "text":"This is a feature common to the admins and employees."
     },
     {
         "type":"paragraph",
-        "text":"Placing order is very easy, one just has to enter item ids refering to the html table one by one (untill they want) and then an automated bill is generated for the order. Also the order is then automatically saved with the systems date file."
+        "text":"Placing orders is very easy, one just has to enter item ids referring to the html table one by one (until they want) and then an automated bill is generated for the order. Also the order is then automatically saved with the systems date file."
     },
     {
         "type":"image",

@@ -5,15 +5,15 @@
     },
     {
         "type":"paragraph",
-        "text":"A form application for mainly school/college related applications such as conducting tests, surveys etc."
+        "text":"A form application for mainly schools/colleges related applications such as conducting tests, surveys etc."
     },
     {
         "type":"paragraph",
-        "text":"With this blog i will let you know each and every thing about the project Dock Forms."
+        "text":"With this blog i will let you know each and every thing about the project 'Dock Forms' ."
     },
     {
         "type":"subheading",
-        "text":"Technologies in use"
+        "text":"Technologies ..."
     },
     {
         "type":"paragraph",
@@ -59,13 +59,13 @@
             "A whole new functionality of rooms (Basically creating a group of accounts) and on connecting rooms to your forms you can restrict the form to only limited people.",
             "Lock form Response (Currently accepting responses).",
             "limiting to one response.",
-            "Edit form after it is made.",
+            "Edit form after it is created.",
             "Home screen with all previously created forms and rooms.",
             "Dedicated page for responses in a html table format.",
             "Rooms editor and connect rooms to Forms dedicated pages.",
-            "Mail verification OTP using smtplib.",
-            "SQL Database as well a self created JSON based database",
-            "4 types of questions (mcq (without ans), mcq(survey type), range type, text type)"
+            "Verification of OTP on mail using smtplib.",
+            "SQL Database as well as self created JSON based database",
+            "4 types of questions (mcq (with ans), mcq(survey type), range type, text type)"
         ]
     },
 
@@ -80,7 +80,7 @@
     },
     {
         "type":"paragraph",
-        "text":"Beginning with the login page, this page has the login or signup options. When you sign up using a new email-id you get a mail with the OTP which needs to be verified and only then your account is created."
+        "text":"Beginning with the login page, this page has the login and signup options. When you sign up using a new email-id you get a mail with the OTP which needs to be verified and only then your account is created."
     },
     {
         "type":"image",
@@ -109,7 +109,7 @@
     },
     {
         "type":"paragraph",
-        "text":"The multiple choice question provides you the freedom to hava any number of option you want. Also You have a toggle for selecting whether the question has a correct answer of its a survey based question."
+        "text":"The multiple choice question provides you the freedom to have any number of options you want. Also You have a toggle for selecting whether the question has a correct answer or its a survey based question."
     },
     {
         "type":"image",
@@ -141,7 +141,7 @@
     },
     {
         "type":"paragraph",
-        "text":"Range type qustions provide a box where the respondent can enter numeric values, this type of question is useful when there are mathematical question and the answer range between some values due to complex calculations. "
+        "text":"Range type qustions provide a box where the respondent can enter numeric values, this type of question is useful when there are mathematical questions and the answers range between some values due to complex calculations. "
     },
     {
         "type":"image",
@@ -155,7 +155,7 @@
     },
     {
         "type":"paragraph",
-        "text":"A very simple page to create and add people to your room, just enter the user-id to add the user, you can also delete the user."
+        "text":"A very simple page to create and add people to your room, just enter the user-id to add the user, you can also delete or add new users anytime later."
     },
     {
         "type":"image",
@@ -169,11 +169,11 @@
     },
     {
         "type":"paragraph",
-        "text":"This is the page where all the previously created forms and rooms are displayed, you can create a new room/form from here or edit your previously created rooms/forms."
+        "text":"This is the page where all your previously created forms and rooms are displayed, you can create a new room/form from here or edit your previously created rooms/forms."
     },
     {
         "type":"paragraph",
-        "text":"You can connect rooms from the rooms tab of each form. (You can connect multiple rooms to a form)"
+        "text":"You can connect rooms from the rooms tab of each form. (You can connect multiple rooms to a form)."
     },
     {
         "type":"image",
@@ -187,7 +187,7 @@
     },
     {
         "type":"paragraph",
-        "text":"On the navbar there is a tab 'Give Response' where you just have to enter the id and then you are redirected to a new window where you have to respond to the form"
+        "text":"On the navbar there is a tab 'Give Response' where you just have to enter the id and then you are redirected to a new window where you have to respond to the form."
     },
     {
         "type":"image",
@@ -201,7 +201,7 @@
     },
     {
         "type":"paragraph",
-        "text":"This is where all the responses to your form are stored. You can view, sort and delete them. "
+        "text":"This is where all the responses to your form are stored. You can view, sort or delete them. "
     },
     {
         "type":"image",
