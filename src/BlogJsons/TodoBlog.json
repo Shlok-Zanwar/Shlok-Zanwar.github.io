@@ -19,11 +19,35 @@
             "Done"
         ]
     },
+
+    {
+        "type":"subheading",
+        "text":"Features"
+    },
+    {
+        "type":"paragraph",
+        "text":"The three columns help in managing your work better. Especially when you do a big project and have multiple functions to be done at a time the 'doing' tab helps you in keeping reference to all your work and you can also track all the things you have done in the ‘done’ tab."
+    },
+    {
+        "type":"paragraph",
+        "text":"The app uses local-storage for storing details so that all the todos are retained when page reopens / reloads."
+    },
+    {
+        "type":"paragraph",
+        "text":"You can also Drag and Drop your todo's to the other divisions rather than using the button."
+    },
     {
         "type":"button",
         "text":"Check it out",
         "click":"https://shlok-zanwar.github.io/todo-app"
     },
+
+    {
+        "type":"image",
+        "src":"https://i.ibb.co/L53DPxv/Todo-Capture.png",
+        "alt":"Image"
+    },
+
     {
         "type":"subheading",
         "text":"Technologies"
@@ -33,16 +57,6 @@
         "text":"This app is designed using React-Js and hosted on Github-pages"
     },
 
-
-    {
-        "type":"image",
-        "src":"https://i.ibb.co/L53DPxv/Todo-Capture.png",
-        "alt":"Image"
-    },
-    {
-        "type":"paragraph",
-        "text":"The three columns help in managing your work better. Especially when you do a big project and have multiple functions to be done at a time the 'doing' tab helps you in keeping reference to all your work , you can track all the things you have done in the ‘done’ tab."
-    },
     {
         "type":"subheading",
         "text":"To-Do"
