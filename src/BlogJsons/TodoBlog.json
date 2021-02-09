@@ -25,17 +25,16 @@
         "text":"Features"
     },
     {
-        "type":"paragraph",
-        "text":"The three columns help in managing your work better. Especially when you do a big project and have multiple functions to be done at a time the 'doing' tab helps you in keeping reference to all your work and you can also track all the things you have done in the ‘done’ tab."
+        "type":"list",
+        "list":[
+            "The three columns help in managing your work better. Especially when you do a big project and have multiple functions to be done at a time the 'doing' tab helps you in keeping reference to all your work and you can also track all the things you have done in the ‘done’ tab.",
+            "The app uses local-storage for storing details so that all the todos are retained when page reopens / reloads.",
+            "You can also Drag and Drop your todo's to the other divisions rather than using the button.",
+            "You can drag an element on the delete button to delete it directly.",
+            "You can re-order the position of a To-Do by dragging it on some other To-Do (New position will be below the To-Do you dragged on)."
+        ]
     },
-    {
-        "type":"paragraph",
-        "text":"The app uses local-storage for storing details so that all the todos are retained when page reopens / reloads."
-    },
-    {
-        "type":"paragraph",
-        "text":"You can also Drag and Drop your todo's to the other divisions rather than using the button."
-    },
+
     {
         "type":"button",
         "text":"Check it out",
