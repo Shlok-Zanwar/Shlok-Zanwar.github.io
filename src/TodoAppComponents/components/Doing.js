@@ -5,7 +5,7 @@ import { MdDoneAll } from 'react-icons/md'
 import { MdArrowBack } from 'react-icons/md'
 import { Tooltip } from '@material-ui/core'
 
-function Doing({todos, updateTodo, sendToDo, sendToDone, handleDrag, handlePositionChange, allowDrop}) {
+function Doing({todos, updateTodo, sendToDo, sendToDone, handleDrag, handlePositionChange, allowDrop, setShowDelete}) {
     const [edit, setEdit] = useState({
         id: null,
         value: '',
@@ -34,6 +34,7 @@ function Doing({todos, updateTodo, sendToDo, sendToDone, handleDrag, handlePosit
             key={index} 
             draggable={true} 
             onDragStart={(e) => handleDrag(e, JSON.stringify(todo))} 
+            onDragEnd={() => setShowDelete(false)}
             onDrop={(e) => handlePositionChange(e, todo)} 
             onDragOver={(e) => allowDrop(e)} 
         >

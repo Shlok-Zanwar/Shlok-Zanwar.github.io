@@ -5,7 +5,7 @@ import { MdDoneAll } from 'react-icons/md'
 import { FiSend } from 'react-icons/fi'
 import { Tooltip } from '@material-ui/core'
 
-function Todo({todos, updateTodo, sendToDoing, sendToDone, handleDrag, handlePositionChange, allowDrop}) {
+function Todo({todos, updateTodo, sendToDoing, sendToDone, handleDrag, handlePositionChange, allowDrop, setShowDelete}) {
     const [edit, setEdit] = useState({
         id: null,
         value: '',
@@ -34,6 +34,7 @@ function Todo({todos, updateTodo, sendToDoing, sendToDone, handleDrag, handlePos
             key={index} 
             draggable={true} 
             onDragStart={(e) => handleDrag(e, JSON.stringify(todo))} 
+            onDragEnd={() => setShowDelete(false)}
             onDrop={(e) => handlePositionChange(e, todo)} 
             onDragOver={(e) => allowDrop(e)} 
         >

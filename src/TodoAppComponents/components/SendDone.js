@@ -1,7 +1,7 @@
 import React from 'react'
 import Done from './Done'
 
-function SendDone({todos, removeTodo, updateTodo, sendToDo, handleDrag, handlePositionChange, allowDrop, deleteAllDone, showDelete }) {
+function SendDone({todos, removeTodo, updateTodo, sendToDo, handleDrag, handlePositionChange, allowDrop, deleteAllDone, showDelete, setShowDelete }) {
 
     return [...todos].filter(todo => todo.done).length > 1 || showDelete ? (
         <>
@@ -14,6 +14,7 @@ function SendDone({todos, removeTodo, updateTodo, sendToDo, handleDrag, handlePo
                 handleDrag={handleDrag} 
                 handlePositionChange={handlePositionChange} 
                 allowDrop={allowDrop} 
+                setShowDelete={setShowDelete}
             />
             <button 
                 className="delete-all-button" 
@@ -35,6 +36,7 @@ function SendDone({todos, removeTodo, updateTodo, sendToDo, handleDrag, handlePo
                 handleDrag={handleDrag} 
                 handlePositionChange={handlePositionChange} 
                 allowDrop={allowDrop} 
+                setShowDelete={setShowDelete}
             />
             
         </>

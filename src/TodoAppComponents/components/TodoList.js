@@ -92,7 +92,6 @@ function TodoList() {
 
     const handleToDoDrop = e => {
         let id = JSON.parse(e.dataTransfer.getData("todo")).id;
-        // console.log(id);
         sendToDo(id);
         setShowDelete(false);
     }
@@ -129,7 +128,7 @@ function TodoList() {
                 newTodos.push(changeTodo);
             }
         }
-
+        setShowDelete(false);
         // For setting todo, Cause useState hook normally not working for functions
         setTodos(prev => {
             return setTodos(newTodos);
@@ -154,6 +153,7 @@ function TodoList() {
                 handleDrag={handleDrag} 
                 handlePositionChange={handlePositionChange} 
                 allowDrop={allowDrop} 
+                setShowDelete={setShowDelete}
             />
         </div>
 
@@ -167,6 +167,7 @@ function TodoList() {
                 handleDrag={handleDrag}
                 handlePositionChange={handlePositionChange} 
                 allowDrop={allowDrop} 
+                setShowDelete={setShowDelete}
             />
         </div>
 
@@ -181,6 +182,7 @@ function TodoList() {
                 allowDrop={allowDrop}
                 deleteAllDone={deleteAllDone}  
                 showDelete={showDelete} 
+                setShowDelete={setShowDelete}
             />
         </div>
         </>
