@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import {Navbar, Nav} from "react-bootstrap"
-import { SiHackerrank, SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
+import { SiHackerrank, SiGithub, SiInstagram, SiLinkedin, SiGmail } from "react-icons/si";
 import { Tooltip } from '@material-ui/core'
 
 
@@ -34,6 +34,11 @@ function MyNavbar() {
                     <Tooltip title='Linkedin' placement='bottom' arrow>
                         <Nav.Link href="https://www.linkedin.com/in/shlok-zanwar-0124961ba/" className="navbar-icons">
                                 <SiLinkedin />
+                        </Nav.Link>
+                    </Tooltip>
+                    <Tooltip title='shlokzanwar14@gmail.com' placement='bottom' arrow>
+                        <Nav.Link href="mailto:shlokzanwar14@gmail.com" className="navbar-icons">
+                                <SiGmail />
                         </Nav.Link>
                     </Tooltip>
                     <Tooltip title='Hackerrank' placement='bottom' arrow>
