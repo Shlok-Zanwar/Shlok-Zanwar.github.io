@@ -36,7 +36,7 @@ function MyNavbar() {
                                 <SiLinkedin />
                         </Nav.Link>
                     </Tooltip>
-                    <Tooltip title='shlokzanwar14@gmail.com' placement='bottom' arrow>
+                    <Tooltip title='shlokzanwar14@gmail.com' placement='bottom' arrow interactive>
                         <Nav.Link href="mailto:shlokzanwar14@gmail.com" className="navbar-icons">
                                 <SiGmail />
                         </Nav.Link>
