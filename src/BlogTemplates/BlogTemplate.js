@@ -8,6 +8,8 @@ import BlogTitle from './BlogTitle'
 
 function BlogTemplate({blogData}) {
 
+    document.title = "Blogs | " + blogData[0].text + " | Shlok Zanwar"
+
     const getRandomNumber = () =>{
         return Math.floor(Math.random() * 100000);
     }

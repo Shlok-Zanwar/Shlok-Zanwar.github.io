@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 function App() {
 
+  document.title = "To-Do App | Shlok Zanwar"
+
   return (
     <>
     <div>
