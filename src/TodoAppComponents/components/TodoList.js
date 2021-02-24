@@ -159,7 +159,7 @@ function TodoList() {
         </div>
 
         <div className="todo-app" onDrop={(e) => handleDoingDrop(e)} onDragOver={(e) => allowDrop(e)} >
-            <h2>Doing ....</h2>
+            <h2>Doing ...</h2>
             <Doing 
                 todos={todos} 
                 updateTodo={updateTodo} 
