@@ -49,7 +49,7 @@ function TodoList() {
                 }
                 newTodos.push(updateTodo);
             });
-            alert(newTodos);
+            
             setTodos(newTodos);
             localStorage.setItem("update_version", "v1"); 
         }
