@@ -203,6 +203,15 @@ h2 {
 }
 
 
+.todo-row.green{
+  background: linear-gradient(
+    90deg,
+    rgb(93, 187, 49) 0%,
+    rgb(84, 202, 29) 100%
+  );
+}
+
+
 .icons {
   display: flex;
   align-items: center;

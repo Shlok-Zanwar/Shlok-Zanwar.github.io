@@ -9,7 +9,8 @@ function TodoForm(props) {
         "todo-row orange", 
         "todo-row pink", 
         "todo-row purple",
-        "todo-row red"
+        "todo-row red",
+        "todo-row green"
     ];
     const [classSelector, setClassSelector] = useState(props.edit.class + " color-select-div");
 
