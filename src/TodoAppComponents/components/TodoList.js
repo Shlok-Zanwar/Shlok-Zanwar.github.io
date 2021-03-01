@@ -15,10 +15,42 @@ function TodoList() {
         localStorage.setItem('savedTodos', JSON.stringify(todos))
     }, [todos])
 
-    
+
+    // Preventing previously created todos from getting destroyed after update
     useEffect(() => {
         if(localStorage.getItem('update_version') !== "v1"){
-            setTodos([]);
+
+            const availableClasses = [
+                "todo-row blue", 
+                "todo-row orange", 
+                "todo-row pink", 
+                "todo-row purple",
+                "todo-row red"
+            ];
+            var newTodos = [];
+            var todoType = "";
+
+            todos.map(todo => {
+                if(todo.todoList){
+                    todoType = "todo";
+                }
+                else if (todo.doing){
+                    todoType = "doing";
+                }
+                else{
+                    todoType = "done";
+                }
+
+                var updateTodo = {
+                    id: todo.id,
+                    text: todo.text,
+                    list: todoType,
+                    class: availableClasses[Math.floor(Math.random() * availableClasses.length)]
+                }
+                newTodos.push(updateTodo);
+            });
+            alert(newTodos);
+            setTodos(newTodos);
             localStorage.setItem("update_version", "v1"); 
         }
     }, [])
