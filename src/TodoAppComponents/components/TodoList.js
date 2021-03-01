@@ -15,6 +15,14 @@ function TodoList() {
         localStorage.setItem('savedTodos', JSON.stringify(todos))
     }, [todos])
 
+    
+    useEffect(() => {
+        if(localStorage.getItem('update_version') !== "v1"){
+            setTodos([]);
+            localStorage.setItem("update_version", "v1"); 
+        }
+    }, [])
+
 
     const addTodo = todo => {
         if(!todo.text || /^\s*$/.test(todo.text)) {
@@ -47,9 +55,7 @@ function TodoList() {
     const sendToDo = id =>{
         let updatedTodos = todos.map(todo => {
             if(todo.id === id){
-                todo.todoList = true;
-                todo.doing = false;
-                todo.done = false;
+                todo.list = "todo";
             }
             return todo;
         })
@@ -59,9 +65,7 @@ function TodoList() {
     const sendToDoing = id =>{
         let updatedTodos = todos.map(todo => {
             if(todo.id === id){
-                todo.todoList = false;
-                todo.doing = true;
-                todo.done = false;
+                todo.list = "doing";
             }
             return todo;
         })
@@ -71,9 +75,7 @@ function TodoList() {
     const sendToDone = id =>{
         let updatedTodos = todos.map(todo => {
             if(todo.id === id){
-                todo.todoList = false;
-                todo.doing = false;
-                todo.done = true;
+                todo.list = "done";
             }
             return todo;
         })
@@ -81,7 +83,7 @@ function TodoList() {
     }
 
     const deleteAllDone = () => {
-        let updatedTodos = [...todos].filter(todo => !todo.done)
+        let updatedTodos = [...todos].filter(todo => todo.list !== "done")
         setTodos(updatedTodos)
     }
 
@@ -114,9 +116,7 @@ function TodoList() {
 
     const handlePositionChange = (e, onTodo) => {
         var changeTodo = JSON.parse(e.dataTransfer.getData("todo"));
-        changeTodo.todoList = onTodo.todoList;
-        changeTodo.doing = onTodo.doing;
-        changeTodo.done = onTodo.done;
+        changeTodo.list = onTodo.list;
 
         const newTodos = [];
         var i;
@@ -145,7 +145,7 @@ function TodoList() {
         <>
         <div className="todo-app" onDrop={(e) => handleToDoDrop(e)} onDragOver={(e) => allowDrop(e)}>
             <h2>To Do's</h2>
-            <TodoForm onSubmit={addTodo}/>
+            <TodoForm onSubmit={addTodo} edit={{class: "todo-row blue"}} newTodo={true}/>
             <Todo 
                 todos={todos} 
                 updateTodo={updateTodo} 
@@ -159,7 +159,7 @@ function TodoList() {
         </div>
 
         <div className="todo-app" onDrop={(e) => handleDoingDrop(e)} onDragOver={(e) => allowDrop(e)} >
-            <h2>Doing ...</h2>
+            <h2>Doing ....</h2>
             <Doing 
                 todos={todos} 
                 updateTodo={updateTodo} 

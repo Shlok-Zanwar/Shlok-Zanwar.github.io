@@ -31,7 +31,8 @@
             "The app uses local-storage for storing details so that all the todos are retained when page reopens / reloads.",
             "You can also Drag and Drop your todo's to the other divisions rather than using the button.",
             "You can drag an element on the delete button to delete it directly.",
-            "You can re-order the position of a To-Do by dragging it on some other To-Do (New position will be below the To-Do you dragged on)."
+            "You can re-order the position of a To-Do by dragging it on some other To-Do (New position will be below the To-Do you dragged on).",
+            "At first the colour of To-Do's is randomly chosen, you can update the color while updating the todo to categorize your todos well."
         ]
     },
 
