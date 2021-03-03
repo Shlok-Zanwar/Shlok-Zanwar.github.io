@@ -25,7 +25,8 @@ function TodoList() {
                 "todo-row orange", 
                 "todo-row pink", 
                 "todo-row purple",
-                "todo-row red"
+                "todo-row red",
+                "todo-row green"
             ];
             var newTodos = [];
             var todoType = "";

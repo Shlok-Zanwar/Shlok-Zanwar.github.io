@@ -102,6 +102,10 @@ h2 {
   padding: 16px 22px;
 }
 
+.edit-form{
+  margin-bottom: 15px;
+}
+
 .delete-all-button{
   position: absolute;
   bottom: 0%;
@@ -124,7 +128,7 @@ h2 {
 }
 
 
-@media only screen and (max-width: 330px){
+@media only screen and (max-width: 365px){
   .todo-input{
     border-radius: 4px;
     margin-top: 4px;
@@ -230,9 +234,17 @@ h2 {
 
 
 .color-select-div{
-  margin-top: 15px;
+  display: inline-table;
+  margin: 5px;
   width: 150px;
   max-width: 150px;
   cursor: pointer;
   text-align: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 297px){
+  .color-select-div{
+    margin-bottom: 0px;
+  }
 }

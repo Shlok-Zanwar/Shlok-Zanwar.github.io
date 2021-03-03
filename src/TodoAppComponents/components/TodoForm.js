@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react';
+
 
 function TodoForm(props) {
     const [input, setInput] = useState(props.edit ? props.edit.value : '');
@@ -12,6 +13,15 @@ function TodoForm(props) {
         "todo-row red",
         "todo-row green"
     ];
+    const colorNames = [
+        "Blue",
+        "Orange",
+        "Pink",
+        "Purple",
+        "Red",
+        "Green"
+    ]
+
     const [classSelector, setClassSelector] = useState(props.edit.class + " color-select-div");
 
     useEffect(() => {
@@ -48,28 +58,50 @@ function TodoForm(props) {
 
     };
 
+    const [selectColor, setSelectColor] = useState(false);
 
-    const changeClassColor = e => {
-        setClassSelector(availableClasses[(availableClasses.indexOf(e.target.className.slice(0, -17)) + 1) % availableClasses.length ] + " color-select-div");
+    const handleRightClick = (e) => {
+        e.preventDefault();
+        setSelectColor(true);
     }
 
+    const nextClassColor = e => {
+        const classesUsed = e.target.className.split(" ");
+        setClassSelector(availableClasses[(availableClasses.indexOf((classesUsed[0] + " " + classesUsed[1])) + 1) % availableClasses.length ] + " color-select-div");
+    }
+
+    var colorSelector = <div className={classSelector} onClick={(e) => nextClassColor(e)} onContextMenu={(e) => handleRightClick(e)}>
+                            {colorNames[availableClasses.indexOf(classSelector.slice(0, -17))]}
+                        </div>
+
+    if(selectColor){
+        colorSelector = availableClasses.map((className, index) => {
+            return(
+                <div className={className + " color-select-div"} onClick={(e) => {setClassSelector(e.target.className); setSelectColor(false)}} >
+                    {colorNames[index]}
+                </div>
+            )
+        })
+    }
+
+    
 
     return (
         <form className="todo-form" onSubmit={handleSubmit}>
         {props.edit.id ? (
             <div>
-                <input 
-                    type="text" 
-                    placeholder="Update your todo" 
-                    value={input}
-                    className="todo-input"
-                    onChange={handleChange}
-                    ref={inputRef}
-                />
-                <button className="todo-button edit">Update</button>
-                <div className={classSelector} onClick={(e) => changeClassColor(e)}>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Color
+                <div className="edit-form">
+                    <input 
+                        type="text" 
+                        placeholder="Update your todo" 
+                        value={input}
+                        className="todo-input"
+                        onChange={handleChange}
+                        ref={inputRef}
+                    />
+                    <button className="todo-button edit">Update</button>
                 </div>
+                {colorSelector}
             </div>
             ) : (
             <>
