@@ -77,7 +77,7 @@ function TodoForm(props) {
     if(selectColor){
         colorSelector = availableClasses.map((className, index) => {
             return(
-                <div className={className + " color-select-div"} onClick={(e) => {setClassSelector(e.target.className); setSelectColor(false)}} >
+                <div className={className + " color-select-div"} key={colorNames[index]} onClick={(e) => {setClassSelector(e.target.className); setSelectColor(false)}} >
                     {colorNames[index]}
                 </div>
             )

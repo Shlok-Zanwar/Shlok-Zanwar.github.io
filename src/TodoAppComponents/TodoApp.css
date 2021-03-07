@@ -125,6 +125,7 @@ h2 {
   );
   color: #fff;
   text-transform: capitalize;
+  animation: fadeIn 1s 1;
 }
 
 
@@ -241,10 +242,16 @@ h2 {
   cursor: pointer;
   text-align: center;
   align-items: center;
+  animation: fadeIn 0.7s 1;
 }
 
 @media only screen and (max-width: 297px){
   .color-select-div{
     margin-bottom: 0px;
   }
+}
+
+@keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
 }
