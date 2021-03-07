@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-    <div>
+    <div className="main-outer-div">
       <Link to="blogs/todo-app">
         <h1>To-Do App</h1>
       </Link>

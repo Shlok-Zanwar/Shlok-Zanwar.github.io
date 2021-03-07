@@ -50,7 +50,7 @@ body {
   margin: 20px 20px;
   border-radius: 10px;
   padding: 10px 10px 25px 10px;
-
+  animation: fadeIn 0.5s 1;
 }
 
 .blog-title {
@@ -136,12 +136,22 @@ body {
   margin: 20px;
   min-height: 220px;
   cursor: pointer;
+  animation: fadeIn 0.5s 1;
 }
+
+
+.cards-box:hover{
+  border-radius: 10px;
+  transition: transform .5s;
+  transform: scale(1.05);
+}
+
 
 .cards-info {
   padding: 3px 5px 10px 5px;
   width: 100%;
 }
+
 
 .cards-title {
   font-size: 28px;
@@ -162,8 +172,7 @@ body {
 }
 
 
-.cards-box:hover{
-  border-radius: 10px;
-  transition: transform .5s;
-  transform: scale(1.05);
+@keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
 }
