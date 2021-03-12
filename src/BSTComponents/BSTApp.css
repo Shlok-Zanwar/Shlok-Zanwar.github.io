@@ -4,21 +4,6 @@
 }
 
 
-.App {
-    /* position: absolute; */
-    background-color: #161a2b; 
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    
-    
-    min-width: 1200px;
-    /* width: max-content; */
-    /* z-index: -1; */
-    margin: 20px;
-    border-radius: 20px;
-}
-
 
 .main-outer-div{
     margin: 20px;
@@ -53,7 +38,7 @@
   
 .rows{
     display: block;
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: center;
 }
   
@@ -84,7 +69,7 @@
     background: none;
     border: transparent;
     /* border: 1px solid white; */
-    width: 30px;
+    width: 40px;
     height: 30px;
 }
 

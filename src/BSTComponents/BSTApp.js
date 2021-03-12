@@ -2,6 +2,7 @@ import './BSTApp.css';
 import BST from './Components/BST';
 import { useSnackbar } from 'notistack';
 import { useEffect } from 'react';
+import Helmet from 'react-helmet';
 
 
 function BSTApp() {
@@ -14,8 +15,19 @@ function BSTApp() {
     }, [])
 
     return (
-        <div className="App">
-            <BST />
+        <div>
+        <Helmet>
+            <style>
+            {`            
+                body {
+                text-align: center;
+                background-color: #161a2b;
+                background-image: none;
+            }
+            `}
+            </style>
+        </Helmet>
+        <BST />
         </div>
     );
 }

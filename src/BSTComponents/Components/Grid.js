@@ -68,7 +68,7 @@ function Grid({grid, loading, setLoading, search}) {
 
     
   
-    var zIndex = 0;
+    var zIndex = -1;
 
     var makeArrows = () => {
         return(
@@ -92,8 +92,8 @@ function Grid({grid, loading, setLoading, search}) {
                                         zIndex={zIndex}
                                         borderColor="rgba(255, 84, 17, 1)" 
                                         borderWidth={5}  
-                                        fromAnchor="bottom center" 
-                                        toAnchor="top center"  
+                                        // fromAnchor="bottom center" 
+                                        // toAnchor="top center"  
                                         key={"r"+(rowIndex).toString()+"c"+cellIndex.toString()+"r"+(rowIndex+1).toString()+"c"+leftChild.toString()} 
                                     />
                                     <LineTo 
@@ -102,8 +102,8 @@ function Grid({grid, loading, setLoading, search}) {
                                         zIndex={zIndex}
                                         borderColor="rgba(255, 84, 17, 1)" 
                                         borderWidth={5}  
-                                        fromAnchor="bottom center" 
-                                        toAnchor="top center"  
+                                        // fromAnchor="bottom center" 
+                                        // toAnchor="top center"  
                                         key={"r"+(rowIndex).toString()+"c"+cellIndex.toString()+"r"+(rowIndex+1).toString()+"c"+rightChild.toString()} 
                                     />
                                     </>
@@ -117,8 +117,8 @@ function Grid({grid, loading, setLoading, search}) {
                                         zIndex={zIndex}
                                         borderColor="rgba(255, 84, 17, 1)" 
                                         borderWidth={5}
-                                        fromAnchor="bottom center" 
-                                        toAnchor="top center"  
+                                        // fromAnchor="bottom center" 
+                                        // toAnchor="top center"  
                                         key={"r"+(rowIndex).toString()+"c"+cellIndex.toString()+"r"+(rowIndex+1).toString()+"c"+leftChild.toString()}
                                     />
                                 )
@@ -131,8 +131,8 @@ function Grid({grid, loading, setLoading, search}) {
                                         zIndex={zIndex}
                                         borderColor="rgba(255, 84, 17, 1)" 
                                         borderWidth={5}  
-                                        fromAnchor="bottom center" 
-                                        toAnchor="top center"   
+                                        // fromAnchor="bottom center" 
+                                        // toAnchor="top center"   
                                         key={"r"+(rowIndex).toString()+"c"+cellIndex.toString()+"r"+(rowIndex+1).toString()+"c"+rightChild.toString()}
                                     />
                                 )
@@ -147,17 +147,11 @@ function Grid({grid, loading, setLoading, search}) {
 
     
 
-    return loading?(
+    return(
         <div className="tree-outer-div">
             <div className="tree-main-div">
                 {makeRows()}
-            </div>
-        </div>
-    ):(
-        <div className="tree-outer-div">
-            <div className="tree-main-div">
-                {makeRows()}
-                {makeArrows()}
+                {loading ? null : makeArrows() }
             </div>
         </div>
     )

@@ -226,10 +226,10 @@ function BST() {
         data = parseInt(data);
         var i, j;
         // var newTree = [...binaryTree];
-        for(i = 0; i < height  && i < 6; i ++){
+        for(i = 0; i < height  && i <= 6; i ++){
             for(j = 0; j < binaryTree[i].length; j ++){
                 if(binaryTree[i][j] === data){
-                    enqueueSnackbar(data + " ound. Highlighted in green.", {
+                    enqueueSnackbar(data + " found. Highlighted in green.", {
                         variant: 'success',
                     });
                     return;
