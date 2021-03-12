@@ -4,11 +4,13 @@ import TodoForm from './TodoForm'
 import Doing from './Doing'
 import DeleteButton from './DeleteButton';
 import Done from './Done';
+import { useSnackbar } from 'notistack';
 
 
 function TodoList() {
     const [todos, setTodos] = useState( localStorage.getItem('savedTodos') ? JSON.parse(localStorage.getItem('savedTodos')) : []);
     const [showDelete, setShowDelete] = useState(false);
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
     useEffect(() => {
         // Saving data to local storage every time Todos are updated
@@ -112,6 +114,9 @@ function TodoList() {
             }
             return todo;
         })
+        enqueueSnackbar("Yayyy !! You completed a todo. ", {
+            variant: 'success',
+        });
         setTodos(updatedTodos)
     }
 

@@ -4,6 +4,7 @@ import BlogTemplate from './BlogTemplates/BlogTemplate';
 import Home from './HomeComponents/Home';
 import MyNavbar from "./MyNavbar";
 import TodoApp from "./TodoAppComponents/TodoApp"
+import BSTApp from "./BSTComponents/BSTApp"
 
 function RoutePaths() {
 
@@ -33,6 +34,10 @@ function RoutePaths() {
 
                 <Route path="/todo-app">
                     <TodoApp />
+                </Route>
+
+                <Route path="/bst-visualization">
+                    <BSTApp />
                 </Route>
 
                 <Route path="/">
