@@ -7,6 +7,7 @@ import Helmet from 'react-helmet';
 
 function BSTApp() {
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+    document.title = "BST Visualization | Shlok Zanwar"
     
     useEffect(() => {
         enqueueSnackbar("This page is recommended to be used on desktop screen.", {
