@@ -10,7 +10,7 @@ ReactDOM.render(
       maxSnack={2}
       anchorOrigin={{
         vertical: 'bottom',
-        horizontal: 'center',
+        horizontal: 'left',
       }}
       autoHideDuration={3000}
     >
