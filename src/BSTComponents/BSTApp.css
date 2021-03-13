@@ -4,7 +4,6 @@
 }
 
 
-
 .main-outer-div{
     margin: 20px;
     padding-top: 10px;
@@ -12,6 +11,7 @@
     min-width: 1200px;
     animation: fadeIn 0.5s 1;
 }
+
 
 .form-div{
     padding-bottom: 0px;
@@ -28,21 +28,23 @@
     padding-top: 20px;
 }
   
-  .tree-main-div{
+.tree-main-div{
     text-align: center;
     width:max-content;
     overflow: hidden;
     justify-content: center;
     align-items: center;
     z-index: 2;
-  }
+}
   
+
 .rows{
     display: block;
     margin-top: 40px;
     text-align: center;
 }
   
+
 .tree-node-div{
     display: inline-flex;
     justify-content: center;
@@ -65,6 +67,7 @@
     opacity: 0.99;
 }
   
+
 .transparent{
     background-color: transparent;
     background: none;
@@ -73,6 +76,7 @@
     width: 40px;
     height: 30px;
 }
+
 
 .searched{
     background-color: rgb(84, 202, 29)  ;
@@ -83,6 +87,7 @@
   );
 }
 
+
 .bst-form {
     margin-bottom: 32px;
     margin-left: 4px;
@@ -90,6 +95,7 @@
     max-width: fit-content;
     display: inline-flex;
 }
+
 
 .operation-input{
     padding: 12px;
@@ -114,6 +120,7 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+
 .operation-button{
     padding: 14px;
     border: none;
@@ -130,6 +137,7 @@ input[type=number] {
     text-transform: capitalize;
 }
 
+
 .clear-button{
     padding: 14px;
     border: none;
@@ -145,6 +153,7 @@ input[type=number] {
     color: #fff;
     text-transform: capitalize;
 }
+
 
 .refresh-button{
     padding: 14px;

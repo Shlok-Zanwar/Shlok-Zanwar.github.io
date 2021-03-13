@@ -87,6 +87,7 @@ function TodoList() {
         })
     }
 
+
     const sendToDo = id =>{
         let updatedTodos = todos.map(todo => {
             if(todo.id === id){
@@ -96,6 +97,7 @@ function TodoList() {
         })
         setTodos(updatedTodos)
     }
+
 
     const sendToDoing = id =>{
         let updatedTodos = todos.map(todo => {
@@ -107,6 +109,7 @@ function TodoList() {
         setTodos(updatedTodos)
     }
     
+
     const sendToDone = id =>{
         let updatedTodos = todos.map(todo => {
             if(todo.id === id){
@@ -120,10 +123,12 @@ function TodoList() {
         setTodos(updatedTodos)
     }
 
+
     const deleteAllDone = () => {
         let updatedTodos = [...todos].filter(todo => todo.list !== "done")
         setTodos(updatedTodos)
     }
+
 
     const handleDrag = (e, todo) => {
         e.dataTransfer.setData("todo", todo);
@@ -179,6 +184,7 @@ function TodoList() {
         e.preventDefault();
     }
 
+    
     return (
         <>
         <div className="todo-app" onDrop={(e) => handleToDoDrop(e)} onDragOver={(e) => allowDrop(e)}>

@@ -40,9 +40,11 @@ body {
   padding-bottom: 32px;
 }
 
+
 .extra-padding {
   padding-bottom: 95px;
 }
+
 
 @media only screen and (max-width: 435px){
   .todo-app {
@@ -59,6 +61,7 @@ h1 {
   font-weight: bold;
 }
 
+
 h2 {
   margin: 20px 0;
   color: #fff;
@@ -72,6 +75,7 @@ h2 {
   margin-right: 4px;
 }
 
+
 .todo-input {
   padding: 14px 32px 14px 16px;
   border-radius: 4px 0 0 4px;
@@ -82,9 +86,11 @@ h2 {
   color: #fff;
 }
 
+
 .todo-input::placeholder {
   color: #e2e2e2;
 }
+
 
 .todo-button {
   padding: 16px;
@@ -100,17 +106,22 @@ h2 {
   color: #fff;
   text-transform: capitalize;
 }
+
+
 .todo-input.edit {
   border: 2px solid #149fff;
 }
+
 
 .todo-button.edit {
   padding: 16px 22px;
 }
 
+
 .edit-form{
   margin-bottom: 15px;
 }
+
 
 .delete-all-button{
   position: absolute;
@@ -153,6 +164,7 @@ h2 {
   flex-direction: row;
   position: relative;
 }
+
 
 .todo-row {
   display: flex;
@@ -230,10 +242,12 @@ h2 {
   cursor: pointer;
 }
 
+
 .edit-icon {
   /* margin-right: 5px; */
   color: #fff;
 }
+
 
 .delete-icon {
   color: #fff;
@@ -251,11 +265,13 @@ h2 {
   animation: fadeIn 0.7s 1;
 }
 
+
 @media only screen and (max-width: 297px){
   .color-select-div{
     margin-bottom: 0px;
   }
 }
+
 
 @keyframes fadeIn {
 	0% {opacity: 0;}

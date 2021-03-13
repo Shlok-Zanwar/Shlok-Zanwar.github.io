@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from 'react';
 
 function TodoForm(props) {
     const [input, setInput] = useState(props.edit ? props.edit.value : '');
-
     const inputRef = useRef(null);
     const availableClasses = [
         "todo-row blue", 
@@ -21,8 +20,8 @@ function TodoForm(props) {
         "Red",
         "Green"
     ]
-
     const [classSelector, setClassSelector] = useState(props.edit.class + " color-select-div");
+    const [selectColor, setSelectColor] = useState(false);
 
     useEffect(() => {
         if(window.innerWidth >= 1350){
@@ -30,9 +29,11 @@ function TodoForm(props) {
         }
     })
 
+
     const handleChange = e => {
         setInput(e.target.value);
     };
+
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -58,21 +59,23 @@ function TodoForm(props) {
 
     };
 
-    const [selectColor, setSelectColor] = useState(false);
-
+    
     const handleRightClick = (e) => {
         e.preventDefault();
         setSelectColor(true);
     }
+
 
     const nextClassColor = e => {
         const classesUsed = e.target.className.split(" ");
         setClassSelector(availableClasses[(availableClasses.indexOf((classesUsed[0] + " " + classesUsed[1])) + 1) % availableClasses.length ] + " color-select-div");
     }
 
+
     var colorSelector = <div className={classSelector} onClick={(e) => nextClassColor(e)} onContextMenu={(e) => handleRightClick(e)}>
                             {colorNames[availableClasses.indexOf(classSelector.slice(0, -17))]}
                         </div>
+
 
     if(selectColor){
         colorSelector = availableClasses.map((className, index) => {

@@ -94,10 +94,6 @@ body {
   color: #ffffff;
 }
 
-/* .blog-list-ul{
-
-} */
-
 .redirect-button{
   padding: 16px;
   border: none;
@@ -125,6 +121,7 @@ body {
 
 
 /* Home Page Cards */
+
 
 .cards-box {
 	background-color: var(--black);
