@@ -31,7 +31,7 @@
   .tree-main-div{
     text-align: center;
     width:max-content;
-    overflow: auto;
+    overflow: hidden;
     justify-content: center;
     align-items: center;
     z-index: 2;
