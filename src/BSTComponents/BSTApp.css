@@ -10,6 +10,7 @@
     padding-top: 10px;
     min-height: 85vh;
     min-width: 1200px;
+    animation: fadeIn 0.5s 1;
 }
 
 .form-div{
