@@ -208,20 +208,20 @@ function BST() {
             for(j = 0; j < newTree[i].length; j++){
                 if(newTree[i][j] === data){
                     newTree[i][j] = 0;
-                }
-                for(k = 0; k < newTree[i].length; k++){
-                    if(newTree[i][k] !== 0){
-                        break;
+                    for(k = 0; k < newTree[i].length; k++){
+                        if(newTree[i][k] !== 0){
+                            break;
+                        }
                     }
+                    if(k === newTree[i].length){
+                        setHeight(i);
+                    }
+                    setBinaryTree(newTree);
+                    enqueueSnackbar(data + " deleted from binary search tree.", {
+                        variant: 'success',
+                    });
+                    return;
                 }
-                if(k === newTree[i].length){
-                    setHeight(i);
-                }
-                setBinaryTree(newTree);
-                enqueueSnackbar(data + " deleted from binary search tree.", {
-                    variant: 'success',
-                });
-                return;
             }
         }
 
