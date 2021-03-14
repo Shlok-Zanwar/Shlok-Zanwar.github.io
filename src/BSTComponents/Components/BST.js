@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Grid from './Grid';
 import { useSnackbar } from 'notistack';
+import { Tooltip } from '@material-ui/core';
+import { FaCode }from 'react-icons/fa'
+import { HiOutlineRefresh }from 'react-icons/hi'
 
 function BST() {
     const [binaryTree, setBinaryTree] = useState([
@@ -342,10 +345,22 @@ function BST() {
                 <button onClick={handleSubmit} className="operation-button" value="Insert" >Insert</button>
                 <button onClick={handleSubmit} className="operation-button" value="Delete" >Delete</button>
                 <button onClick={handleSubmit} className="operation-button" value="Search" >Search</button>
-                <button onClick={handleSubmit} className="clear-button" value="ClearSearch" >Clear Search</button>
-                <button onClick={handleSubmit} className="refresh-button" value="ClearTree" >Clear Tree</button>
-                <button onClick={() => {setLoading(true)}} className="refresh-button">Refresh Lines</button>
-                <button onClick={() => {window.location.href = "https://github.com/Shlok-Zanwar/Binary-Tree-Visualization"}} className="refresh-button">Source Code</button>
+                <button onClick={handleSubmit} className="function-button" value="ClearSearch" >Clear Search</button>
+                <button onClick={handleSubmit} className="function-button nomargin" value="ClearTree" >Clear Tree</button>
+                <Tooltip title='Source Code' placement='bottom' arrow>
+                    <span>
+                        <button onClick={() => {window.location.href = "https://github.com/Shlok-Zanwar/Binary-Tree-Visualization"}} className="function-button nomargin">
+                            <FaCode style={{fontSize:"21px"}} />
+                        </button>
+                    </span>
+                </Tooltip>
+                <Tooltip title='Refresh lines' placement='bottom' arrow>
+                    <span>
+                        <button onClick={() => {setLoading(true)}} className="function-button nomargin">
+                            <HiOutlineRefresh style={{fontSize:"21px"}}  />
+                        </button>
+                    </span>
+                </Tooltip>
 
             </div>
             <Grid grid={grid} loading={loading} setLoading={setLoading} search={search} />

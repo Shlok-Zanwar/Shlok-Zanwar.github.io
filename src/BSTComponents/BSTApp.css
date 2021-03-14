@@ -27,6 +27,7 @@
     align-items: center;
     padding-top: 20px;
 }
+
   
 .tree-main-div{
     text-align: center;
@@ -138,7 +139,7 @@ input[type=number] {
 }
 
 
-.clear-button{
+.function-button{
     padding: 14px;
     border: none;
     margin-left: 50px;
@@ -155,20 +156,8 @@ input[type=number] {
 }
 
 
-.refresh-button{
-    padding: 14px;
-    border: none;
+.nomargin{
     margin-left: 5px;
-    border-radius: 4px;
-    cursor: pointer;
-    outline: none;
-    background: linear-gradient(
-        90deg,
-        rgb(93, 187, 49) 0%,
-        rgb(84, 202, 29) 100%
-    );
-    color: #fff;
-    text-transform: capitalize;
 }
 
   
