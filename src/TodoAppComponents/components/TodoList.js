@@ -10,7 +10,7 @@ import { useSnackbar } from 'notistack';
 function TodoList() {
     const [todos, setTodos] = useState( localStorage.getItem('savedTodos') ? JSON.parse(localStorage.getItem('savedTodos')) : []);
     const [showDelete, setShowDelete] = useState(false);
-    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+    const { enqueueSnackbar } = useSnackbar();
 
     useEffect(() => {
         // Saving data to local storage every time Todos are updated

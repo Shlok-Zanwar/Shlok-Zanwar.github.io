@@ -20,7 +20,7 @@ function BST() {
     const [grid, setGrid] = useState([]);
     const [loading, setLoading] = useState(true);
     const [input, setInput] = useState('');
-    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+    const { enqueueSnackbar } = useSnackbar();
     const [search, setSearch] = useState(-2);
 
     
