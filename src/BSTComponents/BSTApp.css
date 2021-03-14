@@ -142,7 +142,7 @@ input[type=number] {
 .function-button{
     padding: 14px;
     border: none;
-    margin-left: 50px;
+    margin-left: 5px;
     border-radius: 4px;
     cursor: pointer;
     outline: none;
@@ -153,11 +153,6 @@ input[type=number] {
     );
     color: #fff;
     text-transform: capitalize;
-}
-
-
-.nomargin{
-    margin-left: 5px;
 }
 
   

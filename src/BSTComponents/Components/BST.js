@@ -345,18 +345,30 @@ function BST() {
                 <button onClick={handleSubmit} className="operation-button" value="Insert" >Insert</button>
                 <button onClick={handleSubmit} className="operation-button" value="Delete" >Delete</button>
                 <button onClick={handleSubmit} className="operation-button" value="Search" >Search</button>
-                <button onClick={handleSubmit} className="function-button" value="ClearSearch" >Clear Search</button>
-                <button onClick={handleSubmit} className="function-button nomargin" value="ClearTree" >Clear Tree</button>
+
+                <button 
+                    onClick={handleSubmit} 
+                    className="function-button" 
+                    style={{marginLeft:"80px"}} 
+                    value="ClearSearch" >
+                        Clear Search
+                </button>
+                <button 
+                    onClick={handleSubmit} 
+                    className="function-button" 
+                    value="ClearTree" >
+                        Clear Tree
+                </button>
                 <Tooltip title='Source Code' placement='bottom' arrow>
                     <span>
-                        <button onClick={() => {window.location.href = "https://github.com/Shlok-Zanwar/Binary-Tree-Visualization"}} className="function-button nomargin">
+                        <button onClick={() => {window.location.href = "https://github.com/Shlok-Zanwar/Binary-Tree-Visualization"}} className="function-button">
                             <FaCode style={{fontSize:"21px"}} />
                         </button>
                     </span>
                 </Tooltip>
                 <Tooltip title='Refresh lines' placement='bottom' arrow>
                     <span>
-                        <button onClick={() => {setLoading(true)}} className="function-button nomargin">
+                        <button onClick={() => {setLoading(true)}} className="function-button">
                             <HiOutlineRefresh style={{fontSize:"21px"}}  />
                         </button>
                     </span>
