@@ -4,7 +4,10 @@ import BlogTemplate from './BlogTemplates/BlogTemplate';
 import Home from './HomeComponents/Home';
 import MyNavbar from "./MyNavbar";
 import TodoApp from "./TodoAppComponents/TodoApp"
-import BSTApp from "./BSTComponents/BSTApp"
+import BSTApp from './TreeComponents/BSTApp';
+import MaxHeapApp from './TreeComponents/MaxHeapApp';
+import MinHeapApp from './TreeComponents/MinHeapApp';
+
 
 function RoutePaths() {
 
@@ -39,6 +42,13 @@ function RoutePaths() {
                 <Route path="/bst-visualization">
                     <BSTApp />
                 </Route>
+                <Route path="/max-heap-visualization">
+                    <MaxHeapApp />
+                </Route>
+                <Route path="/min-heap-visualization">
+                    <MinHeapApp />
+                </Route>
+
 
                 <Route path="/">
                     {

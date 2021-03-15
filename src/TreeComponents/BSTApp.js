@@ -1,4 +1,4 @@
-import './BSTApp.css';
+import './TreeCss.css';
 import BST from './Components/BST';
 import { useSnackbar } from 'notistack';
 import React, { useEffect } from 'react';
@@ -27,18 +27,18 @@ function BSTApp() {
 
     return (
         <div>
-        <Helmet>
-            <style>
-            {`            
-                body {
-                text-align: center;
-                background-color: #161a2b;
-                background-image: none;
-            }
-            `}
-            </style>
-        </Helmet>
-        <BST />
+            <Helmet>
+                <style>
+                {`            
+                    body {
+                    text-align: center;
+                    background-color: #161a2b;
+                    background-image: none;
+                }
+                `}
+                </style>
+            </Helmet>
+            <BST />
         </div>
     );
 }

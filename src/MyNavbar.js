@@ -23,9 +23,6 @@ function MyNavbar() {
                     <Nav.Link as={Link} to="/todo-app">
                             To-Do App
                     </Nav.Link>
-                    <Nav.Link as={Link} to="/bst-visualization">
-                            BST
-                    </Nav.Link>
                 </Nav>
                 
                 <Nav>

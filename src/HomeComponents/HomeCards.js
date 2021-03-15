@@ -8,6 +8,23 @@ function HomeCards() {
     //     window.location.href = 
     // }
 
+    const cardType = (type) => {
+        if(type === "Blog"){
+            return (
+                <div className="card-type green-card-type">
+                    {type}
+                </div>
+            )
+        }
+        else if(type === "App"){
+            return (
+                <div className="card-type blue-card-type">
+                    {type}
+                </div>
+            )
+        }
+    }
+
     return cards.map(card =>
         <Link to={card.url} key={card.id}>
             <div key={card.id} className="cards-box">
@@ -19,6 +36,7 @@ function HomeCards() {
                         {card.description}
                     </div>
                 </div>
+                {cardType(card.type)}
             </div>
         </Link>
     )
