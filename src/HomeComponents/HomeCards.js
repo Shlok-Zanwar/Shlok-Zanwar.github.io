@@ -11,14 +11,14 @@ function HomeCards() {
     const cardType = (type) => {
         if(type === "Blog"){
             return (
-                <div className="card-type green-card-type">
+                <div className="card-type green-border">
                     {type}
                 </div>
             )
         }
         else if(type === "App"){
             return (
-                <div className="card-type blue-card-type">
+                <div className="card-type blue-border">
                     {type}
                 </div>
             )
@@ -36,7 +36,12 @@ function HomeCards() {
                         {card.description}
                     </div>
                 </div>
-                {cardType(card.type)}
+                <div className="card-bottom-bar">
+                    <div className="card-date ">
+                        {card.date}
+                    </div>
+                    {cardType(card.type)}               
+                </div>
             </div>
         </Link>
     )

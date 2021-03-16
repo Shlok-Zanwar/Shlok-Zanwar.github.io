@@ -4,56 +4,64 @@
         "title":"ToDo App",
         "description": "A Well designed todo app for managing your work.",
         "url":"todo-app",
-        "type":"App"
+        "type":"App",
+        "date":"Dec 2020"
     },
     {
         "id":3,
         "title":"Dock Forms",
         "description":"A form application for mainly school/college related applications such as conducting tests, surveys etc.",
         "url":"/blogs/dock-forms",
-        "type":"Blog"
+        "type":"Blog",
+        "date":"Jan 2021"
     },
     {
         "id":1,
         "title":"ToDo Blog",
         "description": "A Well designed todo app for managing your work.",
         "url":"/blogs/todo-app",
-        "type":"Blog"
+        "type":"Blog",
+        "date":"Jan 2021"
     },
     {
         "id":5,
         "title":"BST Visualization",
         "description":"An app to visualize the insert, delete and search operation on a binary search tree.",
         "url":"/bst-visualization",
-        "type":"App"
+        "type":"App",
+        "date":"Mar 2021"
     },
     {
         "id":7,
         "title":"Max Heap Visualization",
         "description":"An app to visualize the insert, delete and search operation on a max-heap.",
         "url":"/max-heap-visualization",
-        "type":"App"
+        "type":"App",
+        "date":"Mar 2021"
     },
     {
         "id":8,
         "title":"Min Heap Visualization",
         "description":"An app to visualize the insert, delete and search operation on a min-heap..",
         "url":"/min-heap-visualization",
-        "type":"App"
+        "type":"App",
+        "date":"Mar 2021"
     },
     {
         "id":2,
         "title":"Toxic Bot Discord",
         "description": "A discord voice bot for playing memes in your discord voice channel.",
         "url":"/blogs/toxicbot",
-        "type":"Blog"
+        "type":"Blog",
+        "date":"Jan 2021"
     },
     {
         "id":4,
         "title":"Hotel Managment",
         "description":"A basic and well-designed interface for restraunt managment with a self created database system.",
         "url":"/blogs/hotel-managment",
-        "type":"Blog"
+        "type":"Blog",
+        "date":"Feb 2021"
     }
     
 ]
