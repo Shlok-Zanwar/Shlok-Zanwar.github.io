@@ -19,6 +19,8 @@ body {
 
 .navbar-color{
   background-color: var(--black);
+  border-bottom: 2.5px solid rgba(17, 122, 255, 1);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-icons{
@@ -51,6 +53,7 @@ body {
   border-radius: 10px;
   padding: 10px 10px 25px 10px;
   animation: fadeIn 0.5s 1;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3);
 }
 
 .blog-title {
