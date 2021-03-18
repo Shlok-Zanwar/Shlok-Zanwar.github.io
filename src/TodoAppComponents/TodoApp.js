@@ -1,10 +1,14 @@
 import './TodoApp.css';
 import TodoList from './components/TodoList';
 import { Link } from "react-router-dom";
+import { useEffect } from 'react';
 
 function App() {
 
   document.title = "To-Do App | Shlok Zanwar"
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <>

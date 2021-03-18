@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import BlogButton from './BlogButton'
 import BlogImage from './BlogImage'
 import BlogList from './BlogList'
@@ -8,6 +8,9 @@ import BlogTitle from './BlogTitle'
 
 function BlogTemplate({blogData}) {
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     document.title = "Blogs | " + blogData[0].text + " | Shlok Zanwar"
 
     const getRandomNumber = () =>{

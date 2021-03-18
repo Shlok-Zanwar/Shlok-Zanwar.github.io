@@ -42,7 +42,7 @@
     {
         "id":8,
         "title":"Min Heap Visualization",
-        "description":"An app to visualize the insert, delete and search operation on a min-heap..",
+        "description":"An app to visualize the insert, delete and search operation on a min-heap.",
         "url":"/min-heap-visualization",
         "type":"App",
         "date":"Mar 2021"
