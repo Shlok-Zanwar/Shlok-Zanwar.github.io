@@ -7,7 +7,7 @@ import MaxHeap from './Components/MaxHeap';
 
 function MaxHeapApp() {
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
-    document.title = "BST Visualization | Shlok Zanwar"
+    document.title = "Max Heap Visualization | Shlok Zanwar"
 
     const action = key => (
         <React.Fragment>

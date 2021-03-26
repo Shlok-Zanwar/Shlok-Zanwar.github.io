@@ -7,7 +7,7 @@ import MinHeap from './Components/MinHeap';
 
 function MinHeapApp() {
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
-    document.title = "BST Visualization | Shlok Zanwar"
+    document.title = "Min Heap Visualization | Shlok Zanwar"
 
     const action = key => (
         <React.Fragment>
