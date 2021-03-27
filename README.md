@@ -30,3 +30,11 @@ Hosted on :- https://github.com/Shlok-Zanwar/ToDo-App
     - Website :- https://github.com/Shlok-Zanwar/ToDo-App
     - Repository :- https://github.com/Shlok-Zanwar/ToDo-App
 
+### Dependencies
+  - npm i @material-ui/core
+  - npm i react-bootstrap
+  - npm i notistack
+  - npm i react-router-dom
+  - npm i react-icons
+  - npm i react-helmet
+  - npm i react-lineto
