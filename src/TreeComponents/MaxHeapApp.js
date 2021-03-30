@@ -1,6 +1,6 @@
 import './TreeCss.css';
 import { useSnackbar } from 'notistack';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import MaxHeap from './Components/MaxHeap';
 
