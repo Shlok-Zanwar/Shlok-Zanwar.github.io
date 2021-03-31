@@ -9,6 +9,7 @@ function PasteBinApp() {
     const [result, setResult] = useState('');
     const [data, setData] = useState('Write and Share');
     const [savePath, setSavePath] = useState("")
+    const [saved, setSaved] = useState(true);
 
 
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
@@ -24,21 +25,18 @@ function PasteBinApp() {
 
 
     useEffect(() => {
-        console.log(window.location.pathname);
-        var path = window.location.pathname
-        // path = path.split("/");
-        console.log(path[path.length - 1]);
+        // console.log(window.location.pathname);
+        var path = window.location.pathname;
+        // console.log(path[path.length - 1]);
 
         if(path[path.length - 1] === "/"){
             path = path.substring(0, path.length - 1);
             window.location.pathname = path;
         }
-
         path = path.substring(1, path.length);
-        console.log(path)
-
+        // console.log(path)
         path = path.split("/");
-        console.log(path)
+        // console.log(path)
 
         if(path.length == 1){
             setShowApp(true)
@@ -54,6 +52,7 @@ function PasteBinApp() {
                 firebase.getData(path[1].toLowerCase()).then(setResult);
             }
         }
+
     }, [])
 
 
@@ -78,7 +77,11 @@ function PasteBinApp() {
 
 
     const saveData = () => {
-        firebase.addData(savePath, data);
+        if(!saved){
+            firebase.addData(savePath, data);
+            setSaved(true);
+            console.log("Saving");
+        }
         enqueueSnackbar("Details saved successfully", {
             variant: 'success',
         });
@@ -126,7 +129,7 @@ function PasteBinApp() {
                 `}
                 </style>
             </Helmet>
-            <textarea className="pastebin-text" spellCheck="false" value={data} onChange={e => setData(e.target.value)} >
+            <textarea className="pastebin-text" spellCheck="false" value={data} onChange={e => {setData(e.target.value); setSaved(false)}} >
             </textarea>
             <div className="save-pastebin" onClick={() => saveData()}> &nbsp;&nbsp; Save &nbsp;&nbsp; </div>
             
