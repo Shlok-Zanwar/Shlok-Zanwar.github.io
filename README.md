@@ -30,6 +30,26 @@ Hosted on :- https://github.com/Shlok-Zanwar/ToDo-App
     - Website :- https://github.com/Shlok-Zanwar/ToDo-App
     - Repository :- https://github.com/Shlok-Zanwar/ToDo-App
 
+### Apps
+
+  - Binary Search Tree Visualization
+    - App :- https://shlok-zanwar.github.io/bst-visualization
+    - Repository :- https://github.com/Shlok-Zanwar/Binary-Tree-Visualization
+    
+  - Min Heap Visualization
+    - App :- https://shlok-zanwar.github.io/min-heap-visualization
+    - Repository :- https://github.com/Shlok-Zanwar/Heap-Visualization
+
+  - Max Heap Visualization
+    - App :- https://shlok-zanwar.github.io/max-heap-visualization
+    - Repository :- https://github.com/Shlok-Zanwar/Heap-Visualization
+
+  - Paste Bin
+    - App :- https://shlok-zanwar.github.io/pastebin
+    - Repository :- https://github.com/Shlok-Zanwar/Pastebin-React
+
+
+
 ### Dependencies
   - npm i @material-ui/core
   - npm i react-bootstrap
