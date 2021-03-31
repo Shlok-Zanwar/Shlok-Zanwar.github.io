@@ -62,6 +62,14 @@
         "url":"/blogs/hotel-managment",
         "type":"Blog",
         "date":"Feb 2021"
+    },
+    {
+        "id":9,
+        "title":"Paste Bin",
+        "description":"An easy to use pastebin for sharing data without any authentication.",
+        "url":"/pastebin",
+        "type":"App",
+        "date":"Apr 2021"
     }
     
 ]

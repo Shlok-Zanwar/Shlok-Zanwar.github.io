@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect } from "react-router-do
 import BlogTemplate from './BlogTemplates/BlogTemplate';
 import Home from './HomeComponents/Home';
 import MyNavbar from "./MyNavbar";
+import PasteBinApp from './PasteBin/PasteBinApp';
 import TodoApp from "./TodoAppComponents/TodoApp"
 import BSTApp from './TreeComponents/BSTApp';
 import MaxHeapApp from './TreeComponents/MaxHeapApp';
@@ -37,6 +38,10 @@ function RoutePaths() {
 
                 <Route path="/todo-app">
                     <TodoApp />
+                </Route>
+
+                <Route path="/pastebin">
+                    <PasteBinApp />
                 </Route>
 
                 <Route path="/bst-visualization">
