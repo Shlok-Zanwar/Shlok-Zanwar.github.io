@@ -9,7 +9,7 @@ var firebaseConfig = {
     authDomain: "shlok-website.firebaseapp.com",
     projectId: "shlok-website",
     storageBucket: "shlok-website.appspot.com",
-    messagingSenderId: "993579237604",
+    messagingSenderId: "993579237604", 
     appId: "1:993579237604:web:9f13901ca731fed1f82cf1",
     measurementId: "G-CNF32VVWZE"
 };
