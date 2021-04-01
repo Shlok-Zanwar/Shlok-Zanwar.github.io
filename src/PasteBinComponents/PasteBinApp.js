@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import firebase from './firebase';
 import { useSnackbar } from 'notistack';
+import PasteBinHome from './Components/PasteBinHome';
 
 
 function PasteBinApp() {
@@ -38,7 +39,7 @@ function PasteBinApp() {
         path = path.split("/");
         // console.log(path)
 
-        if(path.length == 1){
+        if(path.length === 1){
             setShowApp(true)
         }
         else{
@@ -57,7 +58,7 @@ function PasteBinApp() {
 
 
     useEffect(() => {
-        enqueueSnackbar("Paste bin is publically visible.\nPlease do not share pribate information.", {
+        enqueueSnackbar("Paste bin is publically visible.\nPlease do not share private information.", {
             variant: 'info',
             autoHideDuration: 5000,
             action,
@@ -88,12 +89,6 @@ function PasteBinApp() {
     }
 
 
-    const generateNewURL = () => {
-        let r = Math.random().toString(36).substring(4);
-        window.location.pathname += "/" + r;
-    }
-
-
     return showApp ?  
         <div>
             <Helmet>
@@ -107,14 +102,7 @@ function PasteBinApp() {
                 `}
                 </style>
             </Helmet>
-            <div className="blog-title">Paste Bin</div>
-            <div className="blog-para" style={{textAlign:"center"}}>A pastebin for sharing data without any authentication.</div>
-            <div className="blog-para" style={{textAlign:"center"}}>Go to some URl like "/pastebin/any"</div>
-            <div className="blog-para" style={{textAlign:"center"}}>Write anything</div>
-            <div className="blog-para" style={{textAlign:"center"}}>Save</div>
-            <div className="blog-para" style={{textAlign:"center"}}>Share the URL with anyone</div>
-            <br></br>
-            <div className="redirect-button" style={{maxWidth:"230px"}} onClick={() => generateNewURL()} >Generate random URL</div>
+            <PasteBinHome />
         </div>
     : (
         <div style={{display:"flex", position:"relative"}}>
@@ -132,7 +120,6 @@ function PasteBinApp() {
             <textarea className="pastebin-text" spellCheck="false" value={data} onChange={e => {setData(e.target.value); setSaved(false)}} >
             </textarea>
             <div className="save-pastebin" onClick={() => saveData()}> &nbsp;&nbsp; Save &nbsp;&nbsp; </div>
-            
             
         </div>
     )
