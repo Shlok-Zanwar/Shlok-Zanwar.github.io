@@ -16,11 +16,21 @@ function PasteBinApp() {
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
     document.title = "Paste Bin | Shlok Zanwar"
 
+    const dontShowSnackbar = (key) =>{
+        localStorage.setItem("dontShowPastebinSnack", true);
+        closeSnackbar(key);
+    }
+
     const action = key => (
         <React.Fragment>
-            <div onClick={() => { closeSnackbar(key) }} style={{background:"transparent", border:"none", cursor:"pointer", color:"red" }}>
+            <>
+            <div onClick={() => { dontShowSnackbar(key) }} style={{background:"transparent", border:"none", cursor:"pointer", color:"#fc28b2", paddingRight:"8px", textDecoration:"underline", fontWeight:"bolder" }}>
+                Dont show again
+            </div>
+            <div onClick={() => { closeSnackbar(key) }} style={{background:"transparent", border:"none", cursor:"pointer", color:"#fc28b2", textDecoration:"underline", fontWeight:"bolder" }}>
                 Dismiss
             </div>
+            </>
         </React.Fragment>
     );
 
@@ -58,11 +68,13 @@ function PasteBinApp() {
 
 
     useEffect(() => {
-        enqueueSnackbar("Paste bin is publically visible.\nPlease do not share private information.", {
-            variant: 'info',
-            autoHideDuration: 5000,
-            action,
-        });
+        if(!localStorage.getItem("dontShowPastebinSnack")){
+            enqueueSnackbar("Paste bin is publically visible.\nPlease do not share private information.", {
+                variant: 'info',
+                autoHideDuration: 5000,
+                action,
+            });
+        }
     }, [])
 
 
