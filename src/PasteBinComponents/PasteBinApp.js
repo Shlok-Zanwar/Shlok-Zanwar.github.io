@@ -35,6 +35,17 @@ function PasteBinApp() {
     );
 
 
+    const saveRecent = (path) => {
+        var recentPasteBins = localStorage.getItem('recentPasteBins') ? JSON.parse(localStorage.getItem('recentPasteBins')) : [];
+        recentPasteBins = [...recentPasteBins].filter(pasteBin => pasteBin !== path);
+        recentPasteBins = [path, ...recentPasteBins];
+        if(recentPasteBins.length > 4){
+            recentPasteBins.pop();
+        }
+        localStorage.setItem('recentPasteBins', JSON.stringify(recentPasteBins));
+    }
+
+
     useEffect(() => {
         // console.log(window.location.pathname);
         var path = window.location.pathname;
@@ -60,7 +71,7 @@ function PasteBinApp() {
     
             if(path[0].toLowerCase() === "pastebin"){
                 setSavePath(path[1].toLowerCase());
-                firebase.getData(path[1].toLowerCase()).then(setResult);
+                firebase.getData(path[1].toLowerCase()).then(setResult, saveRecent(path[1]));
             }
         }
 
@@ -129,7 +140,12 @@ function PasteBinApp() {
                 `}
                 </style>
             </Helmet>
-            <textarea className="pastebin-text" spellCheck="false" value={data} onChange={e => {setData(e.target.value); setSaved(false)}} >
+            <textarea 
+                className="pastebin-text" 
+                spellCheck="false" 
+                value={data} 
+                onChange={e => {setData(e.target.value); setSaved(false)}}
+            >
             </textarea>
             <div className="save-pastebin" onClick={() => saveData()}> &nbsp;&nbsp; Save &nbsp;&nbsp; </div>
             

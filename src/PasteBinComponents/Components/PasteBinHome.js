@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { RiDeleteBin5Line } from 'react-icons/ri'
+import { Tooltip } from '@material-ui/core'
 
 function PasteBinHome() {
     const [url, setUrl] = useState('');
+    const [recentBins, setRecentBins] =  useState(localStorage.getItem('recentPasteBins') ? JSON.parse(localStorage.getItem('recentPasteBins')) : []);
     const inputRef = useRef(null);
 
     const generateNewURL = () => {
@@ -31,6 +34,42 @@ function PasteBinHome() {
         // console.log(path);
 
     }
+
+    
+    const removeRecent = (pasteBin) => {
+        const removeArr = [...recentBins].filter(bin => bin !== pasteBin);
+        setRecentBins(removeArr);
+        localStorage.setItem('recentPasteBins', JSON.stringify(removeArr))
+    }
+
+    
+    const gotoRecent = (pasteBin) => {
+        window.location.pathname += "/" + pasteBin
+    }
+
+
+    const loadRecentPasteBins = recentBins.map(index => {
+            return (
+                <div style={{display:"inline-table"}} >
+                    <div className="recent-pastebin">
+                        <div style={{cursor:"pointer"}} onClick={() => gotoRecent(index)}>
+                            {"/" + index}
+                        </div>
+                        <div className="icons">
+                            <Tooltip title='Delete' placement='bottom' arrow>
+                                <span>
+                                    <RiDeleteBin5Line 
+                                        onClick={() => removeRecent(index)}
+                                    />
+                                </span>
+                            </Tooltip>
+
+                        </div>
+                    </div>
+                </div>
+            )
+    })
+    
 
     useEffect(() => {
         if(window.innerWidth >= 1350){
@@ -62,8 +101,17 @@ function PasteBinHome() {
                 </div>
             </form>
             <div className="blog-para" style={{textAlign:"center"}} >OR</div> 
-            {/* <br /> */}
             <div className="redirect-button" style={{maxWidth:"230px"}} onClick={() => generateNewURL()} >Generate random URL</div>
+            {recentBins.length > 0 ?
+                <>
+                    <br />
+                    <div className="blog-para" style={{textAlign:"center"}}>Recent Paste Bins</div>
+                    <div className="recent-pastebin-outer" style={{maxWidth:"500px"}}>
+                        {loadRecentPasteBins}
+                    </div>
+                </>
+                : null
+            }
             
         </div>
     )

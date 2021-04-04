@@ -64,7 +64,7 @@ function TodoList() {
             return;
         }
 
-        const newTodos = [...todos, todo];
+        const newTodos = [todo, ...todos];
         setTodos(newTodos)
     }
     

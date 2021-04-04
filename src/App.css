@@ -319,4 +319,32 @@ body {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
 }
 
+.recent-pastebin{
+  display: flex;
+  justify-content: space-between;
+  margin: 4px auto;
+  color: #fff;
+  word-break: break-all;
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+  margin: 5px;
+  width: 230px;
+  max-width: 230px;
+  text-align: left;
+  align-items: center;
+  vertical-align: middle;
+  background: linear-gradient(
+    90deg,
+    rgb(9, 148, 248) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+  animation: fadeIn 0.7s 1;
+}
+
+.recent-pastebin-outer{
+  display: inline-table;
+  max-width: 500px;
+  padding-bottom: 30px;
+}
 
