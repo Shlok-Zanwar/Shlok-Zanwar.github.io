@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import firebase from './firebase';
 import { useSnackbar } from 'notistack';
 import PasteBinHome from './Components/PasteBinHome';
+import { FaShare } from "react-icons/fa";
 
 
 function PasteBinApp() {
@@ -12,6 +13,24 @@ function PasteBinApp() {
     const [savePath, setSavePath] = useState("")
     const [saved, setSaved] = useState(true);
 
+
+    const copyToClipboard = (command) =>{
+        var toCopy = command;
+
+        var temp = document.createElement("textarea");
+        var tempMsg = document.createTextNode(toCopy);
+        temp.appendChild(tempMsg);
+
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand("copy");
+        document.body.removeChild(temp);
+
+        var message = "Link copied to clipboard.";
+        enqueueSnackbar(message, {
+            variant: 'success',
+        })
+    }
 
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
     document.title = "Paste Bin | Shlok Zanwar"
@@ -39,7 +58,7 @@ function PasteBinApp() {
         var recentPasteBins = localStorage.getItem('recentPasteBins') ? JSON.parse(localStorage.getItem('recentPasteBins')) : [];
         recentPasteBins = [...recentPasteBins].filter(pasteBin => pasteBin !== path);
         recentPasteBins = [path, ...recentPasteBins];
-        if(recentPasteBins.length > 4){
+        if(recentPasteBins.length > 6){
             recentPasteBins.pop();
         }
         localStorage.setItem('recentPasteBins', JSON.stringify(recentPasteBins));
@@ -147,7 +166,14 @@ function PasteBinApp() {
                 onChange={e => {setData(e.target.value); setSaved(false)}}
             >
             </textarea>
-            <div className="save-pastebin" onClick={() => saveData()}> &nbsp;&nbsp; Save &nbsp;&nbsp; </div>
+            <div className="pastebin-controls"> 
+                    <div className="save-share-pastebin" onClick={() => saveData()}>
+                        &nbsp;&nbsp; Save &nbsp;&nbsp; 
+                    </div>
+                    <div className="save-share-pastebin" onClick={() => {copyToClipboard(window.location.href)}}>
+                        <FaShare /> 
+                    </div>
+            </div>
             
         </div>
     )

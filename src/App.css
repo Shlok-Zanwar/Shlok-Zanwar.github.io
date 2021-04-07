@@ -292,22 +292,28 @@ body {
 }
 
 
-.save-pastebin{
+.pastebin-controls{
   position: fixed;
+  display: flex;
+  right: 2%;
+  bottom: 7%;
   z-index: 1;
-  right: 1.5%;
-  bottom: 3%;
-  /* -ms-transform: translate(-50%, -50%); */
-  transform: translate(-50%, -50%);
-  /* bottom: 20%; */
+  /* padding-right: 10px; */
+  margin: auto;
+  justify-content: flex-end;
+  align-items: right;
+  text-align: left;
+  vertical-align: middle;
+}
 
+.save-share-pastebin{
+  display: flex;
   padding: 12px;
-  border: none;
   border-radius: 5px;
-  /* margin: 10px auto; */
+  justify-content: space-between;
+  margin-right: 10px;
   cursor: pointer;
   outline: none;
-  margin-bottom: 20px;
   background: linear-gradient(
     90deg,
     rgba(20, 159, 255, 1)0%,
@@ -315,14 +321,11 @@ body {
   );
   color: #fff;
   text-transform: capitalize;
-  animation: fadeIn 1s 1;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
 }
 
 .recent-pastebin{
   display: flex;
   justify-content: space-between;
-  margin: 4px auto;
   color: #fff;
   word-break: break-all;
   padding: 16px;
