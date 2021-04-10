@@ -314,6 +314,7 @@ body {
   margin-right: 10px;
   cursor: pointer;
   outline: none;
+  border: none;
   background: linear-gradient(
     90deg,
     rgba(20, 159, 255, 1)0%,

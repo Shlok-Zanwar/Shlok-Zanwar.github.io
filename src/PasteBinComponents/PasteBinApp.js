@@ -167,12 +167,12 @@ function PasteBinApp() {
             >
             </textarea>
             <div className="pastebin-controls"> 
-                    <div className="save-share-pastebin" onClick={() => saveData()}>
+                    <button className="save-share-pastebin" onClick={() => saveData()}>
                         &nbsp;&nbsp; Save &nbsp;&nbsp; 
-                    </div>
-                    <div className="save-share-pastebin" onClick={() => {copyToClipboard(window.location.href)}}>
+                    </button>
+                    <button className="save-share-pastebin" onClick={() => {copyToClipboard(window.location.href)}}>
                         <FaShare /> 
-                    </div>
+                    </button>
             </div>
             
         </div>

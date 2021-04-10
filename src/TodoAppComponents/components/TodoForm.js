@@ -92,7 +92,7 @@ function TodoForm(props) {
     return (
         <form className="todo-form" onSubmit={handleSubmit}>
         {props.edit.id ? (
-            <div>
+            <div onClick={() => {setSelectColor(false);}}>
                 <div className="edit-form">
                     <input 
                         type="text" 
