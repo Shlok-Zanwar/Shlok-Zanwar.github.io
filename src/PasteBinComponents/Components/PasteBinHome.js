@@ -1,15 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { RiDeleteBin5Line } from 'react-icons/ri'
 import { Tooltip } from '@material-ui/core'
+import { Helmet } from 'react-helmet';
+import { useHistory } from "react-router-dom";
 
 function PasteBinHome() {
     const [url, setUrl] = useState('');
     const [recentBins, setRecentBins] =  useState(localStorage.getItem('recentPasteBins') ? JSON.parse(localStorage.getItem('recentPasteBins')) : []);
     const inputRef = useRef(null);
+    let history = useHistory();
 
     const generateNewURL = () => {
         let r = Math.random().toString(36).substring(4);
-        window.location.pathname += "/" + r;
+        history.push("/pastebin/" + r);
     }
 
     const handleSubmit = e => {
@@ -21,13 +24,13 @@ function PasteBinHome() {
         path = path.split("/");
         if(path.length === 1){
             if(path[0] !== ""){
-                window.location.pathname += "/" + path[0];
+                history.push("/pastebin/" + path[0]);
             }
         }
         else{
             if(path[0] === "pastebin"){
                 if(path[1] !== ""){
-                    window.location.pathname += "/" + path[1];
+                    history.push("/pastebin/" + path[1]);
                 }
             }
         }
@@ -44,7 +47,7 @@ function PasteBinHome() {
 
     
     const gotoRecent = (pasteBin) => {
-        window.location.pathname += "/" + pasteBin
+        history.push("/pastebin/" + pasteBin);
     }
 
 
@@ -77,42 +80,55 @@ function PasteBinHome() {
         }
     })
 
-    return (
-        <div className="main-blog-di">
-            <div className="blog-title">Paste Bin</div>
-            <div className="blog-para" style={{textAlign:"center"}}>A pastebin for sharing data without any authentication.</div>
-            <div className="blog-para" style={{textAlign:"center"}}>Go to some URl like "/pastebin/any"</div>
-            <div className="blog-para" style={{textAlign:"center"}}>Write anything</div>
-            <div className="blog-para" style={{textAlign:"center"}}>Save</div>
-            <div className="blog-para" style={{textAlign:"center"}}>Share the URL with anyone</div>
-            <br />
-            <form className="todo-form" onSubmit={handleSubmit} style={{marginBottom:"6px"}}>
-                <div className="edit-form" >
-                        <input 
-                            type="text" 
-                            placeholder="Type any url" 
-                            value={url}
-                            className="todo-input"
-                            onChange={e => setUrl(e.target.value)}
-                            ref={inputRef}
-                            style={{maxWidth:"275px"}}
-                        />
-                        <button className="todo-button edit">Go</button>
-                </div>
-            </form>
-            <div className="blog-para" style={{textAlign:"center"}} >OR</div> 
-            <div className="redirect-button" style={{maxWidth:"230px"}} onClick={() => generateNewURL()} >Generate random URL</div>
-            {recentBins.length > 0 ?
-                <>
-                    <br />
-                    <div className="blog-para" style={{textAlign:"center"}}>Recent Paste Bins</div>
-                    <div className="recent-pastebin-outer" style={{maxWidth:"500px"}}>
-                        {loadRecentPasteBins}
+    return ( 
+        <div>
+            <Helmet>
+                <style>
+                {`            
+                    body {
+                    text-align: center;
+                    background-color: #161a2b;
+                    background-image: none;
+                }
+                `}
+                </style>
+            </Helmet>
+            <div className="main-blog-di">
+                <div className="blog-title">Paste Bin</div>
+                <div className="blog-para" style={{textAlign:"center"}}>A pastebin for sharing data without any authentication.</div>
+                <div className="blog-para" style={{textAlign:"center"}}>Go to some URl like "/pastebin/any"</div>
+                <div className="blog-para" style={{textAlign:"center"}}>Write anything</div>
+                <div className="blog-para" style={{textAlign:"center"}}>Save</div>
+                <div className="blog-para" style={{textAlign:"center"}}>Share the URL with anyone</div>
+                <br />
+                <form className="todo-form" onSubmit={handleSubmit} style={{marginBottom:"6px"}}>
+                    <div className="edit-form" >
+                            <input 
+                                type="text" 
+                                placeholder="Type any url" 
+                                value={url}
+                                className="todo-input"
+                                onChange={e => setUrl(e.target.value)}
+                                ref={inputRef}
+                                style={{maxWidth:"275px"}}
+                            />
+                            <button className="todo-button edit">Go</button>
                     </div>
-                </>
-                : null
-            }
-            
+                </form>
+                <div className="blog-para" style={{textAlign:"center"}} >OR</div> 
+                <div className="redirect-button" style={{maxWidth:"230px"}} onClick={() => generateNewURL()} >Generate random URL</div>
+                {recentBins.length > 0 ?
+                    <>
+                        <br />
+                        <div className="blog-para" style={{textAlign:"center"}}>Recent Paste Bins</div>
+                        <div className="recent-pastebin-outer" style={{maxWidth:"500px"}}>
+                            {loadRecentPasteBins}
+                        </div>
+                    </>
+                    : null
+                }
+                
+            </div>
         </div>
     )
 }

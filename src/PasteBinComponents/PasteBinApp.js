@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import firebase from './firebase';
 import { useSnackbar } from 'notistack';
-import PasteBinHome from './Components/PasteBinHome';
 import { FaShare } from "react-icons/fa";
 
 
 function PasteBinApp() {
-    const [showApp, setShowApp] = useState(false);
     const [result, setResult] = useState('');
     const [data, setData] = useState('Write and Share');
     const [savePath, setSavePath] = useState("")
@@ -79,19 +77,13 @@ function PasteBinApp() {
         path = path.split("/");
         // console.log(path)
 
-        if(path.length === 1){
-            setShowApp(true)
+        if(path.length > 2){
+            window.location.pathname = "/" + path[0] + "/" + path[1];
         }
-        else{
-            setShowApp(false);
-            if(path.length > 2){
-                window.location.pathname = "/" + path[0] + "/" + path[1];
-            }
-    
-            if(path[0].toLowerCase() === "pastebin"){
-                setSavePath(path[1].toLowerCase());
-                firebase.getData(path[1].toLowerCase()).then(setResult, saveRecent(path[1]));
-            }
+
+        if(path[0].toLowerCase() === "pastebin"){
+            setSavePath(path[1].toLowerCase());
+            firebase.getData(path[1].toLowerCase()).then(setResult, saveRecent(path[1]));
         }
 
     }, [])
@@ -131,22 +123,7 @@ function PasteBinApp() {
     }
 
 
-    return showApp ?  
-        <div>
-            <Helmet>
-                <style>
-                {`            
-                    body {
-                    text-align: center;
-                    background-color: #161a2b;
-                    background-image: none;
-                }
-                `}
-                </style>
-            </Helmet>
-            <PasteBinHome />
-        </div>
-    : (
+    return (
         <div style={{display:"flex", position:"relative"}}>
             <Helmet>
                 <style>
