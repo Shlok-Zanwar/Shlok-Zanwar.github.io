@@ -80,6 +80,7 @@
 
 
 .searched{
+    /* border: 2px solid rgba(17, 122, 255, 1); */
     background-color: rgb(84, 202, 29)  ;
     background: linear-gradient(
     90deg,
@@ -146,6 +147,7 @@ input[type=number] {
     border-radius: 4px;
     cursor: pointer;
     outline: none;
+    background-color: rgb(84, 202, 29)  ;
     background: linear-gradient(
         90deg,
         rgb(93, 187, 49) 0%,
@@ -197,6 +199,7 @@ input[type=number] {
 }
 
 input:checked + .slider {
+    background-color: rgb(84, 202, 29)  ;
     background: linear-gradient(
         90deg,
         rgb(93, 187, 49) 0%,
