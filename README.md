@@ -64,3 +64,5 @@ Hosted on :- https://github.com/Shlok-Zanwar/ToDo-App
   - [react-lineto](https://www.npmjs.com/package/react-lineto)
   - [firebase](https://www.npmjs.com/package/firebase)
   - [react-masonry-css](https://www.npmjs.com/package/react-masonry-css)
+  - [react-canvas-draw](https://www.npmjs.com/package/react-canvas-draw)
+  - [react-color](https://www.npmjs.com/package/react-color)
