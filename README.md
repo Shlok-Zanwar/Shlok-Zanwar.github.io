@@ -47,6 +47,10 @@ Hosted on :- https://github.com/Shlok-Zanwar/ToDo-App
   - Paste Bin
     - [App](https://shlok-zanwar.github.io/pastebin)
     - [Repository](https://github.com/Shlok-Zanwar/Pastebin-React)
+  
+  - Draw Bin
+    - [App](https://shlok-zanwar.github.io/canvas)
+    - [Repository](https://github.com/Shlok-Zanwar/Pastebin-React)
 
 
 
