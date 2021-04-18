@@ -70,6 +70,14 @@
         "url":"/pastebin",
         "type":"App",
         "date":"Apr 2021"
+    },
+    {
+        "id":10,
+        "title":"Draw Bin",
+        "description":"An easy to use canvas for sharing drawings without any authentication.",
+        "url":"/canvas",
+        "type":"App",
+        "date":"Apr 2021"
     }
     
 ]
