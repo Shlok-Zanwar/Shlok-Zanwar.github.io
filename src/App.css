@@ -315,6 +315,8 @@ body {
   cursor: pointer;
   outline: none;
   border: none;
+  min-height: 48px;
+  max-height: 48px;
   background: linear-gradient(
     90deg,
     rgba(20, 159, 255, 1)0%,
@@ -352,3 +354,28 @@ body {
   padding-bottom: 30px;
 }
 
+.canvas-controls{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+}
+
+.canvas-brush-size{
+  padding: 12px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 2px solid #5d0cff;
+  outline: none;
+  width: 80px;
+  background: transparent;
+  color: #fff;
+}
+
+
+.canvas-div{
+  display: inline-flex;
+  position: relative;
+  border: 2.5px solid rgba(17, 122, 255, 1);
+}

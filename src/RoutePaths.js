@@ -9,6 +9,8 @@ import TodoApp from "./TodoAppComponents/TodoApp"
 import BSTApp from './TreeComponents/BSTApp';
 import MaxHeapApp from './TreeComponents/MaxHeapApp';
 import MinHeapApp from './TreeComponents/MinHeapApp';
+import CanvasHome from './CanvasComponents/CanvasHome';
+import CanvasApp from './CanvasComponents/CanvasApp';
 
 
 function RoutePaths() {
@@ -46,6 +48,13 @@ function RoutePaths() {
                 </Route>
                 <Route path="/pastebin/">
                     <PasteBinApp />
+                </Route>
+
+                <Route exact path="/canvas">
+                    <CanvasHome />
+                </Route>
+                <Route path="/canvas/">
+                    <CanvasApp />
                 </Route>
 
                 <Route path="/bst-visualization">

@@ -4,16 +4,15 @@ import { Tooltip } from '@material-ui/core'
 import { Helmet } from 'react-helmet';
 import { useHistory } from "react-router-dom";
 
-function PasteBinHome() {
+function CanvasHome() {
     const [url, setUrl] = useState('');
-    const [recentBins, setRecentBins] =  useState(localStorage.getItem('recentPasteBins') ? JSON.parse(localStorage.getItem('recentPasteBins')) : []);
+    const [recentBins, setRecentBins] =  useState(localStorage.getItem('recentCanvas') ? JSON.parse(localStorage.getItem('recentCanvas')) : []);
     const inputRef = useRef(null);
     let history = useHistory();
-    document.title = "Paste Bin | Shlok Zanwar"
 
     const generateNewURL = () => {
         let r = Math.random().toString(36).substring(4);
-        history.push("/pastebin/" + r);
+        history.push("/canvas/" + r);
     }
 
     const handleSubmit = e => {
@@ -25,13 +24,13 @@ function PasteBinHome() {
         path = path.split("/");
         if(path.length === 1){
             if(path[0] !== ""){
-                history.push("/pastebin/" + path[0]);
+                history.push("/canvas/" + path[0]);
             }
         }
         else{
-            if(path[0] === "pastebin"){
+            if(path[0] === "canvas"){
                 if(path[1] !== ""){
-                    history.push("/pastebin/" + path[1]);
+                    history.push("/canvas/" + path[1]);
                 }
             }
         }
@@ -40,19 +39,19 @@ function PasteBinHome() {
     }
 
     
-    const removeRecent = (pasteBin) => {
-        const removeArr = [...recentBins].filter(bin => bin !== pasteBin);
+    const removeRecent = (canvas) => {
+        const removeArr = [...recentBins].filter(bin => bin !== canvas);
         setRecentBins(removeArr);
-        localStorage.setItem('recentPasteBins', JSON.stringify(removeArr))
+        localStorage.setItem('recentCanvas', JSON.stringify(removeArr))
     }
 
     
-    const gotoRecent = (pasteBin) => {
-        history.push("/pastebin/" + pasteBin);
+    const gotoRecent = (canvas) => {
+        history.push("/canvas/" + canvas);
     }
 
 
-    const loadRecentPasteBins = recentBins.map(index => {
+    const loadRecentCanvas = recentBins.map(index => {
             return (
                 <div style={{display:"inline-table"}} >
                     <div className="recent-pastebin">
@@ -95,10 +94,10 @@ function PasteBinHome() {
                 </style>
             </Helmet>
             <div className="main-blog-di">
-                <div className="blog-title">Paste Bin</div>
-                <div className="blog-para" style={{textAlign:"center"}}>A pastebin for sharing data without any authentication.</div>
-                <div className="blog-para" style={{textAlign:"center"}}>Go to some URl like "/pastebin/any"</div>
-                <div className="blog-para" style={{textAlign:"center"}}>Write anything</div>
+                <div className="blog-title">Draw Bin</div>
+                <div className="blog-para" style={{textAlign:"center"}}>A canvas for sharing drawings without any authentication.</div>
+                <div className="blog-para" style={{textAlign:"center"}}>Go to some URl like "/canvas/any"</div>
+                <div className="blog-para" style={{textAlign:"center"}}>Draw anything</div>
                 <div className="blog-para" style={{textAlign:"center"}}>Save</div>
                 <div className="blog-para" style={{textAlign:"center"}}>Share the URL with anyone</div>
                 <br />
@@ -123,7 +122,7 @@ function PasteBinHome() {
                         <br />
                         <div className="blog-para" style={{textAlign:"center"}}>Recent Paste Bins</div>
                         <div className="recent-pastebin-outer" style={{maxWidth:"500px"}}>
-                            {loadRecentPasteBins}
+                            {loadRecentCanvas}
                         </div>
                     </>
                     : null
@@ -134,4 +133,4 @@ function PasteBinHome() {
     )
 }
 
-export default PasteBinHome
+export default CanvasHome

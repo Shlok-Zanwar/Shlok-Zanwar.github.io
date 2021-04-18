@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
-import firebase from './firebase';
+import firebase from '../firebase';
 import { useSnackbar } from 'notistack';
 import { FaShare } from "react-icons/fa";
 
@@ -83,7 +83,7 @@ function PasteBinApp() {
 
         if(path[0].toLowerCase() === "pastebin"){
             setSavePath(path[1].toLowerCase());
-            firebase.getData(path[1].toLowerCase()).then(setResult, saveRecent(path[1]));
+            firebase.getPasteBinData(path[1].toLowerCase()).then(setResult, saveRecent(path[1]));
         }
 
     }, [])
@@ -102,7 +102,7 @@ function PasteBinApp() {
 
     useEffect(() => {
         if(result === undefined){
-            firebase.addData(savePath, "Write and Share");
+            firebase.addPasteBinData(savePath, "Write and Share");
             setData("Write and Share");
         }
         else{
@@ -113,7 +113,7 @@ function PasteBinApp() {
 
     const saveData = () => {
         if(!saved){
-            firebase.addData(savePath, data);
+            firebase.addPasteBinData(savePath, data);
             setSaved(true);
             console.log("Saving");
         }
