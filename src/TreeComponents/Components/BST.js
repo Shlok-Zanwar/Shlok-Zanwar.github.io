@@ -4,27 +4,19 @@ import { useSnackbar } from 'notistack';
 import { Tooltip } from '@material-ui/core';
 import { FaCode }from 'react-icons/fa'
 import { HiOutlineRefresh }from 'react-icons/hi'
+import {BinarySearchTree} from './Tree'
 
 function BST() {
-    const [binaryTree, setBinaryTree] = useState([
-        [0],
-        [0, 0],
-        [0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    ]);
-    const [height, setHeight] = useState(0);
+    const [binaryTree, setBinaryTree] = useState([]);
     const [grid, setGrid] = useState([]);
     const [loading, setLoading] = useState(true);
     const [input, setInput] = useState('');
-    const { enqueueSnackbar } = useSnackbar();
+    const {enqueueSnackbar} = useSnackbar();
     const [search, setSearch] = useState(-2);
     const [showAnimation, setShowAnimation] = useState(true);
+    const [BST, setBST] =  useState(new BinarySearchTree());
 
-    
+
     useEffect(() => {
         makeVisualTree();
     }, [binaryTree])
@@ -33,9 +25,9 @@ function BST() {
     const makeVisualTree = () => {
         var i, j, k;
         var myList = [];
+        const height = BST.treeHeight(BST.getRootNode()) + 1;
 
         for(i = 0; i < height; i ++){
-            // var noOfElements = Math.pow(2, i);
             var noOfZerosInMiddle = Math.pow(2, height-i) - 1;
             var tempList = [];
             for(j = 0; j < binaryTree[i].length; j ++){
@@ -51,6 +43,7 @@ function BST() {
         setGrid(myList)
     }
 
+
     var iForAnimation = 0; 
     const createAnimation = (compare) => {
         if(showAnimation){
@@ -61,7 +54,7 @@ function BST() {
                 if (iForAnimation < compare.length) {          
                 createAnimation(compare);             
                 }               
-            }, 1000)
+            }, 700)
         }
         else{
             setSearch(compare[compare.length - 1]);
@@ -69,215 +62,61 @@ function BST() {
     }
 
 
-    const insertToTree = (data) => {
-        const newTree = [...binaryTree];
-        var compare = [];
-        const prevSearch = search;
+    const checkIfPresent = (data) => {
+        var i, j;
+        for(i = 0; i < binaryTree.length; i ++){
+            for(j = 0; j < binaryTree[i].length; j ++){
+                if(binaryTree[i][j] === data){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
-        if(newTree[0][0] === 0 ){
-            newTree[0][0] = parseInt(data);
-            setBinaryTree(newTree);
-            setHeight(1);
-            enqueueSnackbar(data + " added to binary search tree.", {
-                variant: 'success',
+
+    const insertToTree = (data) => {
+        if(checkIfPresent(data)){
+            enqueueSnackbar(data +" is already present !!", {
+                variant: 'error',
             });
-            // console.log(binaryTree, " ", height);
             return;
         }
-        
-        var i, j=0;
-        for(i = 0; i < height && i < 6; i++){
-            if(data < newTree[i][j]){
-                if(newTree[i+1][2*j] === 0){
-                    newTree[i+1][2*j] = parseInt(data);
-                    setBinaryTree(newTree);
-                    setHeight(Math.max(height, i + 2));
-                    enqueueSnackbar(data + " added to binary search tree.", {
-                        variant: 'success',
-                    });
-                    // console.log(binaryTree, " ", height);
-                    compare.push(newTree[i][j]);
-                    compare.push(parseInt(data));
-                    compare.push(prevSearch);
-                    setSearch(compare[0]);
-                    compare.shift();
-                    iForAnimation = 0;
-                    createAnimation(compare);
-                    return;
-                }
-                else{
-                    compare.push(newTree[i][j]);
-                    j = 2*j;
-                }
-            }
-            else if(data > newTree[i][j]){
-                if(newTree[i+1][2*j + 1] === 0){
-                    newTree[i+1][2*j + 1] = parseInt(data);
-                    setBinaryTree(newTree);
-                    setHeight(Math.max(height, i + 2));
-                    enqueueSnackbar(data + " added to binary search tree.", {
-                        variant: 'success',
-                    });
-                    // console.log(binaryTree, " ", height);
-                    compare.push(newTree[i][j]);
-                    compare.push(parseInt(data));
-                    compare.push(prevSearch);
-                    setSearch(compare[0]);
-                    compare.shift();
-                    iForAnimation = 0;
-                    createAnimation(compare);
-                    return;
-                }
-                else{
-                    compare.push(newTree[i][j]);
-                    j = j*2 + 1 
-                }
-            }
-            else{
-                enqueueSnackbar(data +" is already present", {
-                    variant: 'error',
-                });
-                return;
-            }
-        }
 
-        enqueueSnackbar("Maximum height reaced :(", {
-            variant: 'error',
+        let animation = BST.insertNode(data);
+        animation.push(search);
+        createAnimation(animation);
+        setBinaryTree(BST.breathFT(BST.getRootNode()));
+
+        enqueueSnackbar(data + " added to binary search tree.", {
+            variant: 'success',
         });
-
     }
 
-
-    const afterDeletePosi = (oldI, oldJ, newI, newJ, newTree) => {
-        newTree[newI + 1][newJ*2] = newTree[oldI + 1][oldJ*2]; 
-        newTree[oldI + 1][oldJ*2] = 0;
-        newTree[newI + 1][newJ*2 + 1] = newTree[oldI + 1][oldJ*2 + 1]; 
-        newTree[oldI + 1][oldJ*2 + 1] = 0;
-        if(newTree[newI + 1][newJ*2] !== 0){
-            newTree = afterDeletePosi(oldI + 1, oldJ*2, newI+1, newJ*2, newTree);
-        }
-        if(newTree[newI + 1][newJ*2 + 1] !== 0){
-            newTree = afterDeletePosi(oldI + 1, oldJ*2 + 1, newI+1, newJ*2 + 1, newTree);
-        }
-        return newTree;
-    }
-
-
+    
     const deleteFromTree = (data) => {
-        data = parseInt(data);
-        var i, j, k;
-        var newTree = [...binaryTree];
-        for(i = 0; i < height  && i < 6; i ++){
-            for(j = 0; j < newTree[i].length; j ++){
-                if(newTree[i][j] === data){
-                    // alert("Found");
-
-                    // For no left and right
-                    if(newTree[i + 1][2*j] === 0 && newTree[i + 1][2*j + 1] === 0){
-                        newTree[i][j] = 0;
-                        setBinaryTree(newTree);
-                        for(k = 0; k < newTree[i].length; k++){
-                            if(newTree[i][k] !== 0){
-                                break;
-                            }
-                        }
-                        if(k === newTree[i].length){
-                            setHeight(i);
-                        }
-                        if(data !== -1){
-                            enqueueSnackbar(data + " deleted from binary search tree.", {
-                                variant: 'success',
-                            });
-                        }
-                        return;
-                    }
-
-                    // If right empty
-                    else if(newTree[i + 1][2*j + 1] === 0){
-                        newTree[i][j] = newTree[i+1][2*j];
-                        newTree = afterDeletePosi(i + 1, 2*j, i, j, newTree);
-                        setBinaryTree(newTree);
-                        if(data !== -1){
-                            enqueueSnackbar(data + " deleted from binary search tree.", {
-                                variant: 'success',
-                            });
-                        }
-                        return;
-                    }
-
-                    // If left empty
-                    else if(newTree[i + 1][2*j] === 0){
-                        newTree[i][j] = newTree[i+1][2*j + 1];
-                        newTree = afterDeletePosi(i + 1, 2*j + 1, i, j, newTree);
-                        setBinaryTree(newTree);
-                        if(data !== -1){
-                            enqueueSnackbar(data + " deleted from binary search tree.", {
-                                variant: 'success',
-                            });
-                        }
-                        return;
-                    }
-
-                    // if both full
-                    else{
-                        var startI = i +1;
-                        var startJ = j*2 + 1;
-                        while(true){
-                            if(newTree[startI + 1][startJ*2] === 0){
-                                newTree[i][j] = newTree[startI][startJ];
-                                newTree[startI][startJ] = -1;
-                                setBinaryTree(newTree);
-                                enqueueSnackbar(data + " deleted from binary search tree.", {
-                                    variant: 'success',
-                                });
-                                deleteFromTree(-1);
-                                return;
-                                
-                            }
-                            else{
-                                startI = startI + 1;
-                                startJ = startJ*2;
-                            }
-                        }
-                    }
-
-                }
-            }
+        if(!checkIfPresent(data)){
+            enqueueSnackbar(data + " not found !!", {
+                variant: 'error',
+            });
+            return;
         }
-        if(i === 6){
-            for(j = 0; j < newTree[i].length; j++){
-                if(newTree[i][j] === data){
-                    newTree[i][j] = 0;
-                    for(k = 0; k < newTree[i].length; k++){
-                        if(newTree[i][k] !== 0){
-                            break;
-                        }
-                    }
-                    if(k === newTree[i].length){
-                        setHeight(i);
-                    }
-                    setBinaryTree(newTree);
-                    enqueueSnackbar(data + " deleted from binary search tree.", {
-                        variant: 'success',
-                    });
-                    return;
-                }
-            }
-        }
+    
+        BST.deleteNode(data);
+        setBinaryTree(BST.breathFT(BST.getRootNode()));
 
-        enqueueSnackbar(data + " not found !!", {
-            variant: 'error',
+        enqueueSnackbar(data + " deleted from binary search tree.", {
+            variant: 'success',
         });
     }
 
 
     const searchInTree = (data) => {
-        data = parseInt(data);
         var i, j;
-        // var newTree = [...binaryTree];
-        for(i = 0; i < height  && i <= 6; i ++){
+        for(i = 0; i < binaryTree.length; i ++){
             for(j = 0; j < binaryTree[i].length; j ++){
                 if(binaryTree[i][j] === data){
+                    setSearch(data);
                     enqueueSnackbar(data + " found. Highlighted in green.", {
                         variant: 'success',
                     });
@@ -286,37 +125,13 @@ function BST() {
             }
         }
 
-        setSearch(-2);
         enqueueSnackbar(data + " not found !!", {
             variant: 'error',
         });
     }
 
 
-    const clearTree = () => {
-        var newTree = [
-            [0],
-            [0, 0],
-            [0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        ];
-        if(height > 0 || grid.length > 0){
-            // console.log("doing");
-            setBinaryTree(newTree);
-            setGrid([]);
-            setHeight(0);
-        }
-        enqueueSnackbar("Binary Tree Cleared.", {
-            variant: 'success',
-        });
-    }
-
-
-    const handleSubmit = (e) =>{
+    const handleSubmit = (e) => {
         e.preventDefault();
         var operation = e.target.value;
 
@@ -324,15 +139,12 @@ function BST() {
             setSearch(-2);
             setInput('');
             setLoading(true);
-            return
+            return;
         }
 
         if(operation === "ClearTree"){
-            clearTree();
-            setSearch(-2);
-            setInput('');
-            setLoading(true);
-            return
+            window.location.reload()
+            return;
         }
 
         if(input ===  '' || input <= 0){
@@ -342,20 +154,18 @@ function BST() {
             setInput('');
             return;
         }
-        // return;
         if(operation === "Insert"){
-            insertToTree(input);
+            insertToTree(parseInt(input));
             setInput('');
             setLoading(true);
         }
         else if(operation === "Delete"){
-            deleteFromTree(input);
+            deleteFromTree(parseInt(input));
             setInput('');
             setLoading(true);
         }
         else if(operation === "Search"){
-            setSearch(parseInt(input));
-            searchInTree(input);
+            searchInTree(parseInt(input));
             setInput('');
             setLoading(true);
         }
@@ -403,13 +213,6 @@ function BST() {
                         <span className="slider round"></span>
                     </label>
                 </Tooltip></span>
-                <Tooltip title='Source Code' placement='bottom' arrow>
-                    <span>
-                        <button onClick={() => {window.location.href = "https://github.com/Shlok-Zanwar/Binary-Tree-Visualization"}} className="function-button">
-                            <FaCode style={{fontSize:"21px"}} />
-                        </button>
-                    </span>
-                </Tooltip>
                 <Tooltip title='Refresh lines' placement='bottom' arrow>
                     <span>
                         <button onClick={() => {setLoading(true)}} className="function-button">
@@ -417,6 +220,14 @@ function BST() {
                         </button>
                     </span>
                 </Tooltip>
+                <Tooltip title='Source Code' placement='bottom' arrow>
+                    <span>
+                        <button onClick={() => {window.location.href = "https://github.com/Shlok-Zanwar/Binary-Tree-Visualization"}} className="function-button">
+                            <FaCode style={{fontSize:"21px"}} />
+                        </button>
+                    </span>
+                </Tooltip>
+                
 
             </div>
             <Grid grid={grid} loading={loading} setLoading={setLoading} search={search} />
