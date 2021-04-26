@@ -9,10 +9,15 @@ class Node {
 
 
 export class BinarySearchTree { 
-    constructor(){ 
-        this.root = null; 
+    constructor(start){ 
+        this.root = start; 
         this.traversal = [];
     } 
+
+
+    deleteTree() {
+        this.root = null;
+    }
 
 
     getRootNode() { 

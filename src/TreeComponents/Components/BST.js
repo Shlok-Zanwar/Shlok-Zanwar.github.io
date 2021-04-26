@@ -7,18 +7,19 @@ import { HiOutlineRefresh }from 'react-icons/hi'
 import {BinarySearchTree} from './Tree'
 
 function BST() {
-    const [binaryTree, setBinaryTree] = useState([]);
+    
     const [grid, setGrid] = useState([]);
     const [loading, setLoading] = useState(true);
     const [input, setInput] = useState('');
     const {enqueueSnackbar} = useSnackbar();
     const [search, setSearch] = useState(-2);
     const [showAnimation, setShowAnimation] = useState(true);
-    const [BST, setBST] =  useState(new BinarySearchTree());
-
+    const [BST, setBST] =  useState(new BinarySearchTree( localStorage.getItem("BSTRoot") ? JSON.parse(localStorage.getItem("BSTRoot")) : null ));
+    const [binaryTree, setBinaryTree] = useState(BST.breathFT(BST.getRootNode()));
 
     useEffect(() => {
         makeVisualTree();
+        localStorage.setItem('BSTRoot', JSON.stringify(BST.getRootNode()));
     }, [binaryTree])
 
     
@@ -143,7 +144,9 @@ function BST() {
         }
 
         if(operation === "ClearTree"){
-            window.location.reload()
+            BST.deleteTree();
+            setBinaryTree(BST.breathFT(BST.getRootNode()));
+            setLoading(true);
             return;
         }
 

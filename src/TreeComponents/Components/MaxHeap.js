@@ -7,7 +7,7 @@ import { HiOutlineRefresh }from 'react-icons/hi'
 
 
 function MaxHeap() {
-    const [binaryTree, setBinaryTree] = useState([])
+    const [binaryTree, setBinaryTree] = useState(localStorage.getItem("maxHeap") ? JSON.parse(localStorage.getItem("maxHeap")) : [])
     const [grid, setGrid] = useState([]);
     const [loading, setLoading] = useState(true);
     const [input, setInput] = useState('');
@@ -17,6 +17,7 @@ function MaxHeap() {
 
     useEffect(() => {
         makeVisualTree();
+        localStorage.setItem("maxHeap", JSON.stringify(binaryTree));
     }, [binaryTree])
 
 
@@ -139,6 +140,7 @@ function MaxHeap() {
         enqueueSnackbar("Deleted root node successfully.", {
             variant: 'success',
         });
+        return;
     }
 
 
@@ -172,7 +174,8 @@ function MaxHeap() {
         }
 
         if(operation === "ClearTree"){
-            window.location.reload();
+            setBinaryTree([]);
+            setLoading(true);
             return
         }
 

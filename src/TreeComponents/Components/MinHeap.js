@@ -7,7 +7,7 @@ import { HiOutlineRefresh }from 'react-icons/hi'
 
 
 function MinHeap() {
-    const [binaryTree, setBinaryTree] = useState([])
+    const [binaryTree, setBinaryTree] = useState(localStorage.getItem("minHeap") ? JSON.parse(localStorage.getItem("minHeap")) : [])
     const [grid, setGrid] = useState([]);
     const [loading, setLoading] = useState(true);
     const [input, setInput] = useState('');
@@ -17,6 +17,7 @@ function MinHeap() {
 
     useEffect(() => {
         makeVisualTree();
+        localStorage.setItem("minHeap", JSON.stringify(binaryTree));
     }, [binaryTree])
 
 
@@ -139,6 +140,7 @@ function MinHeap() {
         enqueueSnackbar("Deleted root node successfully.", {
             variant: 'success',
         });
+        return;
     }
 
 
@@ -172,7 +174,8 @@ function MinHeap() {
         }
 
         if(operation === "ClearTree"){
-            window.location.reload();
+            setBinaryTree([]);
+            setLoading(true);
             return
         }
 
