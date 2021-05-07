@@ -11,6 +11,7 @@ import MaxHeapApp from './TreeComponents/MaxHeapApp';
 import MinHeapApp from './TreeComponents/MinHeapApp';
 import CanvasHome from './CanvasComponents/CanvasHome';
 import CanvasApp from './CanvasComponents/CanvasApp';
+// import ImageModel from './ModelApps/ImageModel';
 
 
 function RoutePaths() {
@@ -25,19 +26,14 @@ function RoutePaths() {
             <MyNavbar />
 
             <Switch>
-            
-                <Route path="/blogs/toxicbot">
-                    <BlogTemplate blogData={require("./BlogJsons/ToxicbotBlog.json")} />
+
+                <Route path="/blogs/">
+                    <BlogTemplate />
                 </Route>
-                <Route path="/blogs/todo-app">
-                    <BlogTemplate blogData={require("./BlogJsons/TodoBlog.json")} />
-                </Route>
-                <Route path="/blogs/dock-forms">
-                    <BlogTemplate blogData={require("./BlogJsons/DockFormsBlog.json")} />
-                </Route>
-                <Route path="/blogs/hotel-managment">
-                    <BlogTemplate blogData={require("./BlogJsons/HotelManagmentBlog.json")} />
-                </Route>
+
+                {/* <Route path="/models/10animals">
+                    <ImageModel modelInfo={require("./ModelApps/ModelDetails/10Animals.json")} />
+                </Route> */}
 
                 <Route path="/todo-app">
                     <TodoApp />

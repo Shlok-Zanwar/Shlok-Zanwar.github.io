@@ -44,21 +44,14 @@ function BST() {
         setGrid(myList)
     }
 
-
+    const wait = (delay, ...args) => new Promise(resolve => setTimeout(resolve, delay, ...args));
     var iForAnimation = 0; 
-    const createAnimation = (compare) => {
-        if(showAnimation){
-            setTimeout(function() { 
-                // console.log('hello');   
-                setSearch(compare[iForAnimation]);
-                iForAnimation ++;                   
-                if (iForAnimation < compare.length) {          
-                createAnimation(compare);             
-                }               
-            }, 700)
-        }
-        else{
-            setSearch(compare[compare.length - 1]);
+    const createAnimation = async(compare) => {
+        await wait(700);
+        setSearch(compare[iForAnimation]);
+        iForAnimation ++;                   
+        if (iForAnimation < compare.length) {          
+            await createAnimation(compare);             
         }
     }
 
@@ -76,7 +69,7 @@ function BST() {
     }
 
 
-    const insertToTree = (data) => {
+    async function insertToTree(data){
         if(checkIfPresent(data)){
             enqueueSnackbar(data +" is already present !!", {
                 variant: 'error',
@@ -86,12 +79,14 @@ function BST() {
 
         let animation = BST.insertNode(data);
         animation.push(search);
-        createAnimation(animation);
         setBinaryTree(BST.breathFT(BST.getRootNode()));
-
         enqueueSnackbar(data + " added to binary search tree.", {
             variant: 'success',
         });
+        if(showAnimation){
+            await createAnimation(animation);
+        }
+        
     }
 
     

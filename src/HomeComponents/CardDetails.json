@@ -3,7 +3,7 @@
         "id":6,
         "title":"ToDo App",
         "description": "A Well designed todo app for managing your work.",
-        "url":"todo-app",
+        "url":"/todo-app",
         "type":"App",
         "date":"Dec 2020"
     },
@@ -57,9 +57,9 @@
     },
     {
         "id":4,
-        "title":"Hotel Managment",
-        "description":"A basic and well-designed interface for restraunt managment with a self created database system.",
-        "url":"/blogs/hotel-managment",
+        "title":"Hotel Management",
+        "description":"A basic and well-designed interface for restraunt management with a self created database system.",
+        "url":"/blogs/hotel-management",
         "type":"Blog",
         "date":"Feb 2021"
     },

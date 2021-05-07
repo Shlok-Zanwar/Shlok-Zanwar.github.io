@@ -77,9 +77,10 @@ body {
   width: 92%;
   max-width: 750px;
   height: auto;
+  min-height: 85vh;
   background: var(--black);
   text-align: center;
-  margin: 20px 20px;
+  margin: 20px 5px 130px 5px;
   border-radius: 10px;
   padding: 10px 10px 25px 10px;
   animation: fadeIn 0.5s 1;
@@ -140,6 +141,19 @@ body {
     rgba(155, 0, 250, 1) 100%
   );
   color: #fff;
+}
+
+.redirect-button:disabled{
+  opacity: 0.5;
+}
+
+.redirect-button::-webkit-file-upload-button{
+  background-color: #5d0cff;
+  border: 2px solid black;
+  border-radius: 5px;
+  /* border: none; */
+  margin-right: 20px;
+  width: max-content;
 }
 
 .blog-image{
@@ -210,12 +224,25 @@ body {
   border: 2px solid rgb(69, 163, 25);
 }
 
+.yellow-border{
+  color: rgb(208, 211, 26);
+  border: 1.7px solid rgb(208, 211, 26);
+}
 
 .blue-border{
   color: rgba(17, 122, 255, 1);
   border: 2px solid rgba(17, 122, 255, 1);
 }
 
+
+.model-developers{
+  cursor: pointer;
+  display: inline-table;
+  min-width: 150px;
+  margin: 0px 5px;
+  color: rgb(69, 163, 25);
+  border: 2px solid rgb(69, 163, 25);
+}
 
 .cards-box:hover{
   border-radius: 10px;

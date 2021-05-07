@@ -24,6 +24,13 @@ function HomeCards() {
                 </div>
             )
         }
+        else if(type === "Model"){
+            return (
+                <div className="card-type yellow-border">
+                    {type}
+                </div>
+            )
+        }
     }
 
     const breakpoints = {
