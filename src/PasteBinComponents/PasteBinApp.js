@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import firebase from '../firebase';
 import { useSnackbar } from 'notistack';
 import { FaShare } from "react-icons/fa";
+import { Tooltip } from '@material-ui/core';
 
 
 function PasteBinApp() {
@@ -147,9 +148,11 @@ function PasteBinApp() {
                     <button className="save-share-pastebin" onClick={() => saveData()}>
                         &nbsp;&nbsp; Save &nbsp;&nbsp; 
                     </button>
-                    <button className="save-share-pastebin" onClick={() => {copyToClipboard(window.location.href)}}>
-                        <FaShare /> 
-                    </button>
+                    <Tooltip title='Share' placement='top'>
+                        <button className="save-share-pastebin" onClick={() => {copyToClipboard(window.location.href)}}>
+                            <FaShare />
+                        </button>
+                    </Tooltip>
             </div>
             
         </div>

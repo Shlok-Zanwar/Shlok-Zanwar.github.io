@@ -9,6 +9,7 @@ function CanvasHome() {
     const [recentBins, setRecentBins] =  useState(localStorage.getItem('recentCanvas') ? JSON.parse(localStorage.getItem('recentCanvas')) : []);
     const inputRef = useRef(null);
     let history = useHistory();
+    document.title = "Canvas | Shlok Zanwar";
 
     const generateNewURL = () => {
         let r = Math.random().toString(36).substring(4);

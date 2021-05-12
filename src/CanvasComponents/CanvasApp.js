@@ -5,11 +5,12 @@ import { useSnackbar } from 'notistack';
 import { FaShare } from "react-icons/fa";
 import CanvasDraw from 'react-canvas-draw';
 import { SliderPicker } from 'react-color';
+import { Tooltip } from '@material-ui/core';
 
 function CanvasApp() {
     const canvas = useRef();
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
-    document.title = "Paste Bin | Shlok Zanwar";
+    document.title = "Canvas | Shlok Zanwar";
 
     const dontShowSnackbar = (key) =>{
         localStorage.setItem("dontShowCanvasSnack", true);
@@ -181,15 +182,18 @@ function CanvasApp() {
                 >
                     &nbsp;&nbsp; Save &nbsp;&nbsp; 
                 </button>
-                <button className="save-share-pastebin" onClick={() => {copyToClipboard(window.location.href)}} >
-                    <FaShare /> 
-                </button>
+                <Tooltip title='Share' placement='bottom' arrow>
+                    <button className="save-share-pastebin" onClick={() => {copyToClipboard(window.location.href)}} >
+                        <FaShare />
+                    </button>
+                </Tooltip>
             </div >
             <div className="canvas-div">
             {canvasData ? 
                 <CanvasDraw
                     ref={canvas}
                     hideGrid
+                    immediateLoading={true}
                     saveData={canvasData}
                     backgroundColor={"transparent"}
                     brushColor={color.hex}

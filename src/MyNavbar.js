@@ -23,6 +23,9 @@ function MyNavbar() {
                     <Nav.Link as={Link} to="/todo-app">
                             To-Do App
                     </Nav.Link>
+                    <Nav.Link href="https://github.com/Shlok-Zanwar" >
+                            About
+                    </Nav.Link>
                 </Nav>
                 
                 <Nav>

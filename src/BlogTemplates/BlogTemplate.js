@@ -28,13 +28,16 @@ function BlogTemplate() {
     useEffect(() => {
         window.scrollTo(0, 0);
         // console.log(blogurl)
+        document.title = "Blogs | Shlok Zanwar"
         axios.get(window.location.pathname)
             .then(res => {
                 // console.log(res.data);
                 setBlogData(JSON.parse(res.data.blogDetail))
+                document.title = "Blogs | " + JSON.parse(res.data.blogDetail)[0].text + " | Shlok Zanwar";
+                window.scrollTo(0, 0);
             })
             .catch(err => {
-                // console.log(err.request.status)
+                console.log(err)
                 if(err.request.status === 0){
                     enqueueSnackbar("Something went wrong !!", {
                         variant: 'error',
@@ -57,11 +60,12 @@ function BlogTemplate() {
                 }
             })
 
-        if(blogData.length > 0){
-            document.title = "Blogs | " + blogData[0].text + " | Shlok Zanwar";
-        }
+        
     }, [])
     
+    // if(blogData.length > 0){
+    //     document.title = "Blogs | " + blogData[0].text + " | Shlok Zanwar";
+    // }
 
     const getRandomNumber = () =>{
         return Math.floor(Math.random() * 100000);
