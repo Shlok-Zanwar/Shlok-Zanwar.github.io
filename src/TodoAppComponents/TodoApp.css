@@ -88,7 +88,7 @@ h2 {
 
 
 .todo-input::placeholder {
-  color: #e2e2e2;
+  color: #969292;
 }
 
 
@@ -180,7 +180,7 @@ h2 {
 }
 
 
-.todo-row.orange{
+.orange{
   background: linear-gradient(
     90deg,
     rgba(255, 118, 20, 1) 0%,
@@ -189,7 +189,7 @@ h2 {
 }
 
 
-.todo-row.blue{
+.blue{
   background: linear-gradient(
     90deg,
     rgba(20, 159, 255, 1) 0%,
@@ -199,7 +199,7 @@ h2 {
 }
 
 
-.todo-row.red{
+.red{
   background: linear-gradient(
     90deg,
     rgb(255, 20, 79) 0%,
@@ -208,7 +208,7 @@ h2 {
 }
 
 
-.todo-row.pink{
+.pink{
   background: linear-gradient(
     90deg,
     rgba(255, 12, 241, 1) 0%,
@@ -217,7 +217,7 @@ h2 {
 }
 
 
-.todo-row.purple{
+.purple{
   background: linear-gradient(
     90deg,
     rgb(87, 5, 253) 0%,
@@ -226,7 +226,7 @@ h2 {
 }
 
 
-.todo-row.green{
+.green{
   background: linear-gradient(
     90deg,
     rgb(93, 187, 49) 0%,
