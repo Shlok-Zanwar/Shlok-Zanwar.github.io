@@ -188,7 +188,7 @@ function TodoList() {
     return (
         <>
         <div className="todo-app" onDrop={(e) => handleToDoDrop(e)} onDragOver={(e) => allowDrop(e)}>
-            <h2>To Do's</h2>
+            <h2 className="todo-name">To Do's</h2>
             <TodoForm onSubmit={addTodo} edit={{class: "todo-row blue"}} newTodo={true}/>
             <Todo 
                 todos={todos} 
@@ -203,7 +203,7 @@ function TodoList() {
         </div>
 
         <div className="todo-app" onDrop={(e) => handleDoingDrop(e)} onDragOver={(e) => allowDrop(e)} >
-            <h2>Doing ....</h2>
+            <h2 className="todo-name">Doing ....</h2>
             <Doing 
                 todos={todos} 
                 updateTodo={updateTodo} 
@@ -217,7 +217,7 @@ function TodoList() {
         </div>
 
         <div className="todo-app extra-padding" onDrop={(e) => handleDoneDrop(e)} onDragOver={(e) => allowDrop(e)}>
-            <h2>Done !!!</h2>
+            <h2 className="todo-name">Done !!!</h2>
             <Done 
                 todos={todos} 
                 removeTodo={removeTodo} 

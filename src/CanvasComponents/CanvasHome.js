@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { RiDeleteBin5Line } from 'react-icons/ri'
-import { Tooltip } from '@material-ui/core'
+import { Tooltip } from 'antd'
 import { Helmet } from 'react-helmet';
 import { useHistory } from "react-router-dom";
 

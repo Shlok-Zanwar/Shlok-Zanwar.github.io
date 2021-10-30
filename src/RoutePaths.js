@@ -11,7 +11,7 @@ import MaxHeapApp from './TreeComponents/MaxHeapApp';
 import MinHeapApp from './TreeComponents/MinHeapApp';
 import CanvasHome from './CanvasComponents/CanvasHome';
 import CanvasApp from './CanvasComponents/CanvasApp';
-import WordsApp from './GREWords/WordsApp';
+import TicTacToe from './TicTacToe/TicTacToe';
 // import ImageModel from './ModelApps/ImageModel';
 
 
@@ -35,13 +35,13 @@ function RoutePaths() {
                 {/* <Route path="/models/10animals">
                     <ImageModel modelInfo={require("./ModelApps/ModelDetails/10Animals.json")} />
                 </Route> */}
+                
+                <Route path="/tictactoe">
+                    <TicTacToe />
+                </Route>
 
                 <Route path="/todo-app">
                     <TodoApp />
-                </Route>
-
-                <Route path="/gre-words">
-                    <WordsApp />
                 </Route>
 
                 <Route exact path="/pastebin">

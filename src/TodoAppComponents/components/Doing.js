@@ -3,7 +3,7 @@ import TodoForm from './TodoForm'
 import { TiEdit } from 'react-icons/ti'
 import { MdDoneAll } from 'react-icons/md'
 import { MdArrowBack } from 'react-icons/md'
-import { Tooltip } from '@material-ui/core'
+import { Tooltip } from 'antd'
 
 function Doing({todos, updateTodo, sendToDo, sendToDone, handleDrag, handlePositionChange, allowDrop, setShowDelete}) {
     const [edit, setEdit] = useState({

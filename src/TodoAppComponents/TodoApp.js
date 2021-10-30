@@ -14,7 +14,7 @@ function App() {
     <>
     <div className="main-outer-todo-div">
       <Link to="blogs/todo-app">
-        <h1>To-Do App</h1>
+        <h1 className="todo-heading">To-Do App</h1>
       </Link>
       <TodoList />
     </div>

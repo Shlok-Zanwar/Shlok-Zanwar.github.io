@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import firebase from '../firebase';
 import { useSnackbar } from 'notistack';
 import { FaShare } from "react-icons/fa";
-import { Tooltip } from '@material-ui/core';
+import { Tooltip } from 'antd';
 
 
 function PasteBinApp() {

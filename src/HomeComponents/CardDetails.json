@@ -17,6 +17,14 @@
         "fullLink": true
     },
     {
+        "id": 26,
+        "title": "Tic Tac Toe",
+        "description": "A game of Tic Tac Toe where you can never win against the computer.",
+        "url": "/tictactoe",
+        "type": "App",
+        "date": "Oct 2021"
+    },
+    {
         "id": 3,
         "title": "Dock Forms",
         "description": "A form application for mainly school/college related applications such as conducting tests, surveys etc.",

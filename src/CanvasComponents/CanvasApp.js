@@ -5,7 +5,7 @@ import { useSnackbar } from 'notistack';
 import { FaShare } from "react-icons/fa";
 import CanvasDraw from 'react-canvas-draw';
 import { SliderPicker } from 'react-color';
-import { Tooltip } from '@material-ui/core';
+import { Tooltip } from 'antd';
 
 function CanvasApp() {
     const canvas = useRef();

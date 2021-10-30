@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Masonry from "react-masonry-css";
+import { Tabs } from 'antd';
+
+const { TabPane } = Tabs;
 
 function HomeCards() {
-    const [cards] = useState(require("./CardDetails.json"));
+    const [appCards, ] = useState(require("./CardDetails.json").filter(card => card.type === "App"));
+    const [blogCards, ] = useState(require("./CardDetails.json").filter(card => card.type === "Blog"));
 
     // const handleClickCards = (url) =>{
     //     window.location.href =
@@ -44,25 +48,52 @@ function HomeCards() {
     };
 
     return (
-        <Masonry breakpointCols={breakpoints} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
-            {cards.map(card => (
-                <>
-                    {linkType(
-                        card,
-                        <div key={card.id} className="cards-box">
-                            <div className="cards-info">
-                                <div className="cards-title">{card.title}</div>
-                                <div className="cards-description">{card.description}</div>
-                            </div>
-                            <div className="card-bottom-bar">
-                                <div className="card-date ">{card.date}</div>
-                                {cardType(card.type)}
-                            </div>
-                        </div>
-                    )}
-                </>
-            ))}
-        </Masonry>
+        <>
+        <Tabs centered defaultActiveKey="1" tabBarStyle={{background: 'var(--black)', paddingBottom: '10px', borderBottom: "2.5px solid rgba(17, 122, 255, 1)"}}>
+            <TabPane tab={<span style={{fontSize: 22}}>Apps</span>}  key="1">
+                <Masonry breakpointCols={breakpoints} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
+                    {appCards.map(card => (
+                        <>
+                            {linkType(
+                                card,
+                                <div key={card.id} className="cards-box">
+                                    <div className="cards-info">
+                                        <div className="cards-title">{card.title}</div>
+                                        <div className="cards-description">{card.description}</div>
+                                    </div>
+                                    <div className="card-bottom-bar">
+                                        <div className="card-date ">{card.date}</div>
+                                        {cardType(card.type)}
+                                    </div>
+                                </div>
+                            )}
+                        </>
+                    ))}
+                </Masonry>
+            </TabPane>
+            <TabPane tab={<span style={{fontSize: 22}}>Blogs</span>} key="2">
+                <Masonry breakpointCols={breakpoints} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
+                    {blogCards.map(card => (
+                        <>
+                            {linkType(
+                                card,
+                                <div key={card.id} className="cards-box">
+                                    <div className="cards-info">
+                                        <div className="cards-title">{card.title}</div>
+                                        <div className="cards-description">{card.description}</div>
+                                    </div>
+                                    <div className="card-bottom-bar">
+                                        <div className="card-date ">{card.date}</div>
+                                        {cardType(card.type)}
+                                    </div>
+                                </div>
+                            )}
+                        </>
+                    ))}
+                </Masonry>
+            </TabPane>
+        </Tabs>
+        </>
     );
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import {Navbar, Nav} from "react-bootstrap"
 import { SiHackerrank, SiGithub, SiInstagram, SiLinkedin, SiGmail, SiCodechef, SiTwitter } from "react-icons/si";
-import { Tooltip } from '@material-ui/core'
+import { Tooltip } from 'antd'
 
 
 function MyNavbar() {
