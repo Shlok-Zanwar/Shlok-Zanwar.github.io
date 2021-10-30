@@ -18,7 +18,7 @@ export default function TicTacToe() {
     const [line, setLine] = useState([["block_0", "block_2"], ["left center", "right center"]]);
 
     const [isExploding, setIsExploding] = useState(false);
-
+    document.title = "Tic Tac Toe | Shlok Zanwar";
 
     const checkWinner = () => {
         if(noOfTurns === 9) {

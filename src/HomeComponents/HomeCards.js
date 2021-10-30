@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Masonry from "react-masonry-css";
 import { Tabs } from 'antd';
+import { MdApps } from "react-icons/md";
+import { FaMicroblog } from "react-icons/fa";
 
 const { TabPane } = Tabs;
 
@@ -9,9 +11,7 @@ function HomeCards() {
     const [appCards, ] = useState(require("./CardDetails.json").filter(card => card.type === "App"));
     const [blogCards, ] = useState(require("./CardDetails.json").filter(card => card.type === "Blog"));
 
-    // const handleClickCards = (url) =>{
-    //     window.location.href =
-    // }
+    
 
     const cardType = type => {
         if (type === "Blog") {
@@ -50,7 +50,17 @@ function HomeCards() {
     return (
         <>
         <Tabs centered defaultActiveKey="1" tabBarStyle={{background: 'var(--black)', paddingBottom: '10px', borderBottom: "2.5px solid rgba(17, 122, 255, 1)"}}>
-            <TabPane tab={<span style={{fontSize: 22}}>Apps</span>}  key="1">
+            <TabPane 
+                tab={
+                    <span style={{fontSize: 22, display: 'flex', alignItems: 'center'}}>
+                        <MdApps />
+                        <span style={{ marginLeft: '5px' }}>
+                            Apps
+                        </span>
+                    </span>
+                }
+                key="1"
+            >
                 <Masonry breakpointCols={breakpoints} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
                     {appCards.map(card => (
                         <>
@@ -71,7 +81,17 @@ function HomeCards() {
                     ))}
                 </Masonry>
             </TabPane>
-            <TabPane tab={<span style={{fontSize: 22}}>Blogs</span>} key="2">
+            <TabPane 
+                tab={
+                    <span style={{fontSize: 22, display: 'flex', alignItems: 'center'}}>
+                        <FaMicroblog/>
+                        <span style={{ marginLeft: '5px' }}>
+                            Blogs
+                        </span>
+                    </span>
+                }
+                key="2"
+            >
                 <Masonry breakpointCols={breakpoints} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
                     {blogCards.map(card => (
                         <>
