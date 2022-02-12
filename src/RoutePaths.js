@@ -12,6 +12,7 @@ import MinHeapApp from './TreeComponents/MinHeapApp';
 import CanvasHome from './CanvasComponents/CanvasHome';
 import CanvasApp from './CanvasComponents/CanvasApp';
 import TicTacToe from './TicTacToe/TicTacToe';
+import MineSweeper from './MineSweeper/MineSweeper';
 // import ImageModel from './ModelApps/ImageModel';
 
 
@@ -38,6 +39,9 @@ function RoutePaths() {
                 
                 <Route path="/tictactoe">
                     <TicTacToe />
+                </Route>
+                <Route path="/minesweeper">
+                    <MineSweeper />
                 </Route>
 
                 <Route path="/todo-app">

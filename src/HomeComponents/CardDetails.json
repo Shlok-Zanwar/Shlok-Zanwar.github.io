@@ -25,6 +25,14 @@
         "date": "Oct 2021"
     },
     {
+        "id": 27,
+        "title": "Mine Sweeper",
+        "description": "Minesweeper is a single-player puzzle video game.",
+        "url": "/minesweeper",
+        "type": "App",
+        "date": "Nov 2021"
+    },
+    {
         "id": 3,
         "title": "Dock Forms",
         "description": "A form application for mainly school/college related applications such as conducting tests, surveys etc.",

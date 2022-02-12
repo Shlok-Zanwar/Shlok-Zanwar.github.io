@@ -123,29 +123,50 @@ export default function TicTacToe() {
                 }
             }
         }
-      
-        // Check if center is empty
+
         if(move === null){
             if(board[4].data === null){
                 move = 4;
             }
         }
-      
-        // Check if corners are empty
-        if(move === null){
-            if(board[0].data === null){
-                move = 0;
-            }
-            if(board[2].data === null){
-                move = 2;
-            }
-            if(board[6].data === null){
-                move = 6;
-            }
-            if(board[8].data === null){
-                move = 8;
+
+        if (move === null)  {
+            for(let i = 0; i < line.length; i++){
+                if(move !== null) {
+                    break;
+                }
+                let nums = [...line[i]];
+                for(let j = i + 1; j < line.length; j++){
+                    if(move !== null) {
+                        break;
+                    }
+                    for(var num of line[j]){
+                        if(!nums.includes(num)){
+                            nums.push(num);
+                        }
+                    }
+                    var countNums = 0;
+                    for(var num of nums){
+                        if(board[num].data === null || board[num].data === "X"){
+                            countNums += 1;
+                        }
+                    }
+                    
+                    if(countNums === 5){
+                        for(var num of nums){
+                            if(board[num].data === null){
+                                move = num;
+                                break;
+                            }
+                        }
+                    }
+
+                }
             }
         }
+      
+        // Check if center is empty
+        
         
         // Check if sides are empty
         if(move === null){
@@ -160,6 +181,22 @@ export default function TicTacToe() {
             }
             if(board[7].data === null){
                 move = 7;
+            }
+        }
+
+        // Check if corners are empty
+        if(move === null){
+            if(board[0].data === null){
+                move = 0;
+            }
+            if(board[2].data === null){
+                move = 2;
+            }
+            if(board[6].data === null){
+                move = 6;
+            }
+            if(board[8].data === null){
+                move = 8;
             }
         }
       
