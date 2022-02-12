@@ -170,6 +170,7 @@ h2.todo-name {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: left;
   margin: 4px auto;
   color: #fff;
   word-break: break-all;
@@ -177,6 +178,7 @@ h2.todo-name {
   border-radius: 5px;
   width: 90%;
   cursor: grab;
+  white-space: pre-wrap;
 }
 
 

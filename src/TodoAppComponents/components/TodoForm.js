@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Input } from 'antd';
 
+const { TextArea } = Input;
 
 function TodoForm(props) {
     const [input, setInput] = useState(props.edit ? props.edit.value : '');
@@ -90,33 +92,53 @@ function TodoForm(props) {
     
 
     return (
-        <form className="todo-form" onSubmit={handleSubmit}>
+        <form className="todo-form" style={{display: 'flex', paddingRight: '10px', paddingLeft: '10px'}} onSubmit={handleSubmit}>
         {props.edit.id ? (
             <div onClick={() => {setSelectColor(false);}}>
-                <div className="edit-form">
-                    <input 
+                <div className="edit-form" style={{display: 'inline-flex', width: '100%'}}>
+                    <TextArea 
+                        autoSize
                         type="text" 
                         placeholder="Update your todo" 
                         value={input}
-                        className="todo-input"
+                        // className="todo-input"
                         onChange={handleChange}
                         ref={inputRef}
+                        style={{
+                            padding: "14px 32px 14px 16px",
+                            borderRadius: "4px 0 0 4px",
+                            border: "2px solid #5d0cff",
+                            outline: "none",
+                            width: "80%",
+                            background: "transparent",
+                            color: "#fff"
+                        }}
                     />
-                    <button className="todo-button edit">Update</button>
+                    <button className="todo-button edit" style={{flex: '1', minWidth: '90px'}}>Update</button>
                 </div>
                 {colorSelector}
             </div>
             ) : (
             <>
-                <input 
+                <TextArea 
+                    autoSize
                     type="text" 
                     placeholder="Add a todo" 
                     value={input}
-                    className="todo-input"
+                    style={{
+                        padding: "14px 32px 14px 16px",
+                        borderRadius: "4px 0 0 4px",
+                        border: "2px solid #5d0cff",
+                        outline: "none",
+                        // width: "80%",
+                        background: "transparent",
+                        color: "#fff"
+                    }}
+                    // className="todo-input"
                     onChange={handleChange}
                     ref={inputRef}
                 />
-                <button className="todo-button">Add Todo</button>
+                <button className="todo-button" style={{flex: '1', minWidth: '90px'}}>Add Todo</button>
             </>
         )}
             

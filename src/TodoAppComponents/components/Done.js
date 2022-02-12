@@ -41,14 +41,14 @@ function Done({todos, removeTodo, updateTodo, sendToDo, handleDrag, handlePositi
                 {todo.text}
             </div>
             <div className="icons">
-                <Tooltip title='Edit Text' placement='top' arrow>
+                {/* <Tooltip title='Edit Text' placement='top' arrow>
                     <span>
                         <TiEdit 
                             onClick={() => setEdit({ id: todo.id, value: todo.text, list: "done", class:todo.class })}
                             className='edit-icon'
                         />
                     </span>
-                </Tooltip>
+                </Tooltip> */}
 
                 <Tooltip title="Send to To-Do's" placement='top' arrow>
                     <span>
