@@ -94,7 +94,7 @@ function TodoForm(props) {
     return (
         <form className="todo-form" style={{display: 'flex', paddingRight: '10px', paddingLeft: '10px'}} onSubmit={handleSubmit}>
         {props.edit.id ? (
-            <div onClick={() => {setSelectColor(false);}}>
+            <div style={{width: '100%'}} onClick={() => {setSelectColor(false);}}>
                 <div className="edit-form" style={{display: 'inline-flex', width: '100%'}}>
                     <TextArea 
                         autoSize
@@ -109,12 +109,12 @@ function TodoForm(props) {
                             borderRadius: "4px 0 0 4px",
                             border: "2px solid #5d0cff",
                             outline: "none",
-                            width: "80%",
+                            // width: "80%",
                             background: "transparent",
                             color: "#fff"
                         }}
                     />
-                    <button className="todo-button edit" style={{flex: '1', minWidth: '90px'}}>Update</button>
+                    <button className="todo-button edit" style={{flex: '1', minWidth: '52px', padding: '0px'}}>Update</button>
                 </div>
                 {colorSelector}
             </div>
@@ -138,7 +138,7 @@ function TodoForm(props) {
                     onChange={handleChange}
                     ref={inputRef}
                 />
-                <button className="todo-button" style={{flex: '1', minWidth: '90px'}}>Add Todo</button>
+                <button className="todo-button" style={{flex: '1', minWidth: '66px', padding: '0px'}}>Add Todo</button>
             </>
         )}
             

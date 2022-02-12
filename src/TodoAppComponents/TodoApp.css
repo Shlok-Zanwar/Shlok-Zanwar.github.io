@@ -147,7 +147,7 @@ h2.todo-name {
 
 
 @media only screen and (max-width: 365px){
-  .todo-input{
+  /* .todo-input{
     border-radius: 4px;
     margin-top: 4px;
   }
@@ -155,7 +155,7 @@ h2.todo-name {
   .todo-button{
     border-radius: 4px;
     margin-top: 4px;
-  }
+  } */
 }
 
 
@@ -174,7 +174,7 @@ h2.todo-name {
   margin: 4px auto;
   color: #fff;
   word-break: break-all;
-  padding: 16px;
+  padding: 8px 4px 8px 8px;
   border-radius: 5px;
   width: 90%;
   cursor: grab;
@@ -238,8 +238,9 @@ h2.todo-name {
 
 
 .icons {
-  display: flex;
-  align-items: center;
+  display: inline-block;
+  padding-right: 0px;
+  text-align: center;
   font-size: 24px;
   cursor: pointer;
 }
