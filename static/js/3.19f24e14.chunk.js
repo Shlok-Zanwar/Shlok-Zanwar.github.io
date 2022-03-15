@@ -1,2 +1,0 @@
-(this["webpackJsonpapp-react"]=this["webpackJsonpapp-react"]||[]).push([[3],{662:function(t,e,c){"use strict";c.r(e),c.d(e,"default",(function(){return p}));var n=c(2),r=(c(1),c(661)),s=c.n(r);function p(t){var e=t.src;return Object(n.jsxs)("div",{children:[Object(n.jsx)("p",{children:"TestPdf"}),Object(n.jsx)(s.a,{controls:!0,fileType:"pdf",filePath:e})]})}}}]);
-//# sourceMappingURL=3.19f24e14.chunk.js.map
