@@ -54,7 +54,7 @@ function HomeCards() {
                 tab={
                     <span style={{fontSize: 22, display: 'flex', alignItems: 'center'}}>
                         <MdApps />
-                        <span style={{ marginLeft: '5px' }}>
+                        <span style={{ marginLeft: '5px', color: '#fff' }}>
                             Apps
                         </span>
                     </span>
@@ -85,7 +85,7 @@ function HomeCards() {
                 tab={
                     <span style={{fontSize: 22, display: 'flex', alignItems: 'center'}}>
                         <FaMicroblog/>
-                        <span style={{ marginLeft: '5px' }}>
+                        <span style={{ marginLeft: '5px', color: '#fff' }}>
                             Blogs
                         </span>
                     </span>

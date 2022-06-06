@@ -13,8 +13,10 @@ import CanvasHome from './CanvasComponents/CanvasHome';
 import CanvasApp from './CanvasComponents/CanvasApp';
 import TicTacToe from './TicTacToe/TicTacToe';
 import MineSweeper from './MineSweeper/MineSweeper';
+import TSDRally from './TSDRally/TSDRally';
+import TSDRally2 from './TSDRally2/TSDRally2';
+import { Document } from 'react-pdf';
 // import ImageModel from './ModelApps/ImageModel';
-
 
 function RoutePaths() {
 
@@ -72,6 +74,13 @@ function RoutePaths() {
                     <MinHeapApp />
                 </Route>
 
+                <Route path="/tsd-rally">
+                    <TSDRally />
+                </Route>
+                <Route path="/tsd-rally-2">
+                    <TSDRally2 />
+                </Route>
+
 
                 <Route path="/">
                     {
@@ -81,6 +90,7 @@ function RoutePaths() {
                     }
                     <Home />
                 </Route>
+
 
             </Switch>
         </Router>
