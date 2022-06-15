@@ -20,11 +20,11 @@ function MyNavbar() {
             <Navbar.Collapse id="responsive-navbar-nav">
 
                 <Nav className="mr-auto">
-                    <Nav.Link as={Link} to="/todo-app">
-                            To-Do App
+                    <Nav.Link as={Link} to="/apps" >
+                        Apps
                     </Nav.Link>
-                    <Nav.Link href="https://github.com/Shlok-Zanwar" >
-                            About
+                    <Nav.Link as={Link} target="_blank" to="/Shlok_Zanwar.pdf">
+                        Resume
                     </Nav.Link>
                 </Nav>
                 

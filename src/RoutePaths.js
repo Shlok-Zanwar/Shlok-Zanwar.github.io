@@ -15,7 +15,7 @@ import TicTacToe from './TicTacToe/TicTacToe';
 import MineSweeper from './MineSweeper/MineSweeper';
 import TSDRally from './TSDRally/TSDRally';
 import TSDRally2 from './TSDRally2/TSDRally2';
-import { Document } from 'react-pdf';
+import Intro from './Intro/Intro';
 // import ImageModel from './ModelApps/ImageModel';
 
 function RoutePaths() {
@@ -81,6 +81,9 @@ function RoutePaths() {
                     <TSDRally2 />
                 </Route>
 
+                <Route path="/apps">
+                    <Home />
+                </Route>
 
                 <Route path="/">
                     {
@@ -88,7 +91,7 @@ function RoutePaths() {
                         : null
                         
                     }
-                    <Home />
+                    <Intro />
                 </Route>
 
 
