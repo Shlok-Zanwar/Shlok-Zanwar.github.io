@@ -2,10 +2,15 @@ import React, { useRef, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import ProjectTimeline from './ProjectTimeline'
 import { init } from "ityped";
-import { SiCplusplus, SiCss3, SiFastapi, SiFirebase, SiFlask, SiHeroku, SiHtml5, SiJavascript, SiJson, SiMysql, SiPython, SiReact, SiRedux } from "react-icons/si";
+import { SiCplusplus, SiCss3, SiFastapi, SiFirebase, SiFlask, SiGit, SiHeroku, SiHtml5, SiJavascript, SiJson, SiMailchimp, SiMysql, SiPython, SiReact, SiRedux, SiWhatsapp } from "react-icons/si";
 import { GrMysql } from 'react-icons/gr';
-import { AiOutlineSolution, AiOutlineTeam } from 'react-icons/ai';
+import { AiOutlineLinkedin, AiOutlineSolution, AiOutlineTeam } from 'react-icons/ai';
+import { FiLinkedin, FiMail } from 'react-icons/fi';
+import { BsWhatsapp } from 'react-icons/bs';
 import "./ProjectTimelineCss.css";
+import { Tooltip } from 'antd';
+import { GiBrain } from "react-icons/gi";
+
 
 
 export default function Intro() {
@@ -81,6 +86,26 @@ export default function Intro() {
                                 I am proficient in ReactJS, FastAPI, MySQL, Data Structures and more.
                             </span>
                         </div>
+                        <div className="profile-description-div" style={{marginTop: '20px', display: 'inline-flex'}}>
+                            {/* <a href="/Shlok_Zanwar.pdf" target='_blank' className="profile-link-btn profile-btn-gradient-border">
+                                Resume
+                            </a> */}
+                            <Tooltip title="+91-9657867002" placement='bottom' >
+                                <a href="https://wa.me/919657867002" target='_blank' className="profile-link-btn profile-btn-gradient-border" style={{marginLeft: '0px'}}>
+                                    <BsWhatsapp/>
+                                </a>
+                            </Tooltip>
+                            <Tooltip title="shlokzanwar14@gmail.com" placement='bottom' >
+                                <a href="mailto:shlokzanwar14@gmail.com" target='_blank' className="profile-link-btn profile-btn-gradient-border" style={{marginLeft: '0px'}}>
+                                    <FiMail />
+                                </a>
+                            </Tooltip>
+                            <Tooltip title="Linkedin" placement='bottom' >
+                                <a href="https://www.linkedin.com/in/shlok-zanwar/" target='_blank' className="profile-link-btn profile-btn-gradient-border" style={{marginLeft: '0px'}}>
+                                    <FiLinkedin/>
+                                </a>
+                            </Tooltip>
+                        </div>
                     </div>
                     <div>
                         <img 
@@ -124,6 +149,10 @@ export default function Intro() {
                                 Python
                             </span>
                             <span className="profile-skills-chip">
+                                <GiBrain className="profile-tech-icon" /> 
+                                Machine Learning
+                            </span>
+                            <span className="profile-skills-chip">
                                 <SiJavascript className="profile-tech-icon" /> 
                                 Javascript
                             </span>
@@ -138,6 +167,10 @@ export default function Intro() {
                             <span className="profile-skills-chip">
                                 <SiCss3 className="profile-tech-icon" /> 
                                 Css
+                            </span>
+                            <span className="profile-skills-chip">
+                                <SiGit className="profile-tech-icon" /> 
+                                Git
                             </span>
                             <span className="profile-skills-chip">
                                 <AiOutlineTeam className="profile-tech-icon" /> 
