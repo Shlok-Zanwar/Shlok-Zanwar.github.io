@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { HiOutlineCode } from "react-icons/hi";
 import { AiOutlineFileAdd } from "react-icons/ai";
 import { GiBrain } from "react-icons/gi";
-import { SiCss3, SiFastapi, SiFirebase, SiFlask, SiHeroku, SiHtml5, SiJavascript, SiJson, SiMysql, SiPython, SiReact, SiRedux } from "react-icons/si";
+import { SiCss3, SiFastapi, SiFirebase, SiFlask, SiHeroku, SiHtml5, SiJavascript, SiJson, SiMongodb, SiMysql, SiPython, SiReact, SiRedux } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 import { MdKeyboardArrowRight, MdKeyboardArrowDown } from "react-icons/md";
 import { DiSqllite } from "react-icons/di";
@@ -21,7 +21,7 @@ const { Panel } = Collapse;
 
 
 const ProjectImagesDashboard = ({refId, isRightAligned=false}) => {
-    const [collapseKeys, setCollapseKeys] = React.useState([]);
+    const [collapseKeys, setCollapseKeys] = React.useState(["1"]);
     const handleKeysChange = (keys) => {
         setCollapseKeys(keys);
     }
@@ -53,13 +53,14 @@ const ProjectImagesDashboard = ({refId, isRightAligned=false}) => {
                     </div>
                     <div className="timeline-description-div">
                         <span className="timeline-description-text">
-                            I developed this from scratch during my internship at Integrated active monitoring Pvt Ltd (
+                            I developed this during my internship at Integrated active monitoring Pvt Ltd (
                             <a href="https://smartiam.in/" target="_blank">IAM</a>)
                         </span>
                     </div>
                     <div className="timeline-description-div">
                         <span className="timeline-description-text">
-                            This Software application save .... hrs of worktime per day ...... and resulted in .....
+                            {/* This Software application save .... hrs of worktime per day ...... and resulted in ..... */}
+                                <i>( Product related Blog, Video and other informational content to be added soon. )</i>
                         </span>
                     </div>
                     <Collapse ghost activeKey={collapseKeys} onChange={handleKeysChange} >
@@ -69,7 +70,7 @@ const ProjectImagesDashboard = ({refId, isRightAligned=false}) => {
                                 <div className="timeline-description-div" style={{ marginTop: "10px" }}>
                                     <span className="timeline-description-text" style={{display: 'inline-flex', alignItems: 'center'}}>
                                         {collapseKeys.includes("1") ? <MdKeyboardArrowDown className="timeline-tech-icon" /> : <MdKeyboardArrowRight className="timeline-tech-icon" /> }
-                                        <i>Objective</i>&nbsp; {collapseKeys.includes("1") ? " : " : " ...."}
+                                        <i>Roles / Responsibilities</i>&nbsp; {collapseKeys.includes("1") ? " : " : " ...."}
                                     </span>
                                 </div>
                             }
@@ -77,18 +78,28 @@ const ProjectImagesDashboard = ({refId, isRightAligned=false}) => {
                             style={{padding: '0px'}}
                             className="custom-collapse-panel"
                         >
-                            <div className="timeline-list-ul">
-                                <span className="timeline-description-text" >
-                                    Needs to be Completed
-                                </span>
-                            </div>
-                            <div className="timeline-list-ul">
-                                <span className="timeline-description-text" >
-                                    Needs to be Completed
-                                </span>
-                            </div>
+                            <ul className="timeline-list-ul">
+                                <li className="timeline-list-item-li">
+                                    <span className="timeline-list-item-text">
+                                        Designing of the frontend code architecture 
+                                            <div style={{marginLeft: '20px'}}>
+                                                (which includes setting up the project and donfiguring advanced state management and routing).
+                                            </div>
+                                    </span>
+                                </li>
+                                <li className="timeline-list-item-li">
+                                    <span className="timeline-list-item-text">
+                                        Development and maintainence of the codebase.
+                                    </span>
+                                </li>
+                                <li className="timeline-list-item-li">
+                                    <span className="timeline-list-item-text">
+                                        Ticketing software backend architecture and api integration.
+                                    </span>
+                                </li>
+                            </ul>
                         </Panel>
-                        <Panel 
+                        {/* <Panel 
                             key="2" 
                             header={
                                 <div className="timeline-description-div">
@@ -151,7 +162,7 @@ const ProjectImagesDashboard = ({refId, isRightAligned=false}) => {
                                     </span>
                                 </li>
                             </ul>
-                        </Panel>
+                        </Panel> */}
                     </Collapse>
                     <div className="timeline-description-div" style={{marginTop: '10px'}}>
                         <span className="timeline-description-text" style={{display: 'inline-flex', alignItems: 'center'}}>
@@ -162,16 +173,20 @@ const ProjectImagesDashboard = ({refId, isRightAligned=false}) => {
                                     React
                                 </span>
                                 <span className="timeline-chip">
-                                    <GrMysql className="timeline-tech-icon" /> 
-                                    MySQL
-                                </span>
-                                <span className="timeline-chip">
                                     <SiRedux className="timeline-tech-icon" /> 
                                     Redux
                                 </span>
                                 <span className="timeline-chip">
                                     <SiFastapi className="timeline-tech-icon" /> 
                                     FastAPI
+                                </span>
+                                <span className="timeline-chip">
+                                    <GrMysql className="timeline-tech-icon" /> 
+                                    MySQL
+                                </span>
+                                <span className="timeline-chip">
+                                    <SiMongodb className="timeline-tech-icon" /> 
+                                    MongoDB
                                 </span>
                             </div>
                         </span>
@@ -188,7 +203,7 @@ const ProjectImagesDashboard = ({refId, isRightAligned=false}) => {
 }
 
 const ProjectCodeRooms = ({refId, isRightAligned=false}) => {
-    const [collapseKeys, setCollapseKeys] = React.useState([]);
+    const [collapseKeys, setCollapseKeys] = React.useState(["1"]);
     const handleKeysChange = (keys) => {
         setCollapseKeys(keys);
     }
