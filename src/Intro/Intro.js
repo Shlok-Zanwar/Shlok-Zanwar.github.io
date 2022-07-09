@@ -53,6 +53,10 @@ export default function Intro() {
                         background-color: #161a2b;
                         background-image: none;
                     }
+
+                    ::selection {
+                        background: rgba(0, 0, 0, 0.489);
+                    }
                 `}
                 </style>
             </Helmet>
