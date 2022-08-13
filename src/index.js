@@ -2,25 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { SnackbarProvider } from 'notistack';
+import { BrowserRouter } from "react-router-dom";
 import axios from 'axios';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
-// axios.defaults.baseURL = 'http://localhost:8000';
-axios.defaults.baseURL = 'https://shlok-m-server.herokuapp.com/';
+axios.defaults.baseURL = 'http://localhost:8000';
+// axios.defaults.baseURL = 'https://shlok-m-server.herokuapp.com';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <SnackbarProvider
-      maxSnack={2}
-      anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'left',
-      }}
-      autoHideDuration={3000}
-    >
-      <App />
-    </SnackbarProvider>
+    <BrowserRouter>
+      <SnackbarProvider
+        maxSnack={2}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        autoHideDuration={3000}
+      >
+        <App />
+      </SnackbarProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

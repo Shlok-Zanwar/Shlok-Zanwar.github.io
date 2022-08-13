@@ -7,13 +7,14 @@ import BlogPara from './BlogPara'
 import BlogSubheading from './BlogSubheading'
 import BlogTitle from './BlogTitle'
 import { SemipolarLoading } from 'react-loadingg';
-import { useHistory } from 'react-router'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useSnackbar } from 'notistack'
 
 function BlogTemplate() {
-    const histoy = useHistory(); //
+    const navigate = useNavigate(); //
     const [blogData, setBlogData] = useState([]);
-    const { enqueueSnackbar } = useSnackbar()
+    const { enqueueSnackbar } = useSnackbar();
+    const blogId = useParams().id;
 
     const action = key => (
         <React.Fragment>
@@ -29,7 +30,7 @@ function BlogTemplate() {
         window.scrollTo(0, 0);
         // console.log(blogurl)
         document.title = "Blogs | Shlok Zanwar"
-        axios.get(window.location.pathname)
+        axios.get(`/blogs/${blogId}`)
             .then(res => {
                 // console.log(res.data);
                 setBlogData(JSON.parse(res.data.blogDetail))
@@ -56,7 +57,7 @@ function BlogTemplate() {
                             horizontal:"center"
                         }
                     })
-                    histoy.push("/")
+                    navigate("/")
                 }
             })
 

@@ -2,18 +2,18 @@ import React, { useEffect, useRef, useState } from 'react'
 import { RiDeleteBin5Line } from 'react-icons/ri'
 import { Tooltip } from 'antd'
 import { Helmet } from 'react-helmet';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function CanvasHome() {
     const [url, setUrl] = useState('');
     const [recentBins, setRecentBins] =  useState(localStorage.getItem('recentCanvas') ? JSON.parse(localStorage.getItem('recentCanvas')) : []);
     const inputRef = useRef(null);
-    let history = useHistory();
+    let navigate = useNavigate();
     document.title = "Canvas | Shlok Zanwar";
 
     const generateNewURL = () => {
         let r = Math.random().toString(36).substring(4);
-        history.push("/canvas/" + r);
+        navigate("/canvas/" + r);
     }
 
     const handleSubmit = e => {
@@ -25,13 +25,13 @@ function CanvasHome() {
         path = path.split("/");
         if(path.length === 1){
             if(path[0] !== ""){
-                history.push("/canvas/" + path[0]);
+                navigate("/canvas/" + path[0]);
             }
         }
         else{
             if(path[0] === "canvas"){
                 if(path[1] !== ""){
-                    history.push("/canvas/" + path[1]);
+                    navigate("/canvas/" + path[1]);
                 }
             }
         }
@@ -48,7 +48,7 @@ function CanvasHome() {
 
     
     const gotoRecent = (canvas) => {
-        history.push("/canvas/" + canvas);
+        navigate("/canvas/" + canvas);
     }
 
 
