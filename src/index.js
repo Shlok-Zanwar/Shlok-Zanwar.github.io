@@ -6,8 +6,9 @@ import { BrowserRouter } from "react-router-dom";
 import axios from 'axios';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
-axios.defaults.baseURL = 'http://localhost:8000';
+// axios.defaults.baseURL = 'http://localhost:8000';
 // axios.defaults.baseURL = 'https://shlok-m-server.herokuapp.com';
+axios.defaults.baseURL = 'https://3os28y.deta.dev';
 
 
 ReactDOM.render(

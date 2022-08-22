@@ -49,6 +49,14 @@
         "date": "Jan 2021"
     },
     {
+        "id": 15,
+        "title": "Expense Tracker",
+        "description": "An expense tracker app for managing your expenses.",
+        "url": "/expense-tracker",
+        "type": "App",
+        "date": "June 2022"
+    },
+    {
         "id": 5,
         "title": "BST Visualization",
         "description": "An app to visualize the insert, delete and search operation on a binary search tree.",
