@@ -12,8 +12,10 @@ function MyNavbar() {
         <>
         <Navbar collapseOnSelect expand="lg" className="my-navbar" variant="dark" sticky="top">
 
-            <Navbar.Brand href="https://shlok-zanwar.github.io/" >
-                Shlok Zanwar
+            <Navbar.Brand >
+                <Link to="/" style={{color: "inherit"}}>
+                    Shlok Zanwar
+                </Link>
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />

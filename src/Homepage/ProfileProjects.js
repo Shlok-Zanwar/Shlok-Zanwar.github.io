@@ -7,6 +7,7 @@ import { SiCss3, SiFastapi, SiFirebase, SiFlask, SiHeroku, SiHtml5, SiJavascript
 import { GrMysql } from "react-icons/gr";
 import { DiSqllite } from "react-icons/di";
 import Timeline from '@mui/lab/Timeline';
+import { binaryTreeGithubURL, bstVisulizationURL, coderoomsAboutUsURL, coderoomsGithubURL, dockFormsBlogURL, dockFormsGithubURL, drawbinURL, heapVisulizationURL, hotelManagementBlogURL, hotelManagementGithubURL, mathsyraBackendURL, mathsyraFrontendURL, mnistGithubURL, pastebinGithubURL, pastebinURL, terminalQuizGithubURL, todoAppAppURL, todoAppBlogURL, todoAppGithubURL } from '../constants';
 
 
 export default function ProfileProjects() {
@@ -144,9 +145,9 @@ export default function ProfileProjects() {
             {
                 type: "links",
                 content: [
-                    { text: "About", link: "https://code-rooms.github.io/#/about_us" },
-                    { text: "Code Rooms", link: "https://code-rooms.github.io/#/about_us" },
-                    { text: "Github", link: "https://github.com/Code-rooms" },
+                    { text: "About", link: coderoomsAboutUsURL },
+                    { text: "Code Rooms", link: coderoomsAboutUsURL },
+                    { text: "Github", link: coderoomsGithubURL },
                 ]
             }
         ]
@@ -230,8 +231,8 @@ export default function ProfileProjects() {
             {
                 type: "links",
                 content: [
-                    { text: "Blog", link: "https://shlok-zanwar.github.io/blogs/dock-forms" },
-                    { text: "Github", link: "https://github.com/Shlok-Zanwar/Dock-Forms" },
+                    { text: "Blog", link: dockFormsBlogURL },
+                    { text: "Github", link: dockFormsGithubURL },
                 ],
             },
         ],
@@ -301,7 +302,8 @@ export default function ProfileProjects() {
             {
                 type: "links",
                 content: [
-                    { text: "Github", link: "https://github.com/Shlok-Zanwar/Mathsyra-Client" },
+                    { text: "Frontend", link: mathsyraFrontendURL },
+                    { text: "Backend", link: mathsyraBackendURL },
                 ]
             }    
         ]
@@ -374,8 +376,8 @@ export default function ProfileProjects() {
             {
                 type: "links",
                 content: [
-                    { text: "Blog", link: "https://shlok-zanwar.github.io/blogs/hotel-management" },
-                    { text: "Github", link: "https://github.com/Shlok-Zanwar/Hotel-Management-Terminal" }
+                    { text: "Blog", link: hotelManagementBlogURL },
+                    { text: "Github", link: hotelManagementGithubURL },
                 ]
             }
         ]
@@ -423,9 +425,9 @@ export default function ProfileProjects() {
             {
                 type: "links",
                 content: [
-                    { text: "App", link: "https://shlok-zanwar.github.io/todo-app" },
-                    { text: "Blog", link: "https://shlok-zanwar.github.io/blogs/todo-app" },
-                    { text: "Github", link: "https://github.com/Shlok-Zanwar/Shlok-Zanwar.github.io/tree/main/src/TodoAppComponents" },
+                    { text: "App", link: todoAppAppURL },
+                    { text: "Blog", link: todoAppBlogURL },
+                    { text: "Github", link: todoAppGithubURL },
                 ]
             }
         ]
@@ -459,7 +461,7 @@ export default function ProfileProjects() {
             {
                 type: "links",
                 content: [
-                    { text: "Github", link: "https://github.com/Shlok-Zanwar/DS-SCE" },
+                    { text: "Github", link: mnistGithubURL },
                 ]
             }
         ]
@@ -526,7 +528,7 @@ export default function ProfileProjects() {
             {
                 type: "links",
                 content: [
-                    { text: "Github", link: "https://github.com/Shlok-Zanwar/Terminal-Quiz" },
+                    { text: "Github", link: terminalQuizGithubURL },
                 ]
             }
         ]
@@ -567,9 +569,9 @@ export default function ProfileProjects() {
             {
                 type: "links",
                 content: [
-                    { text: "Pastebin", link: "https://shlok-zanwar.github.io/pastebin" },
-                    { text: "Drawbin", link: "https://shlok-zanwar.github.io/canvas" },
-                    { text: "Github", link: "https://github.com/Shlok-Zanwar/Pastebin-React" },
+                    { text: "Pastebin", link: pastebinURL },
+                    { text: "Drawbin", link: drawbinURL },
+                    { text: "Github", link: pastebinGithubURL },
                 ]
             }
         ]
@@ -605,9 +607,9 @@ export default function ProfileProjects() {
             {
                 type: "links",
                 content: [
-                    { text: "Github", link: "https://github.com/Shlok-Zanwar/Binary-Tree-Visualization" },
-                    { text: "Heap", link: "https://shlok-zanwar.github.io/max-heap-visualization" },
-                    { text: "Binary Search Tree", link: "https://shlok-zanwar.github.io/bst-visualization" },
+                    { text: "Github", link: binaryTreeGithubURL },
+                    { text: "Heap", link: heapVisulizationURL },
+                    { text: "Binary Search Tree", link: bstVisulizationURL },
                 ]
             }
         ]

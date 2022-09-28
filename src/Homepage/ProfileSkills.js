@@ -3,7 +3,7 @@ import { SiCplusplus, SiCss3, SiFastapi, SiFirebase, SiFlask, SiGit, SiHeroku, S
 import { GiBrain } from "react-icons/gi";
 import { AiOutlineSolution, AiOutlineTeam } from "react-icons/ai";
 import { GrMysql } from "react-icons/gr";
-import useIsInViewport from '../useIsInViewport';
+import useIsInViewport from '../Functions/useIsInViewport';
 import { useEffect } from 'react';
 
 

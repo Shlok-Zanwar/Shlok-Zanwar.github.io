@@ -8,7 +8,7 @@ import { BsWhatsapp } from 'react-icons/bs';
 import { Tooltip } from 'antd';
 import { GiBrain } from "react-icons/gi";
 import { emailId, whatsappNumber } from "../constants";
-import useIsInViewport from "../useIsInViewport";
+import useIsInViewport from "../Functions/useIsInViewport";
 
 
 

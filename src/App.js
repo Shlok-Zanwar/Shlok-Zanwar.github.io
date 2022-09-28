@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
 import ReactGA from 'react-ga4';
 
-import Intro from "./Intro/Intro";
 import Homepage from "./Homepage/Homepage";
 import MyNavbar from "./MyNavbar";
 
@@ -47,7 +46,7 @@ function App() {
 				<Route path='*' element={ 
 						localStorage.getItem('redirectTo')  
 						? <Navigate to={localStorage.getItem('redirectTo')} />
-						: <Intro /> 
+						: <Homepage /> 
 					} 
 				/>
 			</Route>

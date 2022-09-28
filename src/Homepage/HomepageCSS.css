@@ -136,6 +136,7 @@
 
 .timeline-title-div {
     text-align: left;
+    cursor: pointer;
 }
 
 .timeline-title-text{

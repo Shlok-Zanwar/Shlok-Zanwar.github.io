@@ -17,7 +17,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { Collapse } from 'antd';
-import useIsInViewport from "../useIsInViewport";
+import useIsInViewport from "../Functions/useIsInViewport";
 import { useEffect } from "react";
 const { Panel } = Collapse;
 
@@ -405,16 +405,18 @@ export default function ProjectCard({data={}, id=data?.id, align="left", default
             </TimelineSeparator>
             {/* style={isRightAligned ? { display: "inline-flex", justifyContent: "right" } : {}} */}
             <TimelineContent sx={{ py: "12px", px: 2 }} style={{display: 'inline-flex', justifyContent: align === "right" ? "right" : "" }}>
-                <a href={`#${id}`} >
                 <div className="timeline-content-div" data-aos={`zoom-out-${align === "right" ? "right" : "left"}`} data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">
-                    <div className={"timeline-title-div" + (align === "right" && "timeline-align-right") } 
-                        id={id}
+                    <div 
+                        className={"timeline-title-div" + (align === "right" && "timeline-align-right") } 
+                        id={id} 
+                        style={{cursor: 'pointer'}}
+                        onClick={() => {window.history.replaceState(null, null, `#${id}`);}}
                     >
                         <span className="timeline-title-text"> {data.title} </span>
                     </div>
+
                     {renderData(data.items)}
                 </div>
-                </a>
             </TimelineContent>
         </TimelineItem>
     )
