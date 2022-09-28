@@ -1,19 +1,11 @@
-import React, { useRef, useEffect } from 'react'
-import { Helmet } from 'react-helmet'
-// import ProjectTimeline from './ProjectTimeline'
-import { init } from "ityped";
-import { SiCplusplus, SiCss3, SiFastapi, SiFirebase, SiFlask, SiGit, SiHeroku, SiHtml5, SiJavascript, SiJson, SiMailchimp, SiMysql, SiPython, SiReact, SiRedux, SiWhatsapp } from "react-icons/si";
-import { GrMysql } from 'react-icons/gr';
-import { AiOutlineLinkedin, AiOutlineSolution, AiOutlineTeam } from 'react-icons/ai';
-import { FiLinkedin, FiMail } from 'react-icons/fi';
-import { BsWhatsapp } from 'react-icons/bs';
-import { Tooltip } from 'antd';
-import { GiBrain } from "react-icons/gi";
+import React, { useEffect } from 'react'
 import ProfileIntro from './ProfileIntro';
 import ProfileSkills from './ProfileSkills';
 import ProfileProjects from './ProfileProjects';
 
 export default function Homepage() {
+    document.title = "Shlok Zanwar";
+
     const isMobile = window.matchMedia("only screen and (max-width: 800px)").matches;
 
     useEffect(() => {

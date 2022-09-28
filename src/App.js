@@ -12,6 +12,7 @@ import "./Homepage/HomepageCSS.css";
 // Animate on Scroll
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import TodoApp from "./TodoApp/TodoApp";
 AOS.init();
 
 
@@ -42,7 +43,7 @@ function App() {
 					</>
 				} 
 			>
-				<Route path='test' element={ <Homepage /> } />
+				<Route path='todo-app' element={ <TodoApp /> } />
 				<Route path='*' element={ 
 						localStorage.getItem('redirectTo')  
 						? <Navigate to={localStorage.getItem('redirectTo')} />

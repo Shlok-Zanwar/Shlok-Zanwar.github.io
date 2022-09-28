@@ -25,6 +25,7 @@
     background: linear-gradient(to right, rgb(23, 226, 74), rgb(10, 101, 238));;
     /* background: linear-gradient(to right, #30CFD0, #c43ad6); */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 60px;
     font-weight: 700;
@@ -32,9 +33,10 @@
     text-shadow: 0 0 80px rgb(192 219 255 / 35%), 0 0 32px rgb(65 120 255 / 24%);
 }
 .profile-subtitle-text{
-    background: linear-gradient(to right, rgb(226, 23, 23), rgb(255, 79, 26));;
+    background: linear-gradient(to right, rgb(226, 23, 23), rgb(255, 79, 26));
     /* background: linear-gradient(to right, #30CFD0, #c43ad6); */
     -webkit-background-clip: text;
+    background-clip: text;
     caret-color: #EE1D62;
     -webkit-text-fill-color: transparent;
     font-size: 25px;
@@ -143,6 +145,7 @@
     background: linear-gradient(to right, #ff1f62, #3b2dfa);
     /* background: linear-gradient(to right, #30CFD0, #c43ad6); */
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 35px;
     text-shadow: 0 0 80px rgb(192 219 255 / 35%), 0 0 32px rgb(65 120 255 / 24%);
