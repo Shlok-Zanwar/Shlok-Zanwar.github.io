@@ -7,7 +7,7 @@ import { GrMysql } from 'react-icons/gr';
 import { AiOutlineLinkedin, AiOutlineSolution, AiOutlineTeam } from 'react-icons/ai';
 import { FiLinkedin, FiMail } from 'react-icons/fi';
 import { BsWhatsapp } from 'react-icons/bs';
-import "./ProjectTimelineCss.css";
+// import "./ProjectTimelineCss.css";
 import { Tooltip } from 'antd';
 import { GiBrain } from "react-icons/gi";
 

@@ -19,189 +19,6 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import { Collapse } from 'antd';
 const { Panel } = Collapse;
 
-
-const ProjectImagesDashboard = ({refId, isRightAligned=false}) => {
-    const [collapseKeys, setCollapseKeys] = React.useState(["1"]);
-    const handleKeysChange = (keys) => {
-        setCollapseKeys(keys);
-    }
-
-    return (
-        <TimelineItem id={refId}>
-            <TimelineOppositeContent sx={{ m: "auto 0" }} align="right" variant="body2" >
-                <span className="timeline-item-date">
-                    Continuous Development <br /> Industry Project
-                </span>
-            </TimelineOppositeContent>
-            <TimelineSeparator>
-                <TimelineConnector />
-                <TimelineDot style={{background: '#EE1D62'}}>
-                    {/* <HiOutlineCode /> */}
-                </TimelineDot>
-                <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent sx={{ py: "12px", px: 2 }} style={isRightAligned ? { display: "inline-flex", justifyContent: "right" } : {}}>
-                <div className="timeline-content-div">
-                    <div className={"timeline-title-div " + (isRightAligned ? "timeline-align-right" : "")}>
-                        <span className="timeline-title-text">Images Dashboard</span>
-                    </div>
-                    <div className="timeline-description-div">
-                        <span className="timeline-description-text">
-                            Images Dashboard is cctv image capture and audit platform with integration
-                            of ai to detect common objects.
-                        </span>
-                    </div>
-                    <div className="timeline-description-div">
-                        <span className="timeline-description-text">
-                            I developed this during my internship at Integrated active monitoring Pvt Ltd (
-                            <a href="https://smartiam.in/" target="_blank">IAM</a>)
-                        </span>
-                    </div>
-                    <div className="timeline-description-div">
-                        <span className="timeline-description-text">
-                            {/* This Software application save .... hrs of worktime per day ...... and resulted in ..... */}
-                                <i>( Product related Blog, Video and other informational content to be added soon. )</i>
-                        </span>
-                    </div>
-                    <Collapse ghost activeKey={collapseKeys} onChange={handleKeysChange} >
-                        <Panel 
-                            key="1" 
-                            header={
-                                <div className="timeline-description-div" style={{ marginTop: "10px" }}>
-                                    <span className="timeline-description-text" style={{display: 'inline-flex', alignItems: 'center'}}>
-                                        {collapseKeys.includes("1") ? <MdKeyboardArrowDown className="timeline-tech-icon" /> : <MdKeyboardArrowRight className="timeline-tech-icon" /> }
-                                        <i>Roles / Responsibilities</i>&nbsp; {collapseKeys.includes("1") ? " : " : " ...."}
-                                    </span>
-                                </div>
-                            }
-                            showArrow={false}
-                            style={{padding: '0px'}}
-                            className="custom-collapse-panel"
-                        >
-                            <ul className="timeline-list-ul">
-                                <li className="timeline-list-item-li">
-                                    <span className="timeline-list-item-text">
-                                        Designing of the frontend code architecture 
-                                            <div style={{marginLeft: '20px'}}>
-                                                (which includes setting up the project and donfiguring advanced state management and routing).
-                                            </div>
-                                    </span>
-                                </li>
-                                <li className="timeline-list-item-li">
-                                    <span className="timeline-list-item-text">
-                                        Development and maintainence of the codebase.
-                                    </span>
-                                </li>
-                                <li className="timeline-list-item-li">
-                                    <span className="timeline-list-item-text">
-                                        Ticketing software backend architecture and api integration.
-                                    </span>
-                                </li>
-                            </ul>
-                        </Panel>
-                        {/* <Panel 
-                            key="2" 
-                            header={
-                                <div className="timeline-description-div">
-                                    <span className="timeline-description-text" style={{display: 'inline-flex', alignItems: 'center'}}>
-                                        {collapseKeys.includes("2") ? <MdKeyboardArrowDown className="timeline-tech-icon" /> : <MdKeyboardArrowRight className="timeline-tech-icon" /> }
-                                        <i>Key Modeules</i>&nbsp; {collapseKeys.includes("2") ? " : " : " ...."}
-                                    </span>
-                                </div>
-                            }
-                            showArrow={false}
-                            style={{padding: '0px'}}
-                            className="custom-collapse-panel"
-                        >
-                            <ul className="timeline-list-ul">
-                                <li className="timeline-list-item-li">
-                                    <span className="timeline-list-item-text">
-                                        Ticket Manangement System.........
-                                    </span>
-                                </li>
-                                <li className="timeline-list-item-li">
-                                    <span className="timeline-list-item-text">
-                                        Image comparison.........
-                                    </span>
-                                </li>
-                                <li className="timeline-list-item-li">
-                                    <span className="timeline-list-item-text">
-                                        Advanced state management .......
-                                    </span>
-                                </li>
-                                <li className="timeline-list-item-li">
-                                    <span className="timeline-list-item-text">
-                                        Handling of xyz datapoints.....
-                                    </span>
-                                </li>
-                            </ul>
-                        </Panel>
-                        <Panel 
-                            key="3" 
-                            header={
-                                <div className="timeline-description-div">
-                                    <span className="timeline-description-text" style={{display: 'inline-flex', alignItems: 'center'}}>
-                                        {collapseKeys.includes("3") ? <MdKeyboardArrowDown className="timeline-tech-icon" /> : <MdKeyboardArrowRight className="timeline-tech-icon" /> }
-                                        <i>Learning / Outcomes</i>&nbsp; {collapseKeys.includes("3") ? " : " : " ...."}
-                                    </span>
-                                </div>
-                            }
-                            showArrow={false}
-                            style={{padding: '0px'}}
-                            className="custom-collapse-panel"
-                        >
-                            <ul className="timeline-list-ul">
-                                <li className="timeline-list-item-li">
-                                    <span className="timeline-list-item-text">
-                                        Learning ...
-                                    </span>
-                                </li>
-                                <li className="timeline-list-item-li">
-                                    <span className="timeline-list-item-text">
-                                        Learning ...
-                                    </span>
-                                </li>
-                            </ul>
-                        </Panel> */}
-                    </Collapse>
-                    <div className="timeline-description-div" style={{marginTop: '10px'}}>
-                        <span className="timeline-description-text" style={{display: 'inline-flex', alignItems: 'center'}}>
-                            <span style={{minWidth: '80px', display: 'block'}}>Tech Stack:</span> 
-                            <div>
-                                <span className="timeline-chip">
-                                    <SiReact className="timeline-tech-icon" /> 
-                                    React
-                                </span>
-                                <span className="timeline-chip">
-                                    <SiRedux className="timeline-tech-icon" /> 
-                                    Redux
-                                </span>
-                                <span className="timeline-chip">
-                                    <SiFastapi className="timeline-tech-icon" /> 
-                                    FastAPI
-                                </span>
-                                <span className="timeline-chip">
-                                    <GrMysql className="timeline-tech-icon" /> 
-                                    MySQL
-                                </span>
-                                <span className="timeline-chip">
-                                    <SiMongodb className="timeline-tech-icon" /> 
-                                    MongoDB
-                                </span>
-                            </div>
-                        </span>
-                    </div>
-                    {/* <div className={"timeline-description-div " + (isRightAligned ? "timeline-align-right" : "")} style={{ marginTop: "10px" }}>
-                        <a className="btn btn-gradient-border btn-glow" href="https://code-rooms.github.io/#/about_us" target="_blank">
-                            About
-                        </a>
-                    </div> */}
-                </div>
-            </TimelineContent>
-        </TimelineItem>
-    )
-}
-
 const ProjectCodeRooms = ({refId, isRightAligned=false}) => {
     const [collapseKeys, setCollapseKeys] = React.useState(["1"]);
     const handleKeysChange = (keys) => {
@@ -391,6 +208,331 @@ const ProjectCodeRooms = ({refId, isRightAligned=false}) => {
         </TimelineItem>
     )
 }
+
+const codeRoomsData = {
+    title: "Code Rooms",
+    id: "code-rooms",
+    subtitle: "Online Coding Platform",
+    oppositeContent: "Oct 2021",
+
+    items: [
+        {
+            type: "text",
+            content: "Code rooms is a learning management system where teachers can seamlessly create rooms, assignments and assess assignments. Students can easily submit assigned assignments."
+        },
+        {
+            type: "text",
+            content: (
+                <>
+                    It is deployed and is currently being used and loved by teachers and students at 
+                    <a href="https://www.viit.ac.in/" target="_blank"> VIIT</a>.
+                </>
+            )
+        },
+        {
+            type: "collapse",
+            title: "Objective",
+            id: "objective",
+            items: [
+                {
+                    type: "list",
+                    // copy above
+                    content: [
+                        "Traditional submission system platforms (Google Classroom, OnlineGDB, etc.) lacked good User Interface and User Experience.",
+                        "Teachers had to open every submission in a new tab to view it which costed a lot of time and clicks.",
+                        "Also for assessment of code files in classroom, teachers had to copy the code by themselves and paste it in their own editor for evaluation, whereas there was no way to submit files directly in the OnlineGBD.",
+                        "Code Rooms aims to solve all these problems by providing a simple and easy to use platform for teachers and students."
+                    ]
+                }
+            ]
+        },
+        {
+            type: "collapse",
+            title: "Key Features",
+            id: "features",
+            items: [
+                {
+                    type: "list",
+                    content: [
+                        "Classrooms with features like waiting room authority and visibility on the go with one click.",
+                        "Automated evaluation of test cases.",
+                        "Code Editor with syntax highlighting and code completion.",
+                        "File Previewer with split screen pane view.",
+                        "Submissions of any type of question can be assessed easily in every question with a code editor with submitted code or a preview of the file submitted right on the screen with download option.",
+                    ],
+                }
+            ]
+        },
+        {
+            type: "collapse",
+            title: "Learning / Outcomes",
+            id: "learning",
+            items: [
+                {
+                    type: "list",
+                    content: [
+                        "Integration of complex UI components such as Code-Editor, File-Previewer with split screen pane view keeping good UI in consideration.",
+                        "Implementation of Database User Hierarchy and SQL Queries having complex JOIN operations.",
+                        "Overall deployment / hosting process of the application and making a app production ready."
+                    ]
+                }
+            ]
+        },
+        {
+            type: "chips",
+            title: "Tech Stack",
+            content: [
+                { text: "FastAPI", icon: <SiFastapi className="timeline-tech-icon" /> },
+                { text: "React", icon: <SiReact className="timeline-tech-icon" /> },
+                { text: "MySQL", icon: <GrMysql className="timeline-tech-icon" /> },
+                { text: "Redux", icon: <SiRedux className="timeline-tech-icon" /> },
+            ]
+        },
+        {
+            type: "links",
+            content: [
+                { text: "About", link: "https://code-rooms.github.io/#/about_us" },
+                { text: "Code Rooms", link: "https://code-rooms.github.io/#/about_us" },
+                { text: "Github", link: "https://github.com/Code-rooms" },
+            ]
+        }
+    ]
+}
+
+const ProjectImagesDashboard = ({refId, isRightAligned=false}) => {
+    const [collapseKeys, setCollapseKeys] = React.useState(["1"]);
+    const handleKeysChange = (keys) => {
+        setCollapseKeys(keys);
+    }
+
+    return (
+        <TimelineItem id={refId}>
+            <TimelineOppositeContent sx={{ m: "auto 0" }} align="right" variant="body2" >
+                <span className="timeline-item-date">
+                    Continuous Development <br /> Industry Project
+                </span>
+            </TimelineOppositeContent>
+            <TimelineSeparator>
+                <TimelineConnector />
+                <TimelineDot style={{background: '#EE1D62'}}>
+                    {/* <HiOutlineCode /> */}
+                </TimelineDot>
+                <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent sx={{ py: "12px", px: 2 }} style={isRightAligned ? { display: "inline-flex", justifyContent: "right" } : {}}>
+                <div className="timeline-content-div">
+                    <div className={"timeline-title-div " + (isRightAligned ? "timeline-align-right" : "")}>
+                        <span className="timeline-title-text">Images Dashboard</span>
+                    </div>
+                    <div className="timeline-description-div">
+                        <span className="timeline-description-text">
+                            Images Dashboard is cctv image capture and audit platform with integration
+                            of ai to detect common objects.
+                        </span>
+                    </div>
+                    <div className="timeline-description-div">
+                        <span className="timeline-description-text">
+                            I developed this during my internship at Integrated active monitoring Pvt Ltd (
+                            <a href="https://smartiam.in/" target="_blank">IAM</a>)
+                        </span>
+                    </div>
+                    <div className="timeline-description-div">
+                        <span className="timeline-description-text">
+                            {/* This Software application save .... hrs of worktime per day ...... and resulted in ..... */}
+                                <i>( Product related Blog, Video and other informational content to be added soon. )</i>
+                        </span>
+                    </div>
+                    <Collapse ghost activeKey={collapseKeys} onChange={handleKeysChange} >
+                        <Panel 
+                            key="1" 
+                            header={
+                                <div className="timeline-description-div" style={{ marginTop: "10px" }}>
+                                    <span className="timeline-description-text" style={{display: 'inline-flex', alignItems: 'center'}}>
+                                        {collapseKeys.includes("1") ? <MdKeyboardArrowDown className="timeline-tech-icon" /> : <MdKeyboardArrowRight className="timeline-tech-icon" /> }
+                                        <i>Roles / Responsibilities</i>&nbsp; {collapseKeys.includes("1") ? " : " : " ...."}
+                                    </span>
+                                </div>
+                            }
+                            showArrow={false}
+                            style={{padding: '0px'}}
+                            className="custom-collapse-panel"
+                        >
+                            <ul className="timeline-list-ul">
+                                <li className="timeline-list-item-li">
+                                    <span className="timeline-list-item-text">
+                                        Designing of the frontend code architecture 
+                                            <div style={{marginLeft: '20px'}}>
+                                                (which includes setting up the project and donfiguring advanced state management and routing).
+                                            </div>
+                                    </span>
+                                </li>
+                                <li className="timeline-list-item-li">
+                                    <span className="timeline-list-item-text">
+                                        Development and maintainence of the codebase.
+                                    </span>
+                                </li>
+                                <li className="timeline-list-item-li">
+                                    <span className="timeline-list-item-text">
+                                        Ticketing software backend architecture and api integration.
+                                    </span>
+                                </li>
+                            </ul>
+                        </Panel>
+                        {/* <Panel 
+                            key="2" 
+                            header={
+                                <div className="timeline-description-div">
+                                    <span className="timeline-description-text" style={{display: 'inline-flex', alignItems: 'center'}}>
+                                        {collapseKeys.includes("2") ? <MdKeyboardArrowDown className="timeline-tech-icon" /> : <MdKeyboardArrowRight className="timeline-tech-icon" /> }
+                                        <i>Key Modeules</i>&nbsp; {collapseKeys.includes("2") ? " : " : " ...."}
+                                    </span>
+                                </div>
+                            }
+                            showArrow={false}
+                            style={{padding: '0px'}}
+                            className="custom-collapse-panel"
+                        >
+                            <ul className="timeline-list-ul">
+                                <li className="timeline-list-item-li">
+                                    <span className="timeline-list-item-text">
+                                        Ticket Manangement System.........
+                                    </span>
+                                </li>
+                                <li className="timeline-list-item-li">
+                                    <span className="timeline-list-item-text">
+                                        Image comparison.........
+                                    </span>
+                                </li>
+                                <li className="timeline-list-item-li">
+                                    <span className="timeline-list-item-text">
+                                        Advanced state management .......
+                                    </span>
+                                </li>
+                                <li className="timeline-list-item-li">
+                                    <span className="timeline-list-item-text">
+                                        Handling of xyz datapoints.....
+                                    </span>
+                                </li>
+                            </ul>
+                        </Panel>
+                        <Panel 
+                            key="3" 
+                            header={
+                                <div className="timeline-description-div">
+                                    <span className="timeline-description-text" style={{display: 'inline-flex', alignItems: 'center'}}>
+                                        {collapseKeys.includes("3") ? <MdKeyboardArrowDown className="timeline-tech-icon" /> : <MdKeyboardArrowRight className="timeline-tech-icon" /> }
+                                        <i>Learning / Outcomes</i>&nbsp; {collapseKeys.includes("3") ? " : " : " ...."}
+                                    </span>
+                                </div>
+                            }
+                            showArrow={false}
+                            style={{padding: '0px'}}
+                            className="custom-collapse-panel"
+                        >
+                            <ul className="timeline-list-ul">
+                                <li className="timeline-list-item-li">
+                                    <span className="timeline-list-item-text">
+                                        Learning ...
+                                    </span>
+                                </li>
+                                <li className="timeline-list-item-li">
+                                    <span className="timeline-list-item-text">
+                                        Learning ...
+                                    </span>
+                                </li>
+                            </ul>
+                        </Panel> */}
+                    </Collapse>
+                    <div className="timeline-description-div" style={{marginTop: '10px'}}>
+                        <span className="timeline-description-text" style={{display: 'inline-flex', alignItems: 'center'}}>
+                            <span style={{minWidth: '80px', display: 'block'}}>Tech Stack:</span> 
+                            <div>
+                                <span className="timeline-chip">
+                                    <SiReact className="timeline-tech-icon" /> 
+                                    React
+                                </span>
+                                <span className="timeline-chip">
+                                    <SiRedux className="timeline-tech-icon" /> 
+                                    Redux
+                                </span>
+                                <span className="timeline-chip">
+                                    <SiFastapi className="timeline-tech-icon" /> 
+                                    FastAPI
+                                </span>
+                                <span className="timeline-chip">
+                                    <GrMysql className="timeline-tech-icon" /> 
+                                    MySQL
+                                </span>
+                                <span className="timeline-chip">
+                                    <SiMongodb className="timeline-tech-icon" /> 
+                                    MongoDB
+                                </span>
+                            </div>
+                        </span>
+                    </div>
+                    {/* <div className={"timeline-description-div " + (isRightAligned ? "timeline-align-right" : "")} style={{ marginTop: "10px" }}>
+                        <a className="btn btn-gradient-border btn-glow" href="https://code-rooms.github.io/#/about_us" target="_blank">
+                            About
+                        </a>
+                    </div> */}
+                </div>
+            </TimelineContent>
+        </TimelineItem>
+    )
+}
+
+const imagesDashboardData = {
+    title: "Images Dashboard",
+    id: "images-dashboard",
+    oppositeContent: (<>Continuous Development <br /> Industry Project</>),
+
+    items: [
+        {
+            type: "text",
+            content: "Images Dashboard is cctv image capture and audit platform with integration of ai to detect common objects."
+        },
+        {
+            type: "text",
+            content: (
+                <>
+                    I developed this during my internship at Integrated active monitoring Pvt Ltd (
+                    <a href="https://smartiam.in/" target="_blank">IAM</a>)
+                </>
+            ),
+        },
+        {
+            type: "text",
+            content: (<i>( Product related Blog, Video and other informational content to be added soon. )</i>)
+        },
+        {
+            type: "collapse",
+            title: "Roles / Responsibilities",
+            id: "images-dashboard-roles",
+            items: [
+                {
+                    type: "list",
+                    content: [
+                        "Designing of the frontend code architecture (which includes setting up the project and donfiguring advanced state management and routing).",
+                        "Development and maintainence of the codebase.",
+                        "Ticketing software backend architecture and api integration",
+                    ],
+                },
+            ],
+        },
+        {
+            type: "chips",
+            title: "Tech Stack",
+            content: [
+                { text: "React", icon: <SiReact className="timeline-tech-icon" /> },
+                { text: "Redux", icon: <SiRedux className="timeline-tech-icon" /> },
+                { text: "FastAPI", icon: <SiFastapi className="timeline-tech-icon" /> },
+                { text: "MySQL", icon: <GrMysql className="timeline-tech-icon" /> },
+                { text: "MongoDB", icon: <SiMongodb className="timeline-tech-icon" /> },
+            ]
+        },
+    ]
+}
+
 
 const ProjectDockForms = ({refId, isRightAligned=true}) => {
     const [collapseKeys, setCollapseKeys] = React.useState([]);
@@ -590,6 +732,94 @@ const ProjectDockForms = ({refId, isRightAligned=true}) => {
     );
 }
 
+// Convert the above component to json data format like codeRoomsData
+const dockFormsData = {
+    title: "Dock Forms",
+    id: "dock-forms",
+    oppositeContent: "April 2021",
+
+    items: [
+        {
+            type: "text",
+            content: "A form application for mainly school/college related applications such as conducting tests, surveys etc.",
+        },
+        {
+            type: "text",
+            content: "This was my first project in Web domain and it was a good learning experience.",
+        },
+        {
+            type: "collapse",
+            title: "Objectives",
+            id: "dock-forms-objectives",
+            items: [
+                {
+                    type: "list",
+                    items: [
+                        "Learning about the basic concepts of Web Development and its frameworks.",
+                        "Lockdown had just begun and all college submissions shifted to GoogleForms. So, I started working on this project to build a competitve form application.",
+                        "Google forms is a general purpose form builder, but colleges needed some features / customizations to make it more user friendly.",
+                        "So i decided to make a form-builder which followed a classroom based Hierarchy which would help teachers to manage the access of forms to students.",
+                    ],
+                },
+            ],
+        },
+        {
+            type: "collapse",
+            title: "Key Features",
+            id: "dock-forms-key-features",
+            items: [
+                {
+                    type: "list",
+                    items: [
+                        "Rooms :-  Create a group of students and assign them to a room (like classroom).",
+                        "Form builder with 4 types of questions :- mcq (without ans), mcq(survey type), range type, text type.",
+                        "Rooms can then be assigned to the forms to restrict the visibility of the forms to the users in the room.",
+                        "Traditional features such as :- Limit to 1 response per user, Accepting responses.",
+                    ],
+                },
+            ],
+        },
+        {
+            type: "collapse",
+            title: "Achievements",
+            id: "dock-forms-achievements",
+            items: [
+                {
+                    type: "list",
+                    items: [
+                        "Understanding the concepts of javascript and DOM.",
+                        "Implementation of JSON based file system to tackle problems that were not possible with SQL.",
+                        "Learning about conditional rendering of different types and styles of elements based on JSON data.",
+                    ],
+                },
+            ],
+        },
+        {
+            type: "chips",
+            title: "Tech/Learn Stack:",
+            items: [
+                { text: "Python", icon: <SiPython className="timeline-tech-icon" /> },
+                { text: "Flask", icon: <SiFlask className="timeline-tech-icon" /> },
+                { text: "Javascript", icon: <SiJavascript className="timeline-tech-icon" /> },
+                { text: "MySql", icon: <GrMysql className="timeline-tech-icon" /> },
+                { text: "JSON", icon: <SiJson className="timeline-tech-icon" /> },
+                { text: "Html", icon: <SiHtml5 className="timeline-tech-icon" /> },
+                { text: "Css", icon: <SiCss3 className="timeline-tech-icon" /> },
+                { text: "DOM", icon: <SiJavascript className="timeline-tech-icon" /> },
+            ],
+        },
+        {
+            type: "links",
+            items: [
+                { text: "Blog", link: "https://shlok-zanwar.github.io/blogs/dock-forms" },
+                { text: "Github", link: "https://github.com/Shlok-Zanwar/Dock-Forms" },
+            ],
+        },
+    ],
+};
+
+
+
 const ProjectMathsyra = ({refId, isRightAligned=true}) => {
     const [collapseKeys, setCollapseKeys] = React.useState([]);
     const handleKeysChange = (keys) => {
@@ -732,6 +962,79 @@ const ProjectMathsyra = ({refId, isRightAligned=true}) => {
         </TimelineItem>
     );
 }
+
+// Convert the above component to json data format like dockFormsData
+
+const mathsyraData = {
+    title: "Mathsyra",
+    id: "mathsyra",
+    oppositeContent: "April 2021",
+
+    items: [
+        {
+            type: "text",
+            content: "Mathsyra is a web application for students to learn the concepts of mathematics in an innovative way with Indian cultural themed UI and quizzes."
+        },
+        {
+            type: "collapse",
+            title: "Objective",
+            id: "mathsyra-objective",
+            items: [
+                {
+                    type: "list",
+                    content: [
+                        "This project was created for Toycathon 2021."
+                    ]
+                }
+            ]
+        },
+        {
+            type: "collapse",
+            title: "Key Features",
+            id: "mathsyra-key-features",
+            items: [
+                {
+                    type: "list",
+                    content: [
+                        "Well Designed Interface and User Experience",
+                        "Perfectly categorized modules and quizzes.",
+                        "Interactive Blogs related to vedic maths to Understand the concepts and applications.",
+                        "Quiz after every module to test your knowledge."
+                    ]
+                },
+            ]
+        },
+        {
+            type: "collapse",
+            title: "Achievements",
+            id: "mathsyra-achievements",
+            items: [
+                {
+                    type: "list",
+                    content: [
+                        "Finalist in Toycathon 2021."
+                    ]
+                },
+            ]
+        },
+        {
+            type: "chips",
+            title: "Tech/Learn Stack:",
+            content: [
+                { text: "FastAPI", icon: <SiFastapi className="timeline-tech-icon" /> },
+                { text: "React", icon: <SiReact className="timeline-tech-icon" /> },
+                { text: "SQL lite", icon: <DiSqllite className="timeline-tech-icon" /> },
+            ]
+        },
+        {
+            type: "links",
+            content: [
+                { text: "Github", link: "https://github.com/Shlok-Zanwar/Mathsyra-Client" },
+            ]
+        }
+    ]
+}
+    
 
 const ProjectHotelManagement = ( {refId, isRightAligned=false} ) => {
     const [collapseKeys, setCollapseKeys] = React.useState([]);
@@ -878,6 +1181,102 @@ const ProjectHotelManagement = ( {refId, isRightAligned=false} ) => {
         </TimelineItem>
     );
 }
+
+// A basic and well-designed terminal interface for restaurant inventory and billing system.
+// Self created JSON-file-based database management system which suits the particular usecase and provides a high data integrity and speed.
+// Objective
+// :
+// Learnign the concepts of terminal interface and Object-Oriented Programming.
+// Key Features
+// :
+// Well designed tabulated interface.
+// Admin class features include checking the billing / sales data for a particular date, modifying / updating menu, placing orders etc.
+// Employees can only take orders, view current orders, view the menu, view the inventory etc.
+// Achievements
+// :
+// Understanding the concepts Object-Oriented Programming and the use of JSON-file-based database.
+// Handon with Tabulate library Python.
+// Tech/Learn Stack:
+// PythonJSON
+// April 2020
+
+// Convert the above component into a reusable component
+const hotelManagemantData = {
+    title: "Hotel Management System",
+    id: "hotel-management",
+    oppositeContent: "Nov 2020",
+
+    items: [
+        {
+            type: "text",
+            text: "A basic and well-designed terminal interface for restaurant inventory and billing system."
+        },
+        {
+            type: "text",
+            text: "Self created JSON-file-based database management system which suits the particular usecase and provides a high data integrity and speed."
+        },
+        {
+            type: "collapse",
+            title: "Objective",
+            id: "hotel-management-obj",
+            items: [
+                {
+                    type: "list",
+                    content: [
+                        "Learnign the concepts of terminal interface and Object-Oriented Programming."
+                    ]
+                }
+            ]
+        },
+        {
+            type: "collapse",
+            title: "Key Features",
+            id: "hotel-management-features",
+            items: [
+                {
+                    type: "list",
+                    content: [
+                        "Well designed tabulated interface.",
+                        "Admin class features include checking the billing / sales data for a particular date, modifying / updating menu, placing orders etc.",
+                        "Employees can only take orders, view current orders, view the menu, view the inventory etc."
+                    ]
+                }
+            ]
+        },
+        {
+            type: "collapse",
+            title: "Achievements",
+            id: "hotel-management-achieve",
+            items: [
+                {
+                    type: "list",
+                    content: [
+                        "Understanding the concepts Object-Oriented Programming and the use of JSON-file-based database.",
+                        "Handson with Tabulate library Python."
+                    ]
+                }
+            ]
+        },
+        {
+            type: "chips",
+            title: "Tech/Learn Stack",
+            content: [
+                { name: "Python", icon: <SiPython className="timeline-tech-icon" /> },
+                { name: "JSON", icon: <SiJson className="timeline-tech-icon" /> }
+            ]
+        },
+        {
+            type: "links",
+            content: [
+                { name: "Blog", link: "https://shlok-zanwar.github.io/blogs/hotel-management" },
+                { name: "Github", link: "https://github.com/Shlok-Zanwar/Hotel-Management-Terminal" }
+            ]
+        }
+    ]
+}
+                    
+
+
 
 const ProjectTodoApp = ( {refId, isRightAligned=false} ) => {
     const [collapseKeys, setCollapseKeys] = React.useState([]);
