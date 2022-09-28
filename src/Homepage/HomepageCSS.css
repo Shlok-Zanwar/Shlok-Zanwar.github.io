@@ -105,7 +105,8 @@
     /* From https://css.glass */
     background: rgba(20, 10, 10, 0.34);
     border-radius: 6px;
-    box-shadow: 0 4px 30px rgba(170, 35, 35, 0.1);
+    /* box-shadow: 0 4px 30px rgba(170, 35, 35, 0.1); */
+    box-shadow:5px 5px 115px -14px black;
     backdrop-filter: blur(52px);
     -webkit-backdrop-filter: blur(2px);
     border: 1px solid rgba(255, 255, 255, 0.521);
@@ -187,6 +188,7 @@
     padding: 3px 10px;
     border-radius: 14px;
     margin: 2px 5px;
+    box-shadow:5px 5px 115px -14px black;
 }
 
 .timeline-tech-icon{
