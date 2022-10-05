@@ -110,7 +110,44 @@
     backdrop-filter: blur(52px);
     -webkit-backdrop-filter: blur(2px);
     border: 1px solid rgba(255, 255, 255, 0.521);
+    
+    /* overflow: hidden;
+    transform: translate(0);
+    z-index: 100;
+    cursor: pointer;
+    position: relative; */
+
 }
+
+/* 
+.profile-skills-chip::before{
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 250%;
+    top: 0%;
+    left: -110%;
+    transform: rotate(-16deg);
+    z-index: -1;
+    background: linear-gradient(to right, rgb(23, 226, 74), rgb(10, 101, 238));
+}
+
+.profile-skills-chip:hover::before{
+    animation: onHover 0.7s 1;
+    left: -10%;
+    top: -10%;
+}
+
+@keyframes onHover{
+    0% {
+        left: -110%;
+        top: 0%;
+    }
+    100% {
+        left: 100%;
+        top: 0%;
+    }
+} */
 
 .profile-tech-icon{
     margin-right: 10px;

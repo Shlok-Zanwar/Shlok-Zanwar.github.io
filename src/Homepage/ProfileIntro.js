@@ -45,13 +45,13 @@ export default function ProfileIntro({isMobile}) {
 
     return (
         <div className="profile-outer-div" ref={ref} >
-            <div style={{ minWidth: "350px", textAlign: "left" }} data-aos="fade-up-right" >
+            <div style={{ minWidth: "350px", textAlign: "left" }} data-aos="fade-up-right" data-aos-duration="500">
                 <div style={{ fontSize: "35px" }} className="profile-title-text">
                     Hey there, I'm
                 </div>
-                <div className="profile-title-text" style={{lineHeight: '1'}} >Shlok Zanwar</div>
-                <div><span className="profile-subtitle-text" ref={textRef}></span></div>
-                <div className="profile-description-div" style={{ marginTop: "20px" }}>
+                <div className="profile-title-text" style={{lineHeight: '1'}}>Shlok Zanwar</div>
+                <div data-aos="zoom-in" data-aos-delay="300"><span className="profile-subtitle-text" ref={textRef}></span></div>
+                <div className="profile-description-div" style={{ marginTop: "20px" }} >
                     I am a student, currently studying at Vishwakarma Institute of Information Technology, pune (B-Tech 2023).
                 </div>
                 <div className="profile-description-div">
@@ -100,7 +100,7 @@ export default function ProfileIntro({isMobile}) {
                     </div>
                 </div>
             </div>
-            <div data-aos="fade-up-left">
+            <div data-aos="fade-up-left" data-aos-duration="500">
                 <img
                     src="https://avatars.githubusercontent.com/u/63449205?v=4"
                     alt="Shlok Zanwar"

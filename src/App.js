@@ -4,15 +4,21 @@ import ReactGA from 'react-ga4';
 
 import Homepage from "./Homepage/Homepage";
 import MyNavbar from "./MyNavbar";
+import TodoApp from "./TodoApp/TodoApp";
+import BSTApp from "./TreeVisulizations/BSTApp";
+import MinHeapApp from "./TreeVisulizations/MinHeapApp";
+import MaxHeapApp from "./TreeVisulizations/MaxHeapApp";
+import AppsPage from "./AppsPage/AppsPage";
 
 // CSS Imports
 import "./App.css";
+import "./TodoApp/TodoAppCSS.css";
 import "./Homepage/HomepageCSS.css";
+import "./AppsPage/AppsPageCSS.css";
 
 // Animate on Scroll
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import TodoApp from "./TodoApp/TodoApp";
 AOS.init();
 
 
@@ -43,7 +49,13 @@ function App() {
 					</>
 				} 
 			>
-				<Route path='todo-app' element={ <TodoApp /> } />
+				<Route path='apps' element={ <Outlet /> } >
+					<Route path='todo-app' element={ <TodoApp /> } />
+					<Route path='bst-visualization' element={<BSTApp />} />
+					<Route path='max-heap-visualization' element={<MaxHeapApp />} />
+					<Route path='min-heap-visualization' element={<MinHeapApp />} />
+					<Route path='' element={ <AppsPage /> } />
+				</Route>
 				<Route path='*' element={ 
 						localStorage.getItem('redirectTo')  
 						? <Navigate to={localStorage.getItem('redirectTo')} />

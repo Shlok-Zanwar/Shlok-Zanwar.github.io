@@ -2,9 +2,12 @@ import React, { useEffect } from 'react'
 import ProfileIntro from './ProfileIntro';
 import ProfileSkills from './ProfileSkills';
 import ProfileProjects from './ProfileProjects';
+import { useMemo } from 'react';
+import { useState } from 'react';
 
 export default function Homepage() {
     document.title = "Shlok Zanwar";
+    const [a, b] = useState(window.matchMedia("only screen and (max-width: 800px)").matches);
 
     const isMobile = window.matchMedia("only screen and (max-width: 800px)").matches;
 
@@ -35,7 +38,7 @@ export default function Homepage() {
         <div style={{padding: "10px 0px 500px 0px"}} >
             <ProfileIntro isMobile={isMobile} />
             <ProfileSkills />
-            <ProfileProjects />
+            <ProfileProjects isMobile={a}  />
         </div>
     )
 }

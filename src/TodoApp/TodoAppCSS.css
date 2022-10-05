@@ -47,9 +47,9 @@
 }
 
 
-h1.todo-heading {
+.todo-heading {
   margin: 20px 0px 15px 0px;
-  color: rgb(201, 66, 25);
+  color: rgb(255, 73, 17);
   font-family: cursive ;
   font-size: 30px;
   font-weight: bold;

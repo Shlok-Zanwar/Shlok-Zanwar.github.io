@@ -8,9 +8,10 @@ import { GrMysql } from "react-icons/gr";
 import { DiSqllite } from "react-icons/di";
 import Timeline from '@mui/lab/Timeline';
 import { binaryTreeGithubURL, bstVisulizationURL, coderoomsAboutUsURL, coderoomsGithubURL, dockFormsBlogURL, dockFormsGithubURL, drawbinURL, heapVisulizationURL, hotelManagementBlogURL, hotelManagementGithubURL, mathsyraBackendURL, mathsyraFrontendURL, mnistGithubURL, pastebinGithubURL, pastebinURL, terminalQuizGithubURL, todoAppAppURL, todoAppBlogURL, todoAppGithubURL } from '../constants';
+import { useEffect } from 'react';
 
 
-export default function ProfileProjects() {
+export default function ProfileProjects({isMobile}) {
     const imagesDashboardData = {
         title: "Images Dashboard",
         id: "images-dashboard",
@@ -629,6 +630,11 @@ export default function ProfileProjects() {
         binaryTreeData,
     ]
 
+    // useEffect(() => {
+    //     alert("is mobile: " + isMobile);
+    //     // console.log("is mobile: " + isMobile);
+    // }, [isMobile])
+
     return (
         <div style={{marginTop: '80px', textAlign: 'center'}} data-aos="fade-up" data-aos-once="true" >
             <div className="profile-title-div" style={{textAlign: 'center', lineHeight: '1'}} >
@@ -649,7 +655,11 @@ export default function ProfileProjects() {
                 {
                     projects.map((project, index) => {
                         return (
-                            <ProjectCard data={project} align={index % 2 === 0 ? "left" : "right"} />
+                            <ProjectCard data={project} align={index % 2 === 0 ? "left" : "right"} 
+                                aosAnimation={
+                                    isMobile ? "fade-up" : index % 2 === 0 ? "zoom-out-left" : "zoom-out-right"
+                                } 
+                            />
                         )
                     })
                 }

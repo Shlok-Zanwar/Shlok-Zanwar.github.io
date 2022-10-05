@@ -281,7 +281,7 @@ const { Panel } = Collapse;
 // Above is the old code for the ProjectCard component
 // Convert it into the new data-driven component
 
-export default function ProjectCard({data={}, id=data?.id, align="left", defaultExpanded=[]}) {
+export default function ProjectCard({data={}, id=data?.id, align="left", defaultExpanded=[], aosAnimation="zoom-out"}) {
     const [collapseKeys, setCollapseKeys] = React.useState(defaultExpanded);
     const ref = React.useRef(null);
     // const isInViewport = useIsInViewport(ref);
@@ -405,7 +405,7 @@ export default function ProjectCard({data={}, id=data?.id, align="left", default
             </TimelineSeparator>
             {/* style={isRightAligned ? { display: "inline-flex", justifyContent: "right" } : {}} */}
             <TimelineContent sx={{ py: "12px", px: 2 }} style={{display: 'inline-flex', justifyContent: align === "right" ? "right" : "" }}>
-                <div className="timeline-content-div" data-aos={`zoom-out-${align === "right" ? "right" : "left"}`} data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">
+                <div className="timeline-content-div" data-aos={aosAnimation} data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">
                     <div 
                         className={"timeline-title-div" + (align === "right" && "timeline-align-right") } 
                         id={id} 

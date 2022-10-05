@@ -52,14 +52,17 @@ export default function ProfileSkills() {
             <div style={{marginTop: '14px', maxWidth: '500px', display: 'inline-flex'}}>
             <div>
 
-                {skills.map((skill, index) => (
-                    <span className="profile-skills-chip" key={index} 
-                        data-aos="fade-up" data-aos-delay={index * 100 + 100} data-aos-once="true" data-aos-anchor="#skills" 
-                    >
-                        {skill.icon}
-                        {skill.name}
-                    </span>
-                ))}
+                {skills.map((skill, index) => {
+                    return (
+                        <span className="profile-skills-chip" key={index} 
+                            data-aos="fade-up" data-aos-delay={index * 100 + 100} data-aos-once="true" data-aos-anchor="#skills" 
+                        >
+                            {skill.icon}
+                            {skill.name}
+                        </span>
+                    )
+                }
+                )}
                 </div>
             </div>
         </div>
