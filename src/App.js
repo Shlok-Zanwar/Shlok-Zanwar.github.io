@@ -19,6 +19,8 @@ import "./AppsPage/AppsPageCSS.css";
 // Animate on Scroll
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ExpenseTracker from "./ExpenseTracker/ExpenseTracker";
+import ExpenseTrackerById from "./ExpenseTracker/ExpenseTrackerById";
 AOS.init();
 
 
@@ -54,6 +56,12 @@ function App() {
 					<Route path='bst-visualization' element={<BSTApp />} />
 					<Route path='max-heap-visualization' element={<MaxHeapApp />} />
 					<Route path='min-heap-visualization' element={<MinHeapApp />} />
+
+					<Route path='expense-tracker' element={<Outlet />}>
+						<Route path=':id' element={<ExpenseTrackerById />} />
+						<Route path='' element={<ExpenseTracker />} />
+					</Route>
+
 					<Route path='' element={ <AppsPage /> } />
 				</Route>
 				<Route path='*' element={ 

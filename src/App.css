@@ -66,3 +66,36 @@ body {
 
 
 /* ---------------------------------------------------------------------------------------------- */
+/* Page Info  */
+
+.my-info-outer-div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/* border: 2px solid red; */
+	max-width: 750px;
+	align-self: center;
+	/* should be at the center of the page */
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.my-info-heading {
+	color: rgba(255, 84, 17, 1);
+	font-family: cursive ;
+	font-size: 30px;
+	font-weight: bold;
+}
+.my-info-text-outer{
+	margin-top: 10px;
+}
+.my-info-text-para {
+	color: var(--primaryColor);
+	font-size: 18px;
+	margin-top: 10px;
+	font-family: 'Muli', sans-serif;
+	opacity: 0.9;
+	letter-spacing: 2px;
+}
+
