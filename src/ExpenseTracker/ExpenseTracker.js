@@ -1,79 +1,73 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Helmet } from 'react-helmet'
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function ExpenseTracker() {
-    const [url, setUrl] = useState('');
-    const inputRef = useRef(null);
+    const [url, setUrl] = React.useState("");
     let navigate = useNavigate();
     document.title = "Expense tracker | Shlok Zanwar";
 
     useEffect(() => {
-        if(localStorage.getItem('lastUsedExpenseTracker')){
-            navigate("/expense-tracker/" + localStorage.getItem('lastUsedExpenseTracker'));
+        if (localStorage.getItem("lastUsedExpenseTracker")) {
+            // navigate("/expense-tracker/" + localStorage.getItem("lastUsedExpenseTracker"));
+            navigate(`${window.location.pathname}/${localStorage.getItem("lastUsedExpenseTracker")}`);
         }
-    }, [])
+    }, []);
 
     const handleSubmit = e => {
         e.preventDefault();
         var path = url;
-        if(url[0] === "/"){
+        if (url[0] === "/") {
             path = path.substring(1, path.length);
         }
         path = path.split("/");
-        if(path.length === 1){
-            if(path[0] !== ""){
-                navigate("/expense-tracker/" + path[0]);
+        if (path.length === 1) {
+            if (path[0] !== "") {
+                navigate(`${window.location.pathname}/${path[0]}`);
             }
-        }
-        else{
-            if(path[0] === "expense-tracker"){
-                if(path[1] !== ""){
-                    navigate("/expense-tracker/" + path[1]);
+        } else {
+            if (path[0] === "expense-tracker") {
+                if (path[1] !== "") {
+                    navigate(`${window.location.pathname}/${path[1]}`);
                 }
             }
         }
+    };
 
-    }
 
-    return  ( 
-        <div>
-            <Helmet>
-                <style>
-                {`            
-                    body {
-                    text-align: center;
-                    background-color: #161a2b;
-                    background-image: none;
+    const paraInfo = [
+        { text: "An Application for tracking, categorizing and anlyzing your day-to-day expenses." },
+        { text: "Go to some URl like '/expense-tracker/any' and Create your Expenses." },
+        { text: "Password Protect the route if you want to !" },
+        { text: "Login from any other device with the same url and password ! All your expenses would be synced." },
+    ];
+
+    return (
+        <div className="my-info-outer-div" data-aos="fade-up">
+            <div className="my-info-heading">Expense Tracker</div>
+            <div className="my-info-text-outer">
+                {
+                    paraInfo.map((para, index) => {
+                        return (
+                            <div className="my-info-text-para" data-aos="fade-up" data-aos-delay={index * 100}>
+                                {para.text}
+                            </div>
+                        );
+                    })
                 }
-                `}
-                </style>
-            </Helmet>
-            <div className="main-blog-di">
-                <div className="blog-title">Expense Tracker</div>
-                <div className="blog-para" style={{textAlign:"center", marginTop: 10}}>An Application for tracking, categorizing and anlyzing your day-to-day expenses. </div>
-                <div className="blog-para" style={{textAlign:"center", marginTop: 10}}>Go to some URl like "/expense-tracker/any" and Create your Expenses.</div>
-                <div className="blog-para" style={{textAlign:"center", marginTop: 10}}>Password Protect the route if you want to !</div>
-                <div className="blog-para" style={{textAlign:"center", marginTop: 10}}>Login from any other device with the same url and password ! All your expenses would be synced. </div>
-                <br />
-                <form className="todo-form" onSubmit={handleSubmit} style={{marginBottom:"6px"}}>
-                    <div className="edit-form" >
-                            <input 
-                                type="text" 
-                                placeholder="Type any url" 
-                                value={url}
-                                className="todo-input"
-                                onChange={e => setUrl(e.target.value)}
-                                ref={inputRef}
-                                style={{maxWidth:"275px"}}
-                            />
-                            <button className="todo-button edit">Go</button>
-                    </div>
-                </form>
-                {/* <div className="redirect-button" style={{maxWidth:"230px"}} onClick={() => generateNewURL()} >Generate random URL</div> */}
-                
-                
             </div>
+
+            <form onSubmit={handleSubmit} style={{ marginTop: "16px", display: "inline-flex" }} data-aos="fade-up" data-aos-delay="400">
+                <input
+                    autoFocus={true}
+                    type="text"
+                    placeholder="Type any url"
+                    value={url}
+                    onChange={e => setUrl(e.target.value)}
+                    className="todo-input"
+                    style={{ width: "70%", minWidth: "200px", maxWidth: "375px" }}
+                />
+                <button className="todo-button edit">Go</button>
+            </form>
         </div>
-    )
+    );
 }

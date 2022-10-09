@@ -9,6 +9,7 @@ import BlogTitle from './BlogTitle'
 import { SemipolarLoading } from 'react-loadingg';
 import { useNavigate, useParams } from 'react-router-dom'
 import { useSnackbar } from 'notistack'
+import { Helmet } from 'react-helmet'
 
 function BlogTemplate() {
     const navigate = useNavigate(); //
@@ -97,9 +98,29 @@ function BlogTemplate() {
     })
 
     return (
-        <div className="main-blog-div">
-            {blogData.length === 0 ? <SemipolarLoading   size="large" color="rgb(251, 255, 3)" /> : blog}
-        </div>
+        <>
+            <Helmet>
+                <style>
+                {`            
+                    body {
+                        text-align: center;
+                        background-image: linear-gradient(
+                            to right,
+                            rgba(48, 16, 255, 1) 0%,
+                            rgb(206, 116, 74) 21%,
+                            rgb(219, 74, 74) 50%,
+                            rgb(207, 61, 200) 79%,
+                            rgba(48, 16, 255, 1) 100%
+                        );
+                    }
+                `}
+                </style>
+            </Helmet>
+
+            <div className="main-blog-div">
+                {blogData.length === 0 ? <SemipolarLoading   size="large" color="rgb(251, 255, 3)" /> : blog}
+            </div>
+        </>
     )
 }
 

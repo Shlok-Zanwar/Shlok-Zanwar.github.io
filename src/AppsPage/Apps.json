@@ -1,0 +1,125 @@
+[
+    {
+        "id": 6,
+        "title": "ToDo App",
+        "description": "A Well designed todo app for managing your work.",
+        "url": "/apps/todo-app",
+        "type": "App",
+        "date": "Dec 2020"
+    },
+    {
+        "id": 25,
+        "title": "Code Rooms",
+        "description": "Code Rooms is a free-to-use classroom solution. With innovative features such as automated test cases and clean UI its wil definitely make the submissions way easier.",
+        "url": "https://code-rooms.github.io/#/about_us",
+        "urlTarget": "_blank",
+        "type": "App",
+        "date": "Oct 2021"
+    },
+    {
+        "id": 26,
+        "title": "Tic Tac Toe",
+        "description": "A game of Tic Tac Toe where you can never win against the computer.",
+        "url": "/games/tictactoe",
+        "type": "Game",
+        "date": "Oct 2021",
+        "hidden": true
+    },
+    {
+        "id": 27,
+        "title": "Mine Sweeper",
+        "description": "Minesweeper is a single-player puzzle video game.",
+        "url": "/games/minesweeper",
+        "type": "Game",
+        "date": "Nov 2021"
+    },
+    {
+        "id": 3,
+        "title": "Dock Forms",
+        "description": "A form application for mainly school/college related applications such as conducting tests, surveys etc.",
+        "url": "/blogs/dock-forms",
+        "type": "Blog",
+        "date": "Jan 2021"
+    },
+    {
+        "id": 1,
+        "title": "ToDo Blog",
+        "description": "A Well designed todo app for managing your work.",
+        "url": "/blogs/todo-app",
+        "type": "Blog",
+        "date": "Jan 2021"
+    },
+    {
+        "id": 15,
+        "title": "Expense Tracker",
+        "description": "An expense tracker app for managing your expenses.",
+        "url": "/apps/expense-tracker",
+        "type": "App",
+        "date": "June 2022"
+    },
+    {
+        "id": 5,
+        "title": "BST Visualization",
+        "description": "An app to visualize the insert, delete and search operation on a binary search tree.",
+        "url": "/apps/bst-visualization",
+        "type": "App",
+        "date": "Mar 2021"
+    },
+    {
+        "id": 7,
+        "title": "Max Heap Visualization",
+        "description": "An app to visualize the insert, delete and search operation on a max-heap.",
+        "url": "/apps/max-heap-visualization",
+        "type": "App",
+        "date": "Mar 2021"
+    },
+    {
+        "id": 8,
+        "title": "Min Heap Visualization",
+        "description": "An app to visualize the insert, delete and search operation on a min-heap.",
+        "url": "/apps/min-heap-visualization",
+        "type": "App",
+        "date": "Mar 2021"
+    },
+    {
+        "id": 2,
+        "title": "Toxic Bot Discord",
+        "description": "A discord voice bot for playing memes in your discord voice channel.",
+        "url": "/blogs/toxicbot",
+        "type": "Blog",
+        "date": "Jan 2021"
+    },
+    {
+        "id": 4,
+        "title": "Hotel Management",
+        "description": "A basic and well-designed interface for restraunt management with a self created database system.",
+        "url": "/blogs/hotel-management",
+        "type": "Blog",
+        "date": "Feb 2021"
+    },
+    {
+        "id": 9,
+        "title": "Paste Bin",
+        "description": "An easy to use pastebin for sharing data without any authentication.",
+        "url": "/apps/pastebin",
+        "type": "App",
+        "date": "Apr 2021"
+    },
+    {
+        "id": 10,
+        "title": "Draw Bin",
+        "description": "An easy to use canvas for sharing drawings without any authentication.",
+        "url": "/apps/drawbin",
+        "type": "App",
+        "date": "Apr 2021"
+    },
+    {
+        "id": 14,
+        "title": "TSD Rally",
+        "description": "App for rally ( Time Speed Distance (TSD) Rally )",
+        "url": "/apps/tsd-rally",
+        "type": "App",
+        "date": "",
+        "hidden": true
+    }
+]
