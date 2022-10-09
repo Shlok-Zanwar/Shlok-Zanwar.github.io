@@ -9,18 +9,24 @@ import BSTApp from "./TreeVisulizations/BSTApp";
 import MinHeapApp from "./TreeVisulizations/MinHeapApp";
 import MaxHeapApp from "./TreeVisulizations/MaxHeapApp";
 import AppsPage from "./AppsPage/AppsPage";
+import ExpenseTracker from "./ExpenseTracker/ExpenseTracker";
+import ExpenseTrackerById from "./ExpenseTracker/ExpenseTrackerById";
+import PastebinHome from "./Pastebin/PastebinHome";
+import PasteBinApp from "./Pastebin/PastebinApp";
+import DrawbinApp from "./Pastebin/DrawbinApp";
+import DrawbinHome from "./Pastebin/DrawbinHome";
+
 
 // CSS Imports
 import "./App.css";
 import "./TodoApp/TodoAppCSS.css";
 import "./Homepage/HomepageCSS.css";
 import "./AppsPage/AppsPageCSS.css";
+import "./Pastebin/PastebinCSS.css";
 
 // Animate on Scroll
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import ExpenseTracker from "./ExpenseTracker/ExpenseTracker";
-import ExpenseTrackerById from "./ExpenseTracker/ExpenseTrackerById";
 AOS.init();
 
 
@@ -61,6 +67,17 @@ function App() {
 						<Route path=':id' element={<ExpenseTrackerById />} />
 						<Route path='' element={<ExpenseTracker />} />
 					</Route>
+
+					<Route path='pastebin' element={<Outlet />} >
+						<Route path=':id' element={<PasteBinApp />} />
+						<Route path='' element={<PastebinHome />} />
+					</Route>
+					
+					<Route path='drawbin' element={<Outlet />} >
+						<Route path=':id' element={<DrawbinApp />} />
+						<Route path='' element={<DrawbinHome />} />
+					</Route>
+
 
 					<Route path='' element={ <AppsPage /> } />
 				</Route>

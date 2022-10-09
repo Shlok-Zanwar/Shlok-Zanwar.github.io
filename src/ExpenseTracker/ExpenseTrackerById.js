@@ -278,7 +278,7 @@ export default function ExpenseTrackerById() {
                                     title="Are you sure you want to logout?"
                                     onConfirm={() => {
                                         localStorage.removeItem("lastUsedExpenseTracker");
-                                        window.location.pathname = '/expense-tracker';
+                                        window.location.pathname = '/apps/expense-tracker';
                                     }}
                                     okText="Yes"
                                     cancelText="No"

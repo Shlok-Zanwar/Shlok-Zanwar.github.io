@@ -108,7 +108,7 @@
         "id": 10,
         "title": "Draw Bin",
         "description": "An easy to use canvas for sharing drawings without any authentication.",
-        "url": "/apps/canvas",
+        "url": "/apps/drawbin",
         "type": "App",
         "date": "Apr 2021"
     },

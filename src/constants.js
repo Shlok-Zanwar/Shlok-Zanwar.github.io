@@ -31,7 +31,7 @@ export const mnistGithubURL = "https://github.com/Shlok-Zanwar/DS-SCE";
 export const terminalQuizGithubURL = "https://github.com/Shlok-Zanwar/Terminal-Quiz";
 
 export const pastebinURL = `${websiteBaseURL}/pastebin`;
-export const drawbinURL = `${websiteBaseURL}/canvas`;
+export const drawbinURL = `${websiteBaseURL}/drawbin`;
 export const pastebinGithubURL = "https://github.com/Shlok-Zanwar/Pastebin-React";
 
 

@@ -33,22 +33,27 @@ export default function ExpenseTracker() {
         }
     };
 
+
+    const paraInfo = [
+        { text: "An Application for tracking, categorizing and anlyzing your day-to-day expenses." },
+        { text: "Go to some URl like '/expense-tracker/any' and Create your Expenses." },
+        { text: "Password Protect the route if you want to !" },
+        { text: "Login from any other device with the same url and password ! All your expenses would be synced." },
+    ];
+
     return (
         <div className="my-info-outer-div" data-aos="fade-up">
             <div className="my-info-heading">Expense Tracker</div>
             <div className="my-info-text-outer">
-                <div className="my-info-text-para" data-aos="fade-up">
-                    An Application for tracking, categorizing and anlyzing your day-to-day expenses.{" "}
-                </div>
-                <div className="my-info-text-para" data-aos="fade-up" data-aos-delay="100">
-                    Go to some URl like "/expense-tracker/any" and Create your Expenses.
-                </div>
-                <div className="my-info-text-para" data-aos="fade-up" data-aos-delay="200">
-                    Password Protect the route if you want to !
-                </div>
-                <div className="my-info-text-para" data-aos="fade-up" data-aos-delay="300">
-                    Login from any other device with the same url and password ! All your expenses would be synced.{" "}
-                </div>
+                {
+                    paraInfo.map((para, index) => {
+                        return (
+                            <div className="my-info-text-para" data-aos="fade-up" data-aos-delay={index * 100}>
+                                {para.text}
+                            </div>
+                        );
+                    })
+                }
             </div>
 
             <form onSubmit={handleSubmit} style={{ marginTop: "16px", display: "inline-flex" }} data-aos="fade-up" data-aos-delay="400">
