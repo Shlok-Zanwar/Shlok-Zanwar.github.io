@@ -5,10 +5,14 @@ import { SnackbarProvider } from 'notistack';
 import { BrowserRouter } from "react-router-dom";
 import axios from 'axios';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import ReactGA from "react-ga4";
 
 // axios.defaults.baseURL = 'http://localhost:8000';
 // axios.defaults.baseURL = 'https://shlok-m-server.herokuapp.com';
 axios.defaults.baseURL = 'https://3os28y.deta.dev';
+
+ReactGA.initialize("G-CNF32VVWZE");
+
 
 
 ReactDOM.render(

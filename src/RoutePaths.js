@@ -15,10 +15,11 @@ import MineSweeper from './MineSweeper/MineSweeper';
 import TSDRally from './TSDRally/TSDRally';
 import TSDRally2 from './TSDRally2/TSDRally2';
 import Intro from './Intro/Intro';
-import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
+import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import ExpenseTracker from './ExpenseTracker/ExpenseTracker';
 import ExpenseTrackerById from './ExpenseTracker/TrackerById/ExpenseTrackerById';
 // import ImageModel from './ModelApps/ImageModel';
+import ReactGA from 'react-ga4';
 
 function RoutePaths() {
 
@@ -27,6 +28,13 @@ function RoutePaths() {
             localStorage.removeItem("redirectTo");
         }, 200);
     }, [])
+
+    const location = useLocation();
+	useEffect(() => {
+		console.log('React GA 4');
+        ReactGA.send("pageview");
+	}, [location.pathname])
+
 
     return (
         <Routes>
