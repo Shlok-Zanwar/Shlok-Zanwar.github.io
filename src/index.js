@@ -7,7 +7,7 @@ import axios from "axios";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import ReactGA from "react-ga4";
 
-ReactGA.initialize("G-CNF32VVWZE");
+ReactGA.initialize(process.env.GA_4_ID);
 
 // axios.defaults.baseURL = 'http://localhost:8000';
 // axios.defaults.baseURL = 'https://shlok-m-server.herokuapp.com';
