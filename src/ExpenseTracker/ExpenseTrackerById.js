@@ -17,6 +17,7 @@ const { RangePicker } = DatePicker;
 
 export default function ExpenseTrackerById() {
     const id = useParams().id;
+    document.title = "Expense tracker | Shlok Zanwar";
 
     const [appLoading, setAppLoading] = React.useState(true);
     const [userDetails, setUserDetails] = React.useState({

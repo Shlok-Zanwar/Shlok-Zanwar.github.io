@@ -15,6 +15,8 @@ import PastebinHome from "./Pastebin/PastebinHome";
 import PasteBinApp from "./Pastebin/PastebinApp";
 import DrawbinApp from "./Pastebin/DrawbinApp";
 import DrawbinHome from "./Pastebin/DrawbinHome";
+import TSDRally2 from "./TSD/TSDRally2/TSDRally2";
+import TSDRally from "./TSD/TSDRally/TSDRally";
 
 
 // CSS Imports
@@ -23,6 +25,7 @@ import "./TodoApp/TodoAppCSS.css";
 import "./Homepage/HomepageCSS.css";
 import "./AppsPage/AppsPageCSS.css";
 import "./Pastebin/PastebinCSS.css";
+import "./TSD/TsdCSS.css";
 
 // Animate on Scroll
 import AOS from 'aos';
@@ -40,8 +43,8 @@ function App() {
 
 	const location = useLocation();
 	useEffect(() => {
-		// console.log('location', location.pathname);
-        ReactGA.pageview(location.pathname);
+		// react GA 4
+		ReactGA.send({ hitType: 'pageview', page: location.pathname });
 	}, [location.pathname])
 
 
@@ -78,6 +81,9 @@ function App() {
 						<Route path='' element={<DrawbinHome />} />
 					</Route>
 
+					
+					<Route path='tsd-rally' element={<TSDRally />} />
+                	<Route path='tsd-rally-2' element={<TSDRally2 />} />
 
 					<Route path='' element={ <AppsPage /> } />
 				</Route>

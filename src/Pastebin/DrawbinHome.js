@@ -8,7 +8,7 @@ export default function DrawbinHome() {
     const [recentBins, setRecentBins] =  useState(localStorage.getItem('recentCanvas') ? JSON.parse(localStorage.getItem('recentCanvas')) : []);
     let navigate = useNavigate();
 
-    document.title = "Drawbin | Shlok Zanwar"
+    document.title = "Drawbin | Shlok Zanwar";
 
     const paraInfo = [
         { text: "A drawbin for sharing canvas without any authentication." },

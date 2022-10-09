@@ -15,7 +15,7 @@ export default function AppsPage() {
         window.scrollTo(0, 0)
     }, [])
 
-    const [appCards, ] = useState(require("./Apps.json").filter(card => card.type === "App" || card.type === "Game"));
+    const [appCards, ] = useState(require("./Apps.json").filter(card => ((card.type === "App" || card.type === "Game") && card.hidden !== true) ));
     
 
     const cardType = type => {
@@ -57,13 +57,8 @@ export default function AppsPage() {
             </Helmet>
 
         <Masonry breakpointCols={breakpoints} className="my-masonry-grid" columnClassName="my-masonry-grid_column" >
-            {appCards.map((card, index) => (
-                <Link 
-                    to={card.url} 
-                    key={card.id} 
-                    target={card.urlTarget || ""} 
-                    data-aos="zoom-in-left" data-aos-delay={0} data-aos-once="true" data-aos-anchor="#apps"
-                >
+            {appCards.map((card, index) => {
+                const cardRender = (
                     <div key={card.id} className="cards-box">
                         <div className="cards-info">
                             <div className="cards-title">{card.title}</div>
@@ -74,8 +69,20 @@ export default function AppsPage() {
                             {cardType(card.type)}
                         </div>
                     </div>
-                </Link>
-            ))}
+                )
+                return card.urlTarget === "_blank" ? (
+                    <a href={card.url} key={card.id} target="_blank" rel="noopener noreferrer">
+                        {cardRender}
+                    </a>
+                ) : (
+                    <Link 
+                        to={card.url} 
+                        key={card.id} 
+                    >   
+                        {cardRender}
+                    </Link>
+                )
+            })}
         </Masonry>
         </div>
     );

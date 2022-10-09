@@ -22,7 +22,8 @@
         "description": "A game of Tic Tac Toe where you can never win against the computer.",
         "url": "/games/tictactoe",
         "type": "Game",
-        "date": "Oct 2021"
+        "date": "Oct 2021",
+        "hidden": true
     },
     {
         "id": 27,
@@ -118,6 +119,7 @@
         "description": "App for rally ( Time Speed Distance (TSD) Rally )",
         "url": "/apps/tsd-rally",
         "type": "App",
-        "date": ""
+        "date": "",
+        "hidden": true
     }
 ]
