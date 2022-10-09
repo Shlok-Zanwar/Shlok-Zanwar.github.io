@@ -17,6 +17,8 @@ import DrawbinApp from "./Pastebin/DrawbinApp";
 import DrawbinHome from "./Pastebin/DrawbinHome";
 import TSDRally2 from "./TSD/TSDRally2/TSDRally2";
 import TSDRally from "./TSD/TSDRally/TSDRally";
+import BlogsPage from "./AppsPage/BlogsPage";
+import BlogTemplate from "./BlogTemplates/BlogTemplate";
 
 
 // CSS Imports
@@ -26,6 +28,7 @@ import "./Homepage/HomepageCSS.css";
 import "./AppsPage/AppsPageCSS.css";
 import "./Pastebin/PastebinCSS.css";
 import "./TSD/TsdCSS.css";
+import "./BlogTemplates/BlogCSS.css";
 
 // Animate on Scroll
 import AOS from 'aos';
@@ -86,6 +89,10 @@ function App() {
                 	<Route path='tsd-rally-2' element={<TSDRally2 />} />
 
 					<Route path='' element={ <AppsPage /> } />
+				</Route>
+				<Route path='blogs' element={ <Outlet /> } >
+					<Route path=':id' element={ <BlogTemplate /> } />
+					<Route path='' element={ <BlogsPage /> } />
 				</Route>
 				<Route path='*' element={ 
 						localStorage.getItem('redirectTo')  

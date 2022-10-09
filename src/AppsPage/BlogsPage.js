@@ -9,25 +9,14 @@ import { Helmet } from "react-helmet";
 
 const { TabPane } = Tabs;
 
-export default function AppsPage() {
-    document.title = "Apps | Shlok Zanwar"
+export default function BlogsPage() {
+    document.title = "Blogs | Shlok Zanwar";
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
 
-    const [appCards, ] = useState(
-        [
-            ...require("./Apps.json").filter(card => ((card.type === "App" || card.type === "Game") && card.hidden !== true)),
-            {
-                "id": 999,
-                "title": "Blogs",
-                "description": "Blogs Page ( Old Blogs for some of the apps )",
-                "url": "/blogs",
-                "type": "Blog",
-            },
-        ]
-    );
-
+    const [blogCards, ] = useState(require("./Apps.json").filter(card => ((card.type === "Blog") && card.hidden !== true) ));
+    
 
     const cardType = type => {
         if (type === "Blog") {
@@ -68,7 +57,7 @@ export default function AppsPage() {
             </Helmet>
 
         <Masonry breakpointCols={breakpoints} className="my-masonry-grid" columnClassName="my-masonry-grid_column" >
-            {appCards.map((card, index) => {
+            {blogCards.map((card, index) => {
                 const cardRender = (
                     <div key={card.id} className="cards-box">
                         <div className="cards-info">
@@ -76,7 +65,7 @@ export default function AppsPage() {
                             <div className="cards-description">{card.description}</div>
                         </div>
                         <div className="card-bottom-bar">
-                            {card.date && <div className="card-date ">{card.date}</div>}
+                            <div className="card-date ">{card.date}</div>
                             {cardType(card.type)}
                         </div>
                     </div>
