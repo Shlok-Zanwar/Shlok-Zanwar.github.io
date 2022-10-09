@@ -7,7 +7,6 @@ import { useState } from 'react';
 
 export default function Homepage() {
     document.title = "Shlok Zanwar";
-    const [a, b] = useState(window.matchMedia("only screen and (max-width: 800px)").matches);
 
     const isMobile = window.matchMedia("only screen and (max-width: 800px)").matches;
 
@@ -26,19 +25,26 @@ export default function Homepage() {
         }, 200);
         // console.log(window.location.hash)
 
+        const currentMeta = document.getElementsByTagName('meta')['viewport'].content;
+
+        const isMobile = window.matchMedia("only screen and (max-width: 800px)").matches;
         if(isMobile){ 
-            document.getElementsByTagName('meta')['viewport'].content='width=800;';
+            document.getElementsByTagName('meta')['viewport'].content='width=800, user-scalable=yes';
         }
         else{
             document.getElementsByTagName('meta')['viewport'].content='width=device-width, initial-scale=1';
         }
+
+        return () => {
+            document.getElementsByTagName('meta')['viewport'].content = currentMeta;
+        }
     }, []);
 
     return (
-        <div style={{padding: "10px 0px 500px 0px"}} >
+        <div style={{padding: "10px 0px 0px 0px", overflow:"hidden", width: '100%'}}>
             <ProfileIntro isMobile={isMobile} />
             <ProfileSkills />
-            <ProfileProjects isMobile={a}  />
+            <ProfileProjects isMobile={false}  />
         </div>
     )
 }

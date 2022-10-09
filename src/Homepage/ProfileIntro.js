@@ -41,7 +41,6 @@ export default function ProfileIntro({isMobile}) {
         }         
     }, [textRef])
 
-    console.log(process.env)
 
     return (
         <div className="profile-outer-div" ref={ref} >
@@ -62,7 +61,7 @@ export default function ProfileIntro({isMobile}) {
                         I am proficient in ReactJS, FastAPI, MySQL, Data Structures and more.
                 </div>
                 <div className="profile-description-div" style={{ marginTop: "20px", display: "inline-flex" }}>
-                    <div data-aos="fade-left" data-aos-delay="100">
+                    <div data-aos="fade-left" data-aos-delay="100" data-aos-once="true" >
                         <Tooltip title={`+91-${whatsappNumber}`} placement="bottom">
                             <a
                                 href={`https://wa.me/${whatsappNumber}`}
@@ -74,7 +73,7 @@ export default function ProfileIntro({isMobile}) {
                             </a>
                         </Tooltip>
                     </div>
-                    <div data-aos="fade-left" data-aos-delay="200">
+                    <div data-aos="fade-left" data-aos-delay="200" data-aos-once="true" >
                         <Tooltip title={emailId} placement="bottom">
                             <a
                                 href={`mailto:${emailId}`}
@@ -86,7 +85,7 @@ export default function ProfileIntro({isMobile}) {
                             </a>
                         </Tooltip>
                     </div>
-                    <div data-aos="fade-left" data-aos-delay="300">
+                    <div data-aos="fade-left" data-aos-delay="300" data-aos-once="true" >
                         <Tooltip title="Linkedin" placement="bottom">
                             <a
                                 href="https://www.linkedin.com/in/shlok-zanwar/"

@@ -31,11 +31,17 @@ function BSTApp() {
     useEffect(() => {
         // This is for the viewport
         // If its a mobile device, then set the viewport to 800px
+        const currentMeta = document.getElementsByTagName('meta')['viewport'].content;
+
         if(isMobile){ 
-            document.getElementsByTagName('meta')['viewport'].content='width=1080;';
+            document.getElementsByTagName('meta')['viewport'].content='width=1920;';
         }
         else{
             document.getElementsByTagName('meta')['viewport'].content='width=device-width, initial-scale=1';
+        }
+
+        return () => {
+            document.getElementsByTagName('meta')['viewport'].content = currentMeta;
         }
     }, []);
 
