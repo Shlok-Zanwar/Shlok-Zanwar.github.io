@@ -337,7 +337,7 @@ export default function ProjectCard({data={}, id=data?.id, align="left", default
 
     const linksItem = (item) => (
         <div className={"timeline-description-div " + (align === "right" ? "timeline-align-right" : "")} style={{ marginTop: "10px" }} 
-            data-aos="fade-up" data-aos-delay={0} data-aos-once="true"
+            data-aos="fade-up" data-aos-delay={0} data-aos-once="true" data-aos-anchor={`#${id}`}
             >
             {item.content.map((link, index) => (
                 <a className="btn btn-gradient-border btn-glow" href={link.link} target={link.target || "_blank"} key={index}>
