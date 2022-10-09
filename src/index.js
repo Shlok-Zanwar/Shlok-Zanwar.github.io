@@ -1,5 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import App from "./App";
 import { SnackbarProvider } from "notistack";
 import { BrowserRouter, HashRouter } from "react-router-dom";
@@ -14,8 +14,9 @@ ReactGA.initialize(process.env.REACT_APP_GA_4_ID);
 // axios.defaults.baseURL = 'https://shlok-m-server.herokuapp.com';
 axios.defaults.baseURL = "https://3os28y.deta.dev";
 
-ReactDOM.render(
-    <React.StrictMode>
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
         <BrowserRouter>
             <SnackbarProvider
                 maxSnack={2}
@@ -25,8 +26,6 @@ ReactDOM.render(
                 <App />
             </SnackbarProvider>
         </BrowserRouter>
-    </React.StrictMode>,
-    document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
