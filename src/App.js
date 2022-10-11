@@ -5,7 +5,7 @@ import ReactGA from 'react-ga4';
 // import { GrDocumentText } from "react-icons/gr";
 
 import Homepage from "./Homepage/Homepage";
-// import MyNavbar from "./MyNavbar";
+import MyNavbar from "./MyNavbar";
 // import TodoApp from "./TodoApp/TodoApp";
 // import BSTApp from "./TreeVisulizations/BSTApp";
 // import MinHeapApp from "./TreeVisulizations/MinHeapApp";
@@ -40,7 +40,7 @@ import { SemipolarLoading } from "react-loadingg";
 AOS.init();
 
 // const Homepage = React.lazy(() => import("./Homepage/Homepage"));
-const MyNavbar = React.lazy(() => import("./MyNavbar"));
+// const MyNavbar = React.lazy(() => import("./MyNavbar"));
 const TodoApp = React.lazy(() => import("./TodoApp/TodoApp"));
 const BSTApp = React.lazy(() => import("./TreeVisulizations/BSTApp"));
 const MinHeapApp = React.lazy(() => import("./TreeVisulizations/MinHeapApp"));

@@ -3,11 +3,12 @@ import ProjectCard from './ProjectCard'
 import { HiOutlineCode } from "react-icons/hi";
 import { AiOutlineFileAdd } from "react-icons/ai";
 import { GiBrain } from "react-icons/gi";
-import { SiCss3, SiFastapi, SiFirebase, SiFlask, SiHeroku, SiHtml5, SiJavascript, SiJson, SiMongodb, SiMysql, SiPython, SiReact, SiRedux } from "react-icons/si";
+import { SiCss3, SiFastapi, SiFirebase, SiFlask, SiHeroku, SiHtml5, SiJavascript, SiJson, SiMongodb, SiMysql, SiNpm, SiPython, SiReact, SiRedux } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 import { DiSqllite } from "react-icons/di";
+import { BiCircle } from "react-icons/bi";
 import Timeline from '@mui/lab/Timeline';
-import { binaryTreeGithubURL, bstVisulizationURL, coderoomsAboutUsURL, coderoomsGithubURL, dockFormsBlogURL, dockFormsGithubURL, drawbinURL, heapVisulizationURL, hotelManagementBlogURL, hotelManagementGithubURL, mathsyraBackendURL, mathsyraFrontendURL, mnistGithubURL, pastebinGithubURL, pastebinURL, terminalQuizGithubURL, todoAppAppURL, todoAppBlogURL, todoAppGithubURL } from '../constants';
+import { binaryTreeGithubURL, bstVisulizationURL, coderoomsAboutUsURL, coderoomsGithubURL, dockFormsBlogURL, dockFormsGithubURL, drawbinURL, expenseTrackerGithubURL, expenseTrackerURL, globalSearchGithubURL, globalSearchNPMURL, heapVisulizationURL, hotelManagementBlogURL, hotelManagementGithubURL, mathsyraBackendURL, mathsyraFrontendURL, mnistGithubURL, pastebinGithubURL, pastebinURL, terminalQuizGithubURL, todoAppAppURL, todoAppBlogURL, todoAppGithubURL } from '../constants';
 import { useEffect } from 'react';
 
 
@@ -60,6 +61,23 @@ export default function ProfileProjects({isMobile}) {
                     { text: "MySQL", icon: <GrMysql className="timeline-tech-icon" /> },
                     { text: "MongoDB", icon: <SiMongodb className="timeline-tech-icon" /> },
                 ]
+            },
+        ]
+    }
+
+    const portfolioWebsiteData = {
+        title: "Portfolio Website",
+        id: "portfolio-website",
+        oppositeContent: (<>Personal Project</>),
+
+        items: [
+            {
+                type: "text",
+                content: "This website is a portfolio website which showcases my projects and skills."
+            },
+            {
+                type: "text",
+                content: "I use this as a platform to experiment with new technologies and learn new things."
             },
         ]
     }
@@ -538,7 +556,7 @@ export default function ProfileProjects({isMobile}) {
     const pastebinData = {
         title: "Paste Bin",
         id: "pastebin",
-        oppositeContent: "Feb 2020",
+        oppositeContent: "June 2021",
     
         items: [
             {
@@ -616,18 +634,156 @@ export default function ProfileProjects({isMobile}) {
         ]
     }
 
+    const expenseTrackerData = {
+        title: "Expense Tracker",
+        id: "expense-tracker",
+        oppositeContent: "August 2022",
+
+        items: [
+            {
+                type: "text",
+                content: "An application to manage and keep track of your expenses.",
+            },
+            {
+                type: "text",
+                content: "It has a very simple and easy to use UI.",
+            },
+            {
+                type: "text",
+                content: "User can assign tags to their expenses and can filter / visualize their expenses based on the tags.",
+            },
+            {
+                type: "text",
+                content: "I took it as a challenge to complete this app in 24 hours and yess!! i successfully deployed it in 16 hours.",
+            },
+            {
+                type: "collapse",
+                title: "Algorithm",
+                id: "expense-tracker-algorithm",
+                items: [
+                    {
+                        type: "text",
+                        content: "Every pathname of the url defines a new tracker.",
+                    },
+                    {
+                        type: "text",
+                        content: "As i didnt want to get into user authentication and database management,",
+                    },
+                    {
+                        type: "text",
+                        content: "I developed a unique way of authentication without user login.",
+                    },
+                    {
+                        type: "text",
+                        content: "When someone creates a new tracker, he/she can protect the route by setting a password.",
+                    },
+                    {
+                        type: "text",
+                        content: "They can then share the route with others and they can access the tracker by entering the password.",
+                    },
+                    {
+                        type: "text",
+                        content: "OR",
+                    },
+                    {
+                        type: "text",
+                        content: "The can use it on any device by just entering the password.",
+                    },
+                ]
+            },
+            {
+                type: "chips",
+                title: "Tech/Learn Stack",
+                content: [
+                    { text: "React", icon: <SiReact className="timeline-tech-icon" /> },
+                    { text: "FastAPI", icon: <SiFastapi className="timeline-tech-icon" /> },
+                    { text: "Deta Base", icon: <BiCircle className="timeline-tech-icon" /> },
+                    { text: "Html", icon: <SiHtml5 className="timeline-tech-icon" /> },
+                    { text: "CSS", icon: <SiCss3 className="timeline-tech-icon" /> },
+                ]
+            },
+            {
+                type: "links",
+                content: [
+                    { text: "Expense Tracker", link: expenseTrackerURL },
+                    { text: "Github", link: expenseTrackerGithubURL },
+                ]
+            }
+        ]
+    }
+
+    const reactGlobalSearchNPM = {
+        title: "Global Search NPM",
+        id: "global-search-npm",
+        oppositeContent: "Oct 2022",
+
+        items: [
+            {
+                type: "text",
+                content: "A global search modal to navigate through your website with/without a mouse.",
+            },
+            {
+                type: "text",
+                content: "Having a global search modal in your application makes the website a lot more fluid and user experience much better.",
+            },
+            {
+                type: "text",
+                content: "I created it as a NPM package so that it can be used in any react application.",
+            },
+            {
+                type: "text",
+                content: "The package is fully customizable through props.",
+            },
+            {
+                type: "collapse",
+                title: "Usage",
+                id: "global-search-npm-usage",
+                items: [
+                    {
+                        type: "list",
+                        content: [
+                            "You could open the search modal by (developer defined) shortcuts (ctrl + k, ctrl + f, etc.) or by clicking on the search icon.",
+                            "The search modal is a full screen modal which can be closed by clicking on the close button or by pressing the escape key.",
+                            "Search and navigate through the results using the keyboard (up, down, enter, escape).",
+                        ]
+                    }
+                ]
+            },
+            {
+                type: "chips",
+                title: "Tech/Learn Stack",
+                content: [
+                    { text: "React", icon: <SiReact className="timeline-tech-icon" /> },
+                    { text: "NPM", icon: <SiNpm className="timeline-tech-icon" /> },
+                    { text: "Html", icon: <SiHtml5 className="timeline-tech-icon" /> },
+                    { text: "CSS", icon: <SiCss3 className="timeline-tech-icon" /> },
+                ]
+            },
+            {
+                type: "links",
+                content: [
+                    { text: "Github", link: globalSearchGithubURL },
+                    { text: "NPM", link: globalSearchNPMURL },
+                ],
+            }
+        ]
+    }
+
 
     const projects = [
         imagesDashboardData,
-        dockFormsData,
         codeRoomsData,
-        mathsyraData,
-        hotelManagemantData,
-        todoAppData,
+        // portfolioWebsiteData,
+        reactGlobalSearchNPM,
         mnistData,
-        terminalQuizData,
-        pastebinData,
         binaryTreeData,
+        dockFormsData,
+        expenseTrackerData,
+        pastebinData,
+        mathsyraData,
+        todoAppData,
+        hotelManagemantData,
+        terminalQuizData,
     ]
 
     // useEffect(() => {

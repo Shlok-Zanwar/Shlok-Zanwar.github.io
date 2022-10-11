@@ -24,7 +24,7 @@ export const hotelManagementGithubURL = "https://github.com/Shlok-Zanwar/Hotel-M
 
 export const todoAppAppURL = `${websiteBaseURL}/apps/todo-app`;
 export const todoAppBlogURL = `${websiteBaseURL}/blogs/todo-app`;
-export const todoAppGithubURL = "https://github.com/Shlok-Zanwar/Shlok-Zanwar.github.io/tree/main/src/TodoAppComponents";
+export const todoAppGithubURL = "https://github.com/Shlok-Zanwar/Shlok-Zanwar.github.io/tree/main/src/TodoApp";
 
 export const mnistGithubURL = "https://github.com/Shlok-Zanwar/DS-SCE";
 
@@ -38,3 +38,9 @@ export const pastebinGithubURL = "https://github.com/Shlok-Zanwar/Pastebin-React
 export const binaryTreeGithubURL = "https://github.com/Shlok-Zanwar/Binary-Tree-Visualization";
 export const heapVisulizationURL = `${websiteBaseURL}/apps/max-heap-visualization`;
 export const bstVisulizationURL = `${websiteBaseURL}/apps/bst-visualization`;
+
+export const globalSearchGithubURL = "https://github.com/Shlok-Zanwar/react-global-search";
+export const globalSearchNPMURL = "https://www.npmjs.com/package/react-global-search";
+
+export const expenseTrackerGithubURL = "https://github.com/Shlok-Zanwar/Shlok-Zanwar.github.io/tree/main/src/ExpenseTracker"
+export const expenseTrackerURL = `${websiteBaseURL}/apps/expense-tracker`;

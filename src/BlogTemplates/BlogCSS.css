@@ -1,3 +1,7 @@
+:root {
+  --black: #161a2b;
+  --white: #ffffff;
+}
 
 .main-blog-div {
     display: inline-table;
