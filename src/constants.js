@@ -26,7 +26,7 @@ export const todoAppAppURL = `${websiteBaseURL}/apps/todo-app`;
 export const todoAppBlogURL = `${websiteBaseURL}/blogs/todo-app`;
 export const todoAppGithubURL = "https://github.com/Shlok-Zanwar/Shlok-Zanwar.github.io/tree/main/src/TodoApp";
 
-export const mnistGithubURL = "https://github.com/Shlok-Zanwar/DS-SCE";
+export const mnistGithubURL = "https://github.com/Shlok-Zanwar/mnist-detection";
 
 export const terminalQuizGithubURL = "https://github.com/Shlok-Zanwar/Terminal-Quiz";
 

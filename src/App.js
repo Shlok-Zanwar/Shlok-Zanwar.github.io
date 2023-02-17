@@ -37,6 +37,7 @@ import "./MineSweeper/MineSweeperCSS.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { SemipolarLoading } from "react-loadingg";
+import CompanyChart from "./CompanyChart/CompanyChart";
 AOS.init();
 
 // const Homepage = React.lazy(() => import("./Homepage/Homepage"));
@@ -96,7 +97,7 @@ function App() {
 	// ];
 
 	const loadingComponent = (
-		<SemipolarLoading   size="large" color="rgb(251, 255, 3)" />
+		<SemipolarLoading  size="large" color="rgb(251, 255, 3)" />
 	);
 
     return (
@@ -259,6 +260,10 @@ function App() {
 						</Suspense>
 					} />
 				</Route>
+
+				<Route path='test' element={
+					<CompanyChart />
+				} />
 
 				<Route path='*' element={ 
 						localStorage.getItem('redirectTo')  
